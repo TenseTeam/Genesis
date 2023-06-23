@@ -9,7 +9,8 @@
             Up,
             Down,
             Left,
-            Right
+            Right,
+            Forward
         }
 
         public static Vector3 GetVector3Direction (this Vector3Direction direction)
@@ -27,6 +28,9 @@
 
                 case Vector3Direction.Right:
                     return Vector3.right;
+
+                case Vector3Direction.Forward:
+                    return Vector3.forward;
             }
 
             return Vector3.zero;

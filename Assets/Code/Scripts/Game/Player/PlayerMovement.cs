@@ -7,6 +7,7 @@
     using VUDK.Generic.Systems.MovementSystem;
     using ProjectGenesis.Managers;
     using ProjectGenesis.Events;
+    using VUDK.Extensions.Vectors;
 
     public class PlayerMovement : MovementBase
     {
@@ -20,27 +21,26 @@
 
         private float _horizontal;
         private bool _previousIsGroundedState;
-        private float _rotationDirection;
         private bool _isJumpInCooldown;
 
         private void OnEnable()
         {
             InputsManager.Inputs.PlayerMovement.Jump.started += Jump;
-            InputsManager.Inputs.PlayerMovement.Movement.started += StartMoving;
+            InputsManager.Inputs.PlayerMovement.Movement.performed += StartMoving;
             InputsManager.Inputs.PlayerMovement.Movement.canceled += StopMoving;
         }
 
         private void OnDisable()
         {
             InputsManager.Inputs.PlayerMovement.Jump.started -= Jump;
-            InputsManager.Inputs.PlayerMovement.Movement.started -= StartMoving;
+            InputsManager.Inputs.PlayerMovement.Movement.performed -= StartMoving;
             InputsManager.Inputs.PlayerMovement.Movement.canceled -= StopMoving;
         }
 
         private void FixedUpdate()
         {
             Move();
-            Rotate(_rotationDirection);
+            Rotate();
         }
 
         private void Update()
@@ -59,14 +59,13 @@
         public override void Stop()
         {
             _horizontal = 0f;
-            StopAllCoroutines();
             EventManager.TriggerEvent(Events.PlayerEvents.OnMovement, _horizontal);
         }
 
         private void StartMoving(InputAction.CallbackContext input)
         {
             _horizontal = input.ReadValue<float>();
-            _rotationDirection = _horizontal;
+            //_rotationDirection = _horizontal;
             EventManager.TriggerEvent(Events.PlayerEvents.OnMovement, _horizontal);
         }
 
@@ -81,7 +80,7 @@
             {
                 EventManager.TriggerEvent(Events.PlayerEvents.OnJump);
                 Rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
-                JumpCooldown();
+                StartCoroutine(JumpCooldownRoutine());
             }
         }
 
@@ -94,21 +93,20 @@
             }
         }
 
-        private void JumpCooldown()
+        private void Rotate()
+        {
+            if (_horizontal != 0f)
+            {
+                Quaternion targetRotation = Quaternion.Euler(0f, _horizontal >= 0f ? 0f : 180f, 0f);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _rotationSpeed);
+            }
+        }
+
+        private IEnumerator JumpCooldownRoutine()
         {
             _isJumpInCooldown = true;
-            Invoke("RecoverJump", _jumpCooldown);
-        }
-
-        private void RecoverJump()
-        {
+            yield return new WaitForSeconds(_jumpCooldown);
             _isJumpInCooldown = false;
-        }
-
-        private void Rotate(float direction)
-        {
-            Quaternion targetRotation = Quaternion.Euler(0f, direction >= 0f ? 0f : 180f, 0f);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, _rotationSpeed);
         }
     }
 }

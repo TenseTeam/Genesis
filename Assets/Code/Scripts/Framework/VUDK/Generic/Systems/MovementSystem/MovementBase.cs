@@ -1,7 +1,6 @@
 ﻿namespace VUDK.Generic.Systems.MovementSystem
 {
     using UnityEngine;
-    using UnityEngine.UIElements;
     using VUDK.Generic.Systems.MovementSystem.Interfaces;
     using VUDK.Generic.Utility;
 

@@ -94,7 +94,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""id"": ""dd13e154-f084-4a18-a9d9-1d8c03b7e610"",
                     ""path"": ""<Gamepad>/leftStick/x"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""AxisDeadzone(min=0.3,max=1)"",
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,

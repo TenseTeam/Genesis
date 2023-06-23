@@ -4,6 +4,34 @@
 
     public static class Vector3Extension
     {
+        public enum Vector3Direction
+        {
+            Up,
+            Down,
+            Left,
+            Right
+        }
+
+        public static Vector3 GetVector3Direction (this Vector3Direction direction)
+        {
+            switch (direction)
+            {
+                case Vector3Direction.Up:
+                    return Vector3.up;
+
+                case Vector3Direction.Down:
+                    return Vector3.down;
+
+                case Vector3Direction.Left:
+                    return Vector3.left;
+
+                case Vector3Direction.Right:
+                    return Vector3.right;
+            }
+
+            return Vector3.zero;
+        }
+
         public static float CalculateDistance(this Vector3 v1, Vector3 v2)
         {
             return Mathf.Sqrt(

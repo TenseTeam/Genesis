@@ -1,6 +1,7 @@
 ﻿namespace VUDK.Extensions.Vectors
 {
     using UnityEngine;
+    using VUDK.Extensions.Mathematics;
 
     public static class Vector3Extension
     {
@@ -66,17 +67,19 @@
             return new Vector3(v1.x * v2.x, v1.y * v2.y, v1.z * v2.z);
         }
 
-        // THIS ALREADY EXIST, REMINDER TO DELETE THIS
-        public static Vector3 CrossProduct(this Vector3 v1, Vector3 v2)
-        {
-            return new Vector3(v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.x);
-        }
-
         public static void Components(this Vector3 v1, out Vector3 vx, out Vector3 vy, out Vector3 vz)
         {
             vx = new Vector3(v1.x, 0, 0);
             vy = new Vector3(0, v1.y, 0);
             vz = new Vector3(0, 0, v1.z);
+        }
+
+        public static bool IsApproximatelyEqual(this Vector3 v1, Vector3 v2, float tollerance = 0.01f)
+        {
+            return 
+                v1.x.IsApproximatelyEqual(v2.x, tollerance) &&
+                v1.y.IsApproximatelyEqual(v2.y, tollerance) &&
+                v1.z.IsApproximatelyEqual(v2.z, tollerance);
         }
     }
 }

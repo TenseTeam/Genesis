@@ -4,16 +4,11 @@
     using VUDK.Generic.Systems.EventsSystem;
     using VUDK.Generic.Systems.EventsSystem.Events;
 
-    public abstract class PickupBase : InteractBase, IPickup
+    public abstract class PickupBase : TriggerInteractBase
     {
-        private void OnTriggerEnter(Collider other)
+        public override void Interact(GameObject interactor)
         {
             EventManager.TriggerEvent(EventKeys.InteractEvents.OnPickup);
-            Interact(other.gameObject);
-        }
-
-        public override void Interact(GameObject Interactor)
-        {
         }
     }
 }

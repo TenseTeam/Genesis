@@ -5,9 +5,9 @@
     using UnityEngine.InputSystem;
     using VUDK.Generic.Systems.EventsSystem;
     using VUDK.Generic.Systems.MovementSystem;
-    using ProjectGenesis.Managers;
+    using VUDK.Generic.Systems.InputSystem;
     using ProjectGenesis.Events;
-    using VUDK.Extensions.Vectors;
+    using System;
 
     public class PlayerMovement : MovementBase
     {
@@ -22,6 +22,10 @@
         private float _horizontal;
         private bool _previousIsGroundedState;
         private bool _isJumpInCooldown;
+
+        public event Action<float> OnMovement;
+        public event Action<bool> OnFalling;
+        public event Action OnJump;
 
         private void OnEnable()
         {
@@ -59,14 +63,13 @@
         public override void Stop()
         {
             _horizontal = 0f;
-            EventManager.TriggerEvent(Events.PlayerEvents.OnMovement, _horizontal);
+            OnMovement?.Invoke(_horizontal);
         }
 
         private void StartMoving(InputAction.CallbackContext input)
         {
             _horizontal = input.ReadValue<float>();
-            //_rotationDirection = _horizontal;
-            EventManager.TriggerEvent(Events.PlayerEvents.OnMovement, _horizontal);
+            OnMovement?.Invoke(_horizontal);
         }
 
         private void StopMoving(InputAction.CallbackContext input)
@@ -78,7 +81,7 @@
         {
             if (IsGrounded && !_isJumpInCooldown)
             {
-                EventManager.TriggerEvent(Events.PlayerEvents.OnJump);
+                OnJump?.Invoke();
                 Rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
                 StartCoroutine(JumpCooldownRoutine());
             }
@@ -88,7 +91,7 @@
         {
             if (IsGrounded != _previousIsGroundedState)
             {
-                EventManager.TriggerEvent(Events.PlayerEvents.OnFalling, !IsGrounded);
+                OnFalling?.Invoke(!IsGrounded);
                 _previousIsGroundedState = IsGrounded;
             }
         }

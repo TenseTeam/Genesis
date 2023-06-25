@@ -33,7 +33,7 @@
         /// <param name="b">Other number.</param>
         /// <param name="tollerance">Tollerance Threshold.</param>
         /// <returns>True if they are approximately the same, False if not.</returns>
-        public static bool IsApproximatelyEqual(this float myNumber, float number, float tollerance)
+        public static bool IsApproximatelyEqual(this float myNumber, float number, float tollerance = 0.01f)
         {
             myNumber = Mathf.Max(myNumber, number);
             number = Mathf.Min(myNumber, number);

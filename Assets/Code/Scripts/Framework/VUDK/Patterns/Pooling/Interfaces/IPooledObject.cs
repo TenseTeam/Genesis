@@ -19,7 +19,7 @@
         public void Dispose();
 
         /// <summary>
-        /// Clears the object from its alterations.
+        /// Called on disposed, clears the object from its alterations.
         /// </summary>
         public void Clear();
     }

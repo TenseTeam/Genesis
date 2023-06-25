@@ -1,13 +1,10 @@
 namespace VUDK.Generic.Systems.InteractSystem
 {
     using UnityEngine;
+    using VUDK.Generic.Systems.InteractSystem.Interfaces;
 
-    public abstract class InteractBase : MonoBehaviour
+    public abstract class InteractBase : MonoBehaviour, IInteract
     {
-        /// <summary>
-        /// Triggers interact.
-        /// </summary>
-        /// <param name="Interactor">Interactor GameObject.</param>
-        public abstract void Interact(GameObject Interactor);
+        public abstract void Interact(GameObject interactor);
     }
 }

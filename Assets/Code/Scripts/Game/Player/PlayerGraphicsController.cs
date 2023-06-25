@@ -11,18 +11,20 @@
 
         private float _horizontal;
 
+        private PlayerMovement _playerMovement;
+
         private void OnEnable()
         {
-            EventManager.AddListener<float>(Events.PlayerEvents.OnMovement, StartAnimatingMovement);
-            EventManager.AddListener<bool>(Events.PlayerEvents.OnFalling, AnimateFalling);
-            EventManager.AddListener(Events.PlayerEvents.OnJump, AnimateJump);
+            _playerMovement.OnMovement += StartAnimatingMovement;
+            _playerMovement.OnFalling += AnimateFalling;
+            _playerMovement.OnJump += AnimateJump;
         }
 
         private void OnDisable()
         {
-            EventManager.RemoveListener<float>(Events.PlayerEvents.OnMovement, StartAnimatingMovement);
-            EventManager.RemoveListener<bool>(Events.PlayerEvents.OnFalling, AnimateFalling);
-            EventManager.RemoveListener(Events.PlayerEvents.OnJump, AnimateJump);
+            _playerMovement.OnMovement -= StartAnimatingMovement;
+            _playerMovement.OnFalling -= AnimateFalling;
+            _playerMovement.OnJump -= AnimateJump;
         }
 
         private void Update()
@@ -30,9 +32,10 @@
             AnimateMovement();
         }
 
-        public void Init(Animator animator)
+        public void Init(PlayerMovement movement, Animator animator)
         {
             _anim = animator;
+            _playerMovement = movement;
         }
 
         private void StartAnimatingMovement(float horizontalDirection)

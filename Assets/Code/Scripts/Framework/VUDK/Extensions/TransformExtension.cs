@@ -89,5 +89,19 @@
         {
             transform.position = position;
         }
+
+        /// <summary>
+        /// Sets the global scale of a transform by unparenting and re-parenting it.
+        /// </summary>
+        /// <param name="transform"><see cref="Transform"/> to set its scale.</param>
+        /// <param name="scale">New scale of the transform.</param>
+        public static void SetLossyScale(this Transform transform, Vector3 scale)
+        {
+            Transform oldParent = transform.parent;
+
+            transform.parent = null;
+            transform.localScale = scale;
+            transform.parent = oldParent;
+        }
     }
 }

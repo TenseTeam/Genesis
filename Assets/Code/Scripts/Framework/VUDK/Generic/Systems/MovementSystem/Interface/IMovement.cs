@@ -4,10 +4,9 @@ namespace VUDK.Generic.Systems.MovementSystem.Interfaces
 
     public interface IMovement
     {
-        public void Init(Rigidbody rigidBody);
-
+        public void Init(Rigidbody rigidBody, LayerMask groundLayers);
         public void Move();
-
         public void Stop();
+        public void ResetMovement();
     }
 }

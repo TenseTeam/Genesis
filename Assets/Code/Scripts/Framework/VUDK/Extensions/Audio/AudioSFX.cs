@@ -37,6 +37,7 @@
 
         public void Clear()
         {
+            _audioSource.Stop();
             _audioSource.clip = null;
         }
 

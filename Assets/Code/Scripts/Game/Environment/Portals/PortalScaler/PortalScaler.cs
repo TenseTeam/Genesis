@@ -1,7 +1,6 @@
 namespace ProjectGenesis.Environment.Portals
 {
     using UnityEngine;
-    using VUDK.Extensions.Vectors;
     using ProjectGenesis.Player;
 
     public class PortalScaler : PortalBase
@@ -14,8 +13,7 @@ namespace ProjectGenesis.Environment.Portals
             if (interactor.TryGetComponent(out PlayerManager player))
             {
                 base.Interact(interactor);
-
-                player.Status.ApplyResize(_newSize);
+                player.Status.ToggleResize(_newSize);
             }
         }
     }

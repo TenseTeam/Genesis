@@ -7,12 +7,15 @@ namespace ProjectGenesis.Player
     {
         [SerializeField, Min(0.1f), Header("Resize")]
         private float _resizeSpeed;
+        [SerializeField, Min(0f)]
+        private float _resizeTime;
 
         private Vector3 _originalSize;
         private Vector3 _targetSize;
         private bool _isResizing;
 
-        public bool IsResized { get; private set; } = false;
+        public bool IsResized { get; private set; }
+        public bool IsSplitted { get; private set; }
 
         private void Awake()
         {
@@ -24,14 +27,24 @@ namespace ProjectGenesis.Player
             Resize();
         }
 
-        public void ApplyResize(Vector3 size)
+        public void ToggleResize(Vector3 size)
         {
             _targetSize = IsResized ? _originalSize : size;
             _isResizing = true;
             IsResized = !IsResized;
 
             CancelInvoke("StopResizing");
-            Invoke("StopResizing", 3f/_resizeSpeed);
+            Invoke("StopResizing", _resizeTime);
+        }
+
+        public void ApplySplit()
+        {
+            IsSplitted = true;
+        }
+
+        public void RemoveSplit()
+        {
+            IsSplitted = false;
         }
 
         private void Resize()
@@ -39,7 +52,6 @@ namespace ProjectGenesis.Player
             if (_isResizing)
             {
                 transform.localScale = Vector3.Lerp(transform.localScale, _targetSize, _resizeSpeed * Time.deltaTime);
-                Debug.Log("Called");
             }
         }
 

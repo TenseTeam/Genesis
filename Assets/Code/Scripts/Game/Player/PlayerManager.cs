@@ -2,6 +2,8 @@
 {
     using UnityEngine;
     using VUDK.Generic.Systems.MovementSystem;
+    using ProjectGenesis.Player.Interfaces;
+    using ProjectGenesis.Settings;
 
     [RequireComponent(typeof(MovementBase))]
     [RequireComponent(typeof(PlayerGraphicsController))]
@@ -9,16 +11,15 @@
     [RequireComponent(typeof(PlayerStatus))]
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Animator))]
-    public class PlayerManager : MonoBehaviour
+    public class PlayerManager : MonoBehaviour, IPlayerManager
     {
+        private Rigidbody _rb;
+        private Animator _anim;
+
         public PlayerMovement Movement { get; private set; }
         public PlayerGraphicsController Graphics { get; private set; }
         public PlayerEntity Entity { get; private set; }
-
         public PlayerStatus Status { get; private set; }
-
-        private Rigidbody _rb;
-        private Animator _anim;
 
         private void Awake()
         {
@@ -35,7 +36,7 @@
             Status = status;
 
             Entity.Init();
-            Movement.Init(_rb);
+            Movement.Init(_rb, ProjectSettings.GroundLayers);
             Graphics.Init(Movement, _anim);
         }
     }

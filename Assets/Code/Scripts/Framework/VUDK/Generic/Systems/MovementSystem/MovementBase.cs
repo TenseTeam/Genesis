@@ -17,7 +17,7 @@
         private TriggerLink _groundTrigger;
         [SerializeField]
         private TriggerLink _wallTrigger;
-        [SerializeField]
+
         private LayerMask _groundLayers;
 
         public bool IsGrounded
@@ -36,14 +36,17 @@
             }
         }
 
-        public virtual void Init(Rigidbody rigidBody)
+        public virtual void Init(Rigidbody rigidBody, LayerMask groundLayers)
         {
+            _groundLayers = groundLayers;
             _groundTrigger.Init(_groundLayers);
             _wallTrigger.Init(_groundLayers);
             Rigidbody = rigidBody;
         }
 
         public abstract void Move();
+
+        public abstract void ResetMovement();
 
         public abstract void Stop();
     }

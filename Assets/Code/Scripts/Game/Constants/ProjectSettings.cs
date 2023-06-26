@@ -14,5 +14,4 @@ namespace ProjectGenesis.Settings
             GroundLayers = _groundLayers;
         }
     }
-
 }

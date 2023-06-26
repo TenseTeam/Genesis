@@ -9,11 +9,9 @@
         [SerializeField, Header("Linked Double")]
         private LinkedPlayerManager _linkedPlayerManager;
         [SerializeField]
-        private Vector3 _spawnXPosition;
+        private float _alignPosition;
 
-        private bool _isUsed;
-
-        private Vector3 _correctSpawnPosition => _spawnXPosition + transform.position;
+        private Vector3 _correctSpawnPosition => Vector3.forward * _alignPosition + transform.position;
 
         private void Awake()
         {

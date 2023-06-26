@@ -35,9 +35,14 @@
             Entity = entity;
             Status = status;
 
-            Entity.Init();
+            Entity.Init(this, transform.position);
             Movement.Init(_rb, ProjectSettings.GroundLayers);
             Graphics.Init(Movement, _anim);
+        }
+
+        public void Reset()
+        {
+            Status.Clear();
         }
     }
 }

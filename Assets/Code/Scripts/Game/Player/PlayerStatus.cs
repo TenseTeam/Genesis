@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using VUDK.Extensions.Transform;
 using VUDK.Extensions.Vectors;
 
 namespace ProjectGenesis.Player
@@ -37,6 +38,15 @@ namespace ProjectGenesis.Player
             Invoke("StopResizing", _resizeTime);
         }
 
+        public void RemoveResize()
+        {
+            CancelInvoke("StopResizing");
+            StopResizing();
+            _targetSize = _originalSize;
+            IsResized = false;
+            transform.SetLossyScale(_targetSize);
+        }
+
         public void ApplySplit()
         {
             IsSplitted = true;
@@ -45,6 +55,13 @@ namespace ProjectGenesis.Player
         public void RemoveSplit()
         {
             IsSplitted = false;
+        }
+
+        public void Clear()
+        {
+            CancelInvoke();
+            RemoveSplit();
+            RemoveResize();
         }
 
         private void Resize()

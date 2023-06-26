@@ -4,10 +4,10 @@
     using VUDK.Extensions.Transform;
     using VUDK.Generic.Systems.EntitySystem.Interfaces;
     using VUDK.Generic.Systems.MovementSystem;
+    using VUDK.Generic.Systems.InputSystem;
     using ProjectGenesis.Player;
     using ProjectGenesis.Player.Interfaces;
     using ProjectGenesis.Settings;
-    using VUDK.Generic.Systems.InputSystem;
 
     [RequireComponent(typeof(MovementBase))]
     [RequireComponent(typeof(PlayerGraphicsController))]
@@ -29,13 +29,11 @@
         {
             TryGetComponent(out PlayerMovement movement);
             TryGetComponent(out PlayerGraphicsController graphics);
-            TryGetComponent(out PlayerStatus status);
             TryGetComponent(out _rb);
             TryGetComponent(out _anim);
 
             Movement = movement;
             Graphics = graphics;
-            Status = status;
 
             Movement.Init(_rb, ProjectSettings.GroundLayers);
             Graphics.Init(Movement, _anim);
@@ -47,6 +45,7 @@
 
         public void Init(PlayerManager realPlayer)
         {
+            Status = realPlayer.Status;
             Entity = realPlayer.Entity;
             InputsManager.Inputs.Disable();
             InputsManager.Inputs.Enable();
@@ -59,9 +58,9 @@
             Entity.HealHitPoints(healPoints);
         }
 
-        [ContextMenu("DebugTakeDamage")]
         public void TakeDamage(float hitDamage = 1)
         {
+            gameObject.SetActive(false);
             Entity.TakeDamage(hitDamage);
         }
 

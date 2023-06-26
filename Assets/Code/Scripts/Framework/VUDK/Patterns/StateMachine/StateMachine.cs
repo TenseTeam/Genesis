@@ -1,23 +1,17 @@
 namespace VUDK.Patterns.StateMachine
 {
+    using System;
+    using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
 
-    public abstract class StateMachine : MonoBehaviour
+    public abstract class StateMachine<TKey, TContext> : MonoBehaviour where TContext : Context where TKey : Enum
     {
-        public State CurrentState { get; private set; }
+        protected Dictionary<TKey, State<TKey, TContext>> States = new Dictionary<TKey, State<TKey, TContext>>();
 
-        public int CurrentStateKey { get; protected set; } = 0;
+        public TKey CurrentStateKey { get; protected set; }
 
-        protected List<State> States { get; set; }
-
-        /// <summary>
-        /// Initializes the states list.
-        /// </summary>
-        protected virtual void InitStates()
-        {
-            States = new List<State>();
-        }
+        public State<TKey, TContext> CurrentState { get; private set; }
 
         protected virtual void Start()
         {
@@ -30,10 +24,15 @@ namespace VUDK.Patterns.StateMachine
         }
 
         /// <summary>
-        /// Changes the state to a state in the list by its index.
+        /// Initializes the <see cref="StateMachine"/> and its states.
+        /// </summary>
+        public abstract void Init();
+
+        /// <summary>
+        /// Changes the state to a state in the list by its key.
         /// </summary>
         /// <param name="stateKey">State key.</param>
-        public void ChangeState(int stateKey)
+        public void ChangeState(TKey stateKey)
         {
             if (States[stateKey] != CurrentState)
             {
@@ -45,42 +44,44 @@ namespace VUDK.Patterns.StateMachine
         }
 
         /// <summary>
-        /// Removes a state from the states list by its index.
+        /// Changes the state to a state in the list by its key after waiting for seconds.
         /// </summary>
         /// <param name="stateKey">State key.</param>
-        public void RemoveState(int stateKey)
+        /// <param name="timeToWait">Time to wait in seconds.</param>
+        public void ChangeStateIn(TKey stateKey, float timeToWait)
         {
-            States.RemoveAt(stateKey);
+            StartCoroutine(WaitSecondsAndGoToStateRoutine(stateKey, timeToWait));
         }
 
         /// <summary>
-        /// Removes a state from the states list.
+        /// Removes a state from the states by its key.
         /// </summary>
-        /// <param name="stateKey">State.</param>
-
-        public void RemoveState(State state)
+        /// <param name="stateKey">State key.</param>
+        public void RemoveState(TKey stateKey)
         {
-            if(!States.Contains(state))
-                return;
-
-            States.Remove(state);
+            States.Remove(stateKey);
         }
 
         /// <summary>
-        /// Adds a state to the states list.
+        /// Adds a state.
         /// </summary>
+        /// <param name="stateKey">State to add key.</param>
         /// <param name="state">State to add.</param>
-        public void AddState(State state)
+        public void AddState(TKey stateKey, State<TKey, TContext> state)
         {
-            States.Add(state);
+            States.Add(stateKey, state);
         }
 
         /// <summary>
-        /// Begins the state machine starting from the state of index 0.
+        /// Coroutine wait for seconds before changing state.
         /// </summary>
-        public virtual void Begin()
+        /// <param name="stateKey">State Key.</param>
+        /// <param name="time">Time in Seconds.</param>
+        /// <returns></returns>
+        private IEnumerator WaitSecondsAndGoToStateRoutine(TKey stateKey, float time)
         {
-            ChangeState(0);
+            yield return new WaitForSeconds(time);
+            ChangeState(stateKey);
         }
     }
 }

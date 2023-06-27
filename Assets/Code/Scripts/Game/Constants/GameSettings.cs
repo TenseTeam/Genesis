@@ -2,7 +2,7 @@ namespace ProjectGenesis.Settings
 {
     using UnityEngine;
 
-    public class ProjectSettings : MonoBehaviour
+    public class GameSettings : MonoBehaviour
     {
         [SerializeField, Header("Layers")]
         private LayerMask _groundLayers;

@@ -3,19 +3,15 @@
     using System;
     using VUDK.Patterns.StateMachine.Interfaces;
 
-    public abstract class State<TKey, TContext> : IEventState where TContext : Context where TKey : Enum
+    public abstract class State : IEventState
     {
-        protected TContext Context;
-        protected StateMachine<TKey, TContext> RelatedStateMachine;
+        private StateMachine _relatedStateMachine;
 
-        /// <summary>
-        /// Initializes a new instance of the State class with the specified name and its associated <see cref="StateMachine"/>.
-        /// </summary>
-        /// <param name="name">The name of the state.</param>
-        /// <param name="relatedStateMachine">The associated <see cref="StateMachine"/>.</param>
-        protected State(StateMachine<TKey, TContext> relatedStateMachine, TContext context)
+        protected Context Context { get; private set; }
+
+        protected State(StateMachine relatedStateMachine, Context context)
         {
-            RelatedStateMachine = relatedStateMachine;
+            _relatedStateMachine = relatedStateMachine;
             Context = context;
         }
 
@@ -30,8 +26,41 @@
         public abstract void Exit();
 
         /// <summary>
-        /// Called to process the state's logic.
+        /// Called to process the state's logic each frame.
         /// </summary>
         public abstract void Process();
+
+        /// <summary>
+        /// Called to process the state's logic each fixed frame.
+        /// </summary>
+        public abstract void PhysicsProcess();
+
+        /// <summary>
+        /// Changes the state of its related state machine.
+        /// </summary>
+        /// <param name="key">State key.</param>
+        protected void ChangeState(Enum key) 
+        {
+            _relatedStateMachine.ChangeState(key);
+        }
+
+        /// <summary>
+        /// Changes the state of its related state machinee to a state in the dictionary by its key after waiting for seconds.
+        /// </summary>
+        /// <param name="stateKey">State key.</param>
+        /// <param name="timeToWait">Time to wait in seconds.</param>
+        protected void ChangeStateIn(Enum key, float time)
+        {
+            _relatedStateMachine?.ChangeStateIn(key, time);
+        }
+    }
+
+    public abstract class State<T> : State, IContextConverter<T> where T : Context
+    {
+        public new T Context => (T)base.Context;
+
+        protected State(StateMachine relatedStateMachine, Context context) : base(relatedStateMachine, context)
+        {
+        }
     }
 }

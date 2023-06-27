@@ -7,16 +7,12 @@
     public abstract class MovementBase : MonoBehaviour, IMovement
     {
         protected Rigidbody Rigidbody;
+        protected float Speed;
 
-        [SerializeField, Header("Movement Speeds")]
-        protected float GroundSpeed;
+        [SerializeField, Min(0f), Header("Ground")]
+        private float _groundedRadius;
         [SerializeField]
-        protected float AirSpeed;
-
-        [SerializeField, Header("Boundaries")]
-        private TriggerLink _groundTrigger;
-        [SerializeField]
-        private TriggerLink _wallTrigger;
+        private Vector3 _groundedOffset;
 
         private LayerMask _groundLayers;
 
@@ -24,30 +20,32 @@
         {
             get
             {
-                return _groundTrigger.IsTriggered;
-            }
-        }
-
-        public bool IsWalled
-        {
-            get
-            {
-                return !IsGrounded && _wallTrigger.IsTriggered;
+                return Physics.CheckSphere(transform.position + _groundedOffset, _groundedRadius, _groundLayers, QueryTriggerInteraction.Ignore);
             }
         }
 
         public virtual void Init(Rigidbody rigidBody, LayerMask groundLayers)
         {
             _groundLayers = groundLayers;
-            _groundTrigger.Init(_groundLayers);
-            _wallTrigger.Init(_groundLayers);
+            //_groundTrigger.Init(_groundLayers);
             Rigidbody = rigidBody;
         }
 
         public abstract void Move();
 
-        public abstract void ResetMovement();
-
         public abstract void Stop();
+
+        public void SetSpeed(float speed)
+        {
+            Speed = speed;
+        }
+
+#if DEBUG
+        private void OnDrawGizmos()
+        {
+            Gizmos.color = new Color(0.0f, 1.0f, 0.0f, 0.35f);
+            Gizmos.DrawSphere(transform.position + _groundedOffset, _groundedRadius);
+        }
+#endif
     }
 }

@@ -1,49 +1,32 @@
 ﻿namespace ProjectGenesis.Environment.Portals
 {
-    using UnityEngine;
     using VUDK.Extensions.Transform;
     using VUDK.Generic.Systems.EntitySystem.Interfaces;
-    using VUDK.Generic.Systems.MovementSystem;
     using VUDK.Generic.Systems.InputSystem;
-    using ProjectGenesis.Player;
-    using ProjectGenesis.Player.Interfaces;
     using ProjectGenesis.Settings;
+    using ProjectGenesis.Player;
 
-    [RequireComponent(typeof(MovementBase))]
-    [RequireComponent(typeof(PlayerGraphicsController))]
-    [RequireComponent(typeof(PlayerStatus))]
-    [RequireComponent(typeof(Rigidbody))]
-    [RequireComponent(typeof(Animator))]
-
-    public class LinkedPlayerManager : MonoBehaviour, IEntity, IPlayerManager
+    public class LinkedPlayerController : PlayerController, IEntity
     {
-        public PlayerMovement Movement { get; private set; }
-        public PlayerGraphicsController Graphics { get; private set; }
-        public PlayerEntity Entity { get; private set; }
-        public PlayerStatus Status { get; private set; }
+        private bool _areStatesInitialized;
 
-        private Rigidbody _rb;
-        private Animator _anim;
-
-        private void Awake()
+        protected override void Awake()
         {
             TryGetComponent(out PlayerMovement movement);
             TryGetComponent(out PlayerGraphicsController graphics);
-            TryGetComponent(out _rb);
-            TryGetComponent(out _anim);
+            TryGetComponent(out PlayerStatus status);
+            TryGetComponent(out Rigidbody);
+            TryGetComponent(out Animator);
 
             Movement = movement;
             Graphics = graphics;
+            Status = status;
 
-            Movement.Init(_rb, ProjectSettings.GroundLayers);
-            Graphics.Init(Movement, _anim);
+            Movement.Init(Rigidbody, GameSettings.GroundLayers);
+            Graphics.Init(Animator);
         }
 
-        public void Init()
-        {
-        }
-
-        public void Init(PlayerManager realPlayer)
+        public void Init(PlayerController realPlayer)
         {
             Status = realPlayer.Status;
             Entity = realPlayer.Entity;
@@ -51,6 +34,12 @@
             InputsManager.Inputs.Enable();
             SetAsRealPlayer(realPlayer);
             gameObject.SetActive(true);
+
+            if (!_areStatesInitialized)
+            {
+                Init();
+                _areStatesInitialized = true;
+            }
         }
 
         public void HealHitPoints(float healPoints)
@@ -69,7 +58,7 @@
             Entity.Death();
         }
 
-        private void SetAsRealPlayer(PlayerManager realPlayer)
+        private void SetAsRealPlayer(PlayerController realPlayer)
         {
             transform.SetLossyScale(realPlayer.transform.lossyScale);
         }

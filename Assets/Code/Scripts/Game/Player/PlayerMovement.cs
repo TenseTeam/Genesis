@@ -1,7 +1,6 @@
 ﻿namespace ProjectGenesis.Player
 {
     using System;
-    using System.Collections;
     using UnityEngine;
     using UnityEngine.InputSystem;
     using VUDK.Generic.Systems.InputSystem;
@@ -18,23 +17,21 @@
         [SerializeField, Min(0)]
         private float _jumpCooldown;
 
-        protected float Horizontal;
-        protected bool PreviousIsGroundedState;
-        protected bool IsJumpInCooldown;
-        protected bool IsRotating;
-
         private Quaternion _targetRotation;
 
-        public event Action<float> OnMovement;
+        [field: SerializeField, Header("Speeds")]
+        public float GroundSpeed { get; private set; }
 
-        public event Action<bool> OnFalling;
+        [field: SerializeField]
+        public float AirSpeed { get; private set; }
 
-        public event Action OnJump;
+        public float Horizontal { get; private set; }
+
+        private bool _isRotating;
 
         private void OnEnable()
         {
             InputsManager.Inputs.PlayerMovement.Jump.started += Jump;
-            InputsManager.Inputs.PlayerMovement.Movement.started += StartMoving;
             InputsManager.Inputs.PlayerMovement.Movement.performed += PerformMoving;
             InputsManager.Inputs.PlayerMovement.Movement.canceled += StopMoving;
         }
@@ -42,7 +39,6 @@
         private void OnDisable()
         {
             InputsManager.Inputs.PlayerMovement.Jump.started -= Jump;
-            InputsManager.Inputs.PlayerMovement.Movement.started -= StartMoving;
             InputsManager.Inputs.PlayerMovement.Movement.performed -= PerformMoving;
             InputsManager.Inputs.PlayerMovement.Movement.canceled -= StopMoving;
         }
@@ -53,89 +49,43 @@
             Rotate();
         }
 
-        private void Update()
-        {
-            CheckIsGroundedState();
-        }
-
-        public override void ResetMovement()
-        {
-            Horizontal = 0f;
-            PreviousIsGroundedState = false;
-            IsJumpInCooldown = false;
-            IsRotating = false;
-        }
-
         public override void Move()
         {
-            if (IsWalled) return;
-
-            float currentSpeed = IsGrounded ? GroundSpeed : AirSpeed;
-            Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * currentSpeed);
+            Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * Speed);
         }
 
         public override void Stop()
         {
             Horizontal = 0f;
-            OnMovement?.Invoke(Horizontal);
-        }
-
-        private void StartMoving(InputAction.CallbackContext input)
-        {
-            float direction = input.ReadValue<float>();
-            CalculateTargetRotation(direction);
-            IsRotating = true;
         }
 
         private void PerformMoving(InputAction.CallbackContext input)
         {
             Horizontal = input.ReadValue<float>();
-            OnMovement?.Invoke(Horizontal);
+            CalculateTargetRotation(Horizontal);
+            _isRotating = true;
         }
 
         private void StopMoving(InputAction.CallbackContext input)
         {
             Stop();
-            IsRotating = false;
+            _isRotating = false;
         }
 
         private void Jump(InputAction.CallbackContext input)
         {
-            if (IsGrounded && !IsJumpInCooldown)
-            {
-                OnJump?.Invoke();
-                Rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);
-                StartCoroutine(JumpCooldownRoutine());
-            }
-        }
-
-        private void CheckIsGroundedState()
-        {
-            if (IsGrounded != PreviousIsGroundedState)
-            {
-                OnFalling?.Invoke(!IsGrounded);
-                PreviousIsGroundedState = IsGrounded;
-            }
+            Rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);   
         }
 
         private void Rotate()
         {
-            if (IsRotating)
-            {
+            if(_isRotating)
                 transform.rotation = Quaternion.Lerp(transform.rotation, _targetRotation, _rotationSpeed);
-            }
         }
 
         private void CalculateTargetRotation(float direction)
         {
             _targetRotation = Quaternion.Euler(transform.eulerAngles.x, direction >= 0f ? 0f : 180f, transform.eulerAngles.z);
-        }
-
-        private IEnumerator JumpCooldownRoutine()
-        {
-            IsJumpInCooldown = true;
-            yield return new WaitForSeconds(_jumpCooldown);
-            IsJumpInCooldown = false;
         }
     }
 }

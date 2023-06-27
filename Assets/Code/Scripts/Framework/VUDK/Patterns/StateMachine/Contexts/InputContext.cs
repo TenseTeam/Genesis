@@ -2,7 +2,7 @@
 {
     public class InputContext : Context
     {
-        public Inputs Inputs;
+        public Inputs Inputs { get; protected set; }
 
         public InputContext(Inputs inputs) : base()
         {

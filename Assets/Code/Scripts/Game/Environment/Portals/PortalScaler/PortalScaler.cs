@@ -10,7 +10,7 @@ namespace ProjectGenesis.Environment.Portals
 
         public override void Interact(GameObject interactor)
         {
-            if (interactor.TryGetComponent(out PlayerManager player))
+            if (interactor.TryGetComponent(out PlayerController player))
             {
                 base.Interact(interactor);
                 player.Status.ToggleResize(_newSize);

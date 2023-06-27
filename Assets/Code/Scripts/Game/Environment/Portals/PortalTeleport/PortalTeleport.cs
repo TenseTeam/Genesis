@@ -22,7 +22,7 @@
 
         public override void Interact(GameObject interactor)
         {
-            if(interactor.TryGetComponent(out PlayerManager player) && !IsTeleporting)
+            if(interactor.TryGetComponent(out PlayerController player) && !IsTeleporting)
             {
                 OnUse?.Invoke();
                 _portalDestination.TeleportAtThisPortal(interactor.transform);

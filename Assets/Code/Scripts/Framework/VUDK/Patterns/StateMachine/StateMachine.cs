@@ -4,14 +4,13 @@ namespace VUDK.Patterns.StateMachine
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using UnityEngine.InputSystem;
 
-    public abstract class StateMachine<TKey, TContext> : MonoBehaviour where TContext : Context where TKey : Enum
+    public abstract class StateMachine : MonoBehaviour
     {
-        protected Dictionary<TKey, State<TKey, TContext>> States = new Dictionary<TKey, State<TKey, TContext>>();
+        protected Dictionary<Enum, State> States = new Dictionary<Enum, State>();
 
-        public TKey CurrentStateKey { get; protected set; }
-
-        public State<TKey, TContext> CurrentState { get; private set; }
+        public State CurrentState { get; private set; }
 
         protected virtual void Start()
         {
@@ -23,41 +22,45 @@ namespace VUDK.Patterns.StateMachine
             CurrentState?.Process();
         }
 
+        protected virtual void FixedUpdate()
+        {
+            CurrentState?.PhysicsProcess();
+        }
+
         /// <summary>
         /// Initializes the <see cref="StateMachine"/> and its states.
         /// </summary>
         public abstract void Init();
 
         /// <summary>
-        /// Changes the state to a state in the list by its key.
+        /// Changes the state to a state in the dictionary by its key.
         /// </summary>
         /// <param name="stateKey">State key.</param>
-        public void ChangeState(TKey stateKey)
+        public void ChangeState(Enum stateKey)
         {
             if (States[stateKey] != CurrentState)
             {
                 CurrentState?.Exit();
-                CurrentStateKey = stateKey;
                 CurrentState = States[stateKey];
                 CurrentState?.Enter();
             }
         }
 
         /// <summary>
-        /// Changes the state to a state in the list by its key after waiting for seconds.
+        /// Changes the state to a state in the dictionary by its key after waiting for seconds.
         /// </summary>
         /// <param name="stateKey">State key.</param>
         /// <param name="timeToWait">Time to wait in seconds.</param>
-        public void ChangeStateIn(TKey stateKey, float timeToWait)
+        public void ChangeStateIn(Enum stateKey, float timeToWait)
         {
             StartCoroutine(WaitSecondsAndGoToStateRoutine(stateKey, timeToWait));
         }
 
         /// <summary>
-        /// Removes a state from the states by its key.
+        /// Removes a state from the dictionary by its key.
         /// </summary>
         /// <param name="stateKey">State key.</param>
-        public void RemoveState(TKey stateKey)
+        public void RemoveState(Enum stateKey)
         {
             States.Remove(stateKey);
         }
@@ -67,7 +70,7 @@ namespace VUDK.Patterns.StateMachine
         /// </summary>
         /// <param name="stateKey">State to add key.</param>
         /// <param name="state">State to add.</param>
-        public void AddState(TKey stateKey, State<TKey, TContext> state)
+        public void AddState(Enum stateKey, State state)
         {
             States.Add(stateKey, state);
         }
@@ -78,7 +81,7 @@ namespace VUDK.Patterns.StateMachine
         /// <param name="stateKey">State Key.</param>
         /// <param name="time">Time in Seconds.</param>
         /// <returns></returns>
-        private IEnumerator WaitSecondsAndGoToStateRoutine(TKey stateKey, float time)
+        private IEnumerator WaitSecondsAndGoToStateRoutine(Enum stateKey, float time)
         {
             yield return new WaitForSeconds(time);
             ChangeState(stateKey);

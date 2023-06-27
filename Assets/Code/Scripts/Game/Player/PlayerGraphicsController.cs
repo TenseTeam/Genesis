@@ -9,51 +9,22 @@
     {
         private Animator _anim;
 
-        private float _horizontal;
-
-        private PlayerMovement _playerMovement;
-
-        private void OnEnable()
-        {
-            _playerMovement.OnMovement += StartAnimatingMovement;
-            _playerMovement.OnFalling += AnimateFalling;
-            _playerMovement.OnJump += AnimateJump;
-        }
-
-        private void OnDisable()
-        {
-            _playerMovement.OnMovement -= StartAnimatingMovement;
-            _playerMovement.OnFalling -= AnimateFalling;
-            _playerMovement.OnJump -= AnimateJump;
-        }
-
-        private void Update()
-        {
-            AnimateMovement();
-        }
-
-        public void Init(PlayerMovement movement, Animator animator)
+        public void Init(Animator animator)
         {
             _anim = animator;
-            _playerMovement = movement;
         }
 
-        private void StartAnimatingMovement(float horizontalDirection)
+        public void AnimateMovement(float direction)
         {
-            _horizontal = horizontalDirection;
+            _anim.SetFloat(Constants.Animations.PlayerAnimations.Horizontal, Mathf.Abs(direction), 0.1f, Time.deltaTime);
         }
 
-        private void AnimateMovement()
-        {
-            _anim.SetFloat(Constants.Animations.PlayerAnimations.Horizontal, Mathf.Abs(_horizontal), 0.1f, Time.deltaTime);
-        }
-
-        private void AnimateJump()
+        public void AnimateJump()
         {
             _anim.SetTrigger(Constants.Animations.PlayerAnimations.Jump);
         }
 
-        private void AnimateFalling(bool isFalling)
+        public void AnimateFalling(bool isFalling)
         {
             _anim.SetBool(Constants.Animations.PlayerAnimations.Falling, isFalling);
         }

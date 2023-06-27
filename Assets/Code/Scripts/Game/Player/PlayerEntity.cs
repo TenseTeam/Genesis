@@ -7,10 +7,10 @@ namespace ProjectGenesis.Player
 
     public class PlayerEntity : EntityBase
     {
-        private PlayerManager _manager;
+        private PlayerController _manager;
         private Vector3 _startPosition;
 
-        public void Init(PlayerManager manager, Vector3 _startPosition)
+        public void Init(PlayerController manager, Vector3 _startPosition)
         {
             base.Init();
             _manager = manager;
@@ -19,7 +19,6 @@ namespace ProjectGenesis.Player
         public override void TakeDamage(float hitDamage = 1)
         {
             base.TakeDamage(hitDamage);
-
             _manager.Reset();
 
             // warnig -> this way when it's splitted the splitted version will disable itself but the player will be still present. Gameover needed.

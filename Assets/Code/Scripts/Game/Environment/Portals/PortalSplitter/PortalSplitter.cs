@@ -7,11 +7,11 @@
     public class PortalSplitter : PortalBase
     {
         [SerializeField, Header("Linked Double")]
-        private LinkedPlayerManager _linkedPlayerManager;
+        private LinkedPlayerController _linkedPlayerManager;
         [SerializeField]
-        private float _alignPosition;
-
-        private Vector3 _correctSpawnPosition => Vector3.forward * _alignPosition + transform.position;
+        private Vector3 _playerAlignPosition;
+        [SerializeField]
+        private Vector3 _linkedPlayerAlignPosition;
 
         private void Awake()
         {
@@ -22,7 +22,7 @@
         {
             base.Interact(interactor);
 
-            if(interactor.TryGetComponent(out PlayerManager player))
+            if (interactor.TryGetComponent(out PlayerController player))
             {
                 if (!player.Status.IsSplitted)
                     EnableDouble(player);
@@ -31,34 +31,39 @@
             }
         }
 
-        private void EnableDouble(PlayerManager player)
+        private void EnableDouble(PlayerController player)
         {
             player.Status.ApplySplit();
             _linkedPlayerManager.Init(player);
-            _linkedPlayerManager.Movement.ResetMovement();
-            player.Movement.ResetMovement();
+            //_linkedPlayerManager.Movement.ResetMovement();
+            //player.Movement.ResetMovement();
             _linkedPlayerManager.gameObject.SetActive(true);
             SetPlayersAtCorrectPositions(player);
         }
 
-        private void DisableDouble(PlayerManager player)
+        private void DisableDouble(PlayerController player)
         {
             player.Status.RemoveSplit();
             _linkedPlayerManager.gameObject.SetActive(false);
         }
 
-        private void SetPlayersAtCorrectPositions(PlayerManager player)
+        private void SetPlayersAtCorrectPositions(PlayerController player)
         {
-            player.transform.SetPosition(new Vector3(player.transform.position.x, player.transform.position.y, _correctSpawnPosition.z));
-            _linkedPlayerManager.transform.SetPosition(new Vector3(_linkedPlayerManager.transform.position.x, _linkedPlayerManager.transform.position.y, _correctSpawnPosition.z));
+            player.transform.SetPosition(transform.position + _playerAlignPosition);
+            _linkedPlayerManager.transform.SetPosition(transform.position + _linkedPlayerAlignPosition);
         }
 
 #if DEBUG
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(_correctSpawnPosition, transform.localScale.magnitude / 8f);
-            Gizmos.DrawRay(_correctSpawnPosition, transform.up * transform.localScale.magnitude * 100f);
-            Gizmos.DrawRay(_correctSpawnPosition, -transform.up * transform.localScale.magnitude * 100f);
+            Vector3 playerPos = transform.position + _playerAlignPosition;
+            Vector3 linkedPos = transform.position + _linkedPlayerAlignPosition;
+
+            Gizmos.DrawLine(transform.position, playerPos);
+            Gizmos.DrawWireSphere(playerPos, transform.localScale.magnitude / 8f);
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, linkedPos);
+            Gizmos.DrawWireSphere(linkedPos, transform.localScale.magnitude / 8f);
         }
 #endif
     }

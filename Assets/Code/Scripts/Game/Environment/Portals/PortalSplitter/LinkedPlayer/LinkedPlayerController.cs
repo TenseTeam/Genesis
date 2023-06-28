@@ -7,6 +7,7 @@
     using ProjectGenesis.Settings;
     using ProjectGenesis.Player;
     using ProjectGenesis.Player.Interfaces;
+    using Unity.VisualScripting;
 
     public class LinkedPlayerController : PlayerController, IEntity, IPlayer
     {

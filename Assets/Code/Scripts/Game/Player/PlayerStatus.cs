@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using VUDK.Extensions.Transform;
 using VUDK.Extensions.Vectors;
 
 namespace ProjectGenesis.Player
 {
-    public class PlayerStatus : MonoBehaviour
+    public class PlayerStatus : MonoBehaviour, ICloneable
     {
         [SerializeField, Min(0.1f), Header("Resize")]
         private float _resizeSpeed;
@@ -75,6 +76,18 @@ namespace ProjectGenesis.Player
         private void StopResizing()
         {
             _isResizing = false;
+        }
+
+        public object Clone()
+        {
+            PlayerStatus clonedStatus = (PlayerStatus)MemberwiseClone();
+            clonedStatus._originalSize = _originalSize;
+            clonedStatus._targetSize = _targetSize;
+            clonedStatus._isResizing = _isResizing;
+            clonedStatus.IsResized = IsResized;
+            clonedStatus.IsSplitted = IsSplitted;
+
+            return clonedStatus;
         }
     }
 }

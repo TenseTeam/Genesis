@@ -64,6 +64,15 @@
             }
         }
 
+        [System.ObsoleteAttribute("This TriggerEvent is obsolete. Use TriggerEvent<T> instead.", false)]
+        public static void TriggerEvent(string eventKey, params object[] parameters)
+        {
+            if (s_EventListeners.ContainsKey(eventKey))
+            {
+                s_EventListeners[eventKey].DynamicInvoke(parameters);
+            }
+        }
+
         private static void RegisterEvent(string eventKey, Delegate listener)
         {
             if (s_EventListeners.ContainsKey(eventKey))

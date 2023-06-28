@@ -1,14 +1,17 @@
 ﻿namespace ProjectGenesis.Environment.Portals
 {
+    using UnityEngine;
     using VUDK.Extensions.Transform;
     using VUDK.Generic.Systems.EntitySystem.Interfaces;
     using VUDK.Generic.Systems.InputSystem;
     using ProjectGenesis.Settings;
     using ProjectGenesis.Player;
+    using ProjectGenesis.Player.Interfaces;
 
-    public class LinkedPlayerController : PlayerController, IEntity
+    public class LinkedPlayerController : PlayerController, IEntity, IPlayer
     {
-        private bool _areStatesInitialized;
+        [SerializeField]
+        private PlayerController _originalPlayer;
 
         protected override void Awake()
         {
@@ -24,22 +27,22 @@
 
             Movement.Init(Rigidbody, GameSettings.GroundLayers);
             Graphics.Init(Animator);
+            Init(_originalPlayer);
         }
 
         public void Init(PlayerController realPlayer)
         {
             Status = realPlayer.Status;
             Entity = realPlayer.Entity;
+            Init();
+        }
+
+        public void Enable()
+        {
             InputsManager.Inputs.Disable();
             InputsManager.Inputs.Enable();
-            SetAsRealPlayer(realPlayer);
+            SetAsRealPlayer();
             gameObject.SetActive(true);
-
-            if (!_areStatesInitialized)
-            {
-                Init();
-                _areStatesInitialized = true;
-            }
         }
 
         public void HealHitPoints(float healPoints)
@@ -58,9 +61,9 @@
             Entity.Death();
         }
 
-        private void SetAsRealPlayer(PlayerController realPlayer)
+        private void SetAsRealPlayer()
         {
-            transform.SetLossyScale(realPlayer.transform.lossyScale);
+            transform.SetLossyScale(_originalPlayer.transform.lossyScale);
         }
     }
 }

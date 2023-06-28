@@ -1,6 +1,5 @@
 ﻿namespace ProjectGenesis.Tools.Factories
 {
-    using UnityEngine;
     using VUDK.Patterns.StateMachine;
     using ProjectGenesis.Player;
     using ProjectGenesis.Player.Controller;

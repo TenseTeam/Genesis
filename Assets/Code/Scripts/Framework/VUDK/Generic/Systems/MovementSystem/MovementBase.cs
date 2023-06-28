@@ -27,7 +27,11 @@
         public virtual void Init(Rigidbody rigidBody, LayerMask groundLayers)
         {
             _groundLayers = groundLayers;
-            //_groundTrigger.Init(_groundLayers);
+            Init(rigidBody);
+        }
+
+        public void Init(Rigidbody rigidBody)
+        {
             Rigidbody = rigidBody;
         }
 

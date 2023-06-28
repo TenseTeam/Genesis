@@ -2,6 +2,7 @@ namespace ProjectGenesis.Player.States
 {
     using VUDK.Patterns.StateMachine;
     using ProjectGenesis.Player.Controller;
+    using UnityEngine;
 
     public class PlayerGroundState : State<PlayerContext>
     {
@@ -20,6 +21,7 @@ namespace ProjectGenesis.Player.States
 
         public override void PhysicsProcess()
         {
+
         }
 
         public override void Process()

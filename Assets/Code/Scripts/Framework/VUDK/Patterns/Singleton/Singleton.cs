@@ -8,17 +8,13 @@ namespace VUDK.Patterns.Singleton
 
         protected virtual void Awake()
         {
-            if (Instance == null)
+            if (!Instance)
             {
-                if (!TryGetComponent<T>(out Instance))
-                {
+                if (!TryGetComponent(out Instance))
                     Instance = gameObject.AddComponent<T>();
-                }
             }
             else
-            {
                 Destroy(gameObject);
-            }
         }
     }
 }

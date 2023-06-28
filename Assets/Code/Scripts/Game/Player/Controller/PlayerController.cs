@@ -13,11 +13,10 @@
 
     [RequireComponent(typeof(MovementBase))]
     [RequireComponent(typeof(PlayerGraphicsController))]
-    //[RequireComponent(typeof(PlayerEntity))]
     [RequireComponent(typeof(PlayerStatus))]
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Animator))]
-    public class PlayerController : StateMachine, IPlayerManager
+    public class PlayerController : StateMachine, IPlayer
     {
         protected Rigidbody Rigidbody;
         protected Animator Animator;

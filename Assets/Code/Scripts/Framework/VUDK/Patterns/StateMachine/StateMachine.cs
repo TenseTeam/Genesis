@@ -4,7 +4,6 @@ namespace VUDK.Patterns.StateMachine
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
-    using UnityEngine.InputSystem;
 
     public abstract class StateMachine : MonoBehaviour
     {

@@ -34,9 +34,7 @@
         private void EnableDouble(PlayerController player)
         {
             player.Status.ApplySplit();
-            _linkedPlayerManager.Init(player);
-            //_linkedPlayerManager.Movement.ResetMovement();
-            //player.Movement.ResetMovement();
+            _linkedPlayerManager.Enable();
             _linkedPlayerManager.gameObject.SetActive(true);
             SetPlayersAtCorrectPositions(player);
         }

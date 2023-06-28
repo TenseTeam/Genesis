@@ -29,11 +29,6 @@ namespace ProjectGenesis.Player.States
 
         public override void Process()
         {
-            //if (Context.PlayerMovement.IsWalled)
-            //{
-            //    Context.PlayerMovement.Stop();
-            //}
-
             if (Context.PlayerMovement.IsGrounded)
                 ChangeState(PlayerStateKey.Ground);
         }

@@ -17,12 +17,17 @@
         [SerializeField, Min(0)]
         private float _jumpCooldown;
 
+        [SerializeField, Header("Options")]
+        private bool _isJumpAffectedByScale;
+        [SerializeField]
+        private bool _isSpeedAffectedByScale;
+
         private Quaternion _targetRotation;
 
-        [field: SerializeField, Header("Speeds")]
+        [field: SerializeField, Min(0), Header("Speeds")]
         public float GroundSpeed { get; private set; }
 
-        [field: SerializeField]
+        [field: SerializeField, Min(0)]
         public float AirSpeed { get; private set; }
 
         public float Horizontal { get; private set; }
@@ -51,7 +56,8 @@
 
         public override void Move()
         {
-            Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * Speed);
+            float effectiveSpeed = (_isSpeedAffectedByScale ? Speed * transform.lossyScale.magnitude : Speed) / Rigidbody.mass;
+            Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * effectiveSpeed);
         }
 
         public override void Stop()
@@ -74,7 +80,8 @@
 
         private void Jump(InputAction.CallbackContext input)
         {
-            Rigidbody.AddForce(transform.up * _jumpForce, ForceMode.Impulse);   
+            float effectiveJumpForce = _isJumpAffectedByScale ? _jumpForce * transform.lossyScale.magnitude : _jumpForce;
+            Rigidbody.AddForce(transform.up * effectiveJumpForce, ForceMode.Impulse);
         }
 
         private void Rotate()

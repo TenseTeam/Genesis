@@ -9,7 +9,7 @@ namespace ProjectGenesis.Environment.Platforms
         [SerializeField]
         private PlatformAnchor _anchor;
 
-        private void OnCollisionEnter(Collision collision)
+        protected virtual void OnCollisionEnter(Collision collision)
         {
             if (collision.transform.TryGetComponent(out IEntity ent))
             {
@@ -17,7 +17,7 @@ namespace ProjectGenesis.Environment.Platforms
             }
         }
 
-        private void OnCollisionExit(Collision collision)
+        protected virtual void OnCollisionExit(Collision collision)
         {
             if (collision.transform.TryGetComponent(out IEntity ent))
             {

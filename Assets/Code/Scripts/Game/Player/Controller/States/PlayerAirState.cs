@@ -25,12 +25,12 @@ namespace ProjectGenesis.Player.States
 
         public override void PhysicsProcess()
         {
+            if (Context.PlayerMovement.IsGrounded)
+                ChangeState(PlayerStateKey.Ground);
         }
 
         public override void Process()
         {
-            if (Context.PlayerMovement.IsGrounded)
-                ChangeState(PlayerStateKey.Ground);
         }
     }
 }

@@ -7,7 +7,6 @@
     public abstract class MovementBase : MonoBehaviour, IMovement
     {
         protected Rigidbody Rigidbody;
-        protected float Speed;
 
         [SerializeField, Min(0f), Header("Ground")]
         private float _groundedRadius;
@@ -15,6 +14,7 @@
         private Vector3 _groundedOffset;
 
         private LayerMask _groundLayers;
+        public float Speed { get; protected set; }
 
         public bool IsGrounded
         {

@@ -10,13 +10,14 @@
     using ProjectGenesis.Player.Controller;
     using ProjectGenesis.Player.States;
     using ProjectGenesis.Player.Interfaces;
+    using VUDK.Generic.Systems.CheckpointSystem;
 
     [RequireComponent(typeof(MovementBase))]
     [RequireComponent(typeof(PlayerGraphicsController))]
     [RequireComponent(typeof(PlayerStatus))]
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Animator))]
-    public class PlayerController : StateMachine, IPlayer
+    public class PlayerController : StateMachine, Interfaces.IPlayer
     {
         protected Rigidbody Rigidbody;
         protected Animator Animator;
@@ -43,6 +44,8 @@
             Entity.Init(this, transform.position);
             Movement.Init(Rigidbody, GameSettings.GroundLayers);
             Graphics.Init(Animator);
+
+            CheckpointsManager.SetCheckpoint(Entity, transform.position);
             Init();
         }
 

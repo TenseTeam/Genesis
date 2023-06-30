@@ -6,13 +6,13 @@
 
     public abstract class AudioManager : MonoBehaviour
     {
-        [SerializeField, Header("AudioSources")]
-        private AudioSource _music;
+        [SerializeField, Header("Uncuncurrent AudioSources")]
+        protected AudioSource Music;
         [SerializeField]
-        private List<AudioSource> _effects;
+        protected AudioSource StereoSourceEffect;
 
-        [SerializeField]
-        private AudioSettings _settings;
+        [SerializeField, Header("Concurrent AudioSources")]
+        protected List<AudioSource> StereoSourceEffects;
 
         protected abstract void OnEnable();
 
@@ -31,8 +31,8 @@
                 audio = foundAudio;
             else
             {
-                audio = gameObject.AddComponent<AudioSource>();
-                _effects.Add(audio);
+                audio = StereoSourceEffects[0].gameObject.AddComponent<AudioSource>();
+                StereoSourceEffects.Add(audio);
             }
 
             PlayAudio(audio, clip);
@@ -46,7 +46,7 @@
 
         private bool TryFindFreeAudioSource(out AudioSource audio)
         {
-            foreach (AudioSource effect in _effects)
+            foreach (AudioSource effect in StereoSourceEffects)
             {
                 if (!effect.isPlaying)
                 {

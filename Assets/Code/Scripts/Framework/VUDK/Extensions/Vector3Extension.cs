@@ -3,18 +3,18 @@
     using UnityEngine;
     using VUDK.Extensions.Mathematics;
 
+    public enum Vector3Direction
+    {
+        Up,
+        Down,
+        Left,
+        Right,
+        Forward
+    }
+
     public static class Vector3Extension
     {
-        public enum Vector3Direction
-        {
-            Up,
-            Down,
-            Left,
-            Right,
-            Forward
-        }
-
-        public static Vector3 GetVector3Direction (this Vector3Direction direction)
+        public static Vector3 GetDirection (this Vector3Direction direction)
         {
             switch (direction)
             {

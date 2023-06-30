@@ -7,10 +7,10 @@
 
     public class MovingPlatform : Platform
     {
-        [SerializeField]
+        [SerializeField, Header("Waypoints Path")]
         private LoopList<Vector3> _positions;
 
-        [SerializeField]
+        [SerializeField, Header("Velocity")]
         private float _speed;
 
         private Vector3 _previousPosition;
@@ -20,17 +20,14 @@
             _previousPosition = transform.position;
         }
 
-        private void FixedUpdate()
-        {
-            Move();
-        }
+        private void Update() => Move();
 
         public void Move()
         {
             Vector3 targetPosition = _positions.Current;
             Vector3 direction = (targetPosition - _previousPosition).normalized;
 
-            float distanceToMove = _speed * Time.fixedDeltaTime;
+            float distanceToMove = _speed * Time.deltaTime;
             transform.position = _previousPosition + direction * distanceToMove;
             _previousPosition = transform.position;
 

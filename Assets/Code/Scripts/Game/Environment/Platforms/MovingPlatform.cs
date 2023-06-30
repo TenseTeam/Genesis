@@ -20,7 +20,7 @@
             _previousPosition = transform.position;
         }
 
-        private void Update() => Move();
+        private void FixedUpdate() => Move();
 
         public void Move()
         {

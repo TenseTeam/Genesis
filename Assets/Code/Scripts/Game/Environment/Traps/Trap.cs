@@ -9,22 +9,22 @@ namespace ProjectGenesis.Environment.Traps
     {
         private void OnTriggerEnter(Collider other)
         {
-            if(other.TryGetComponent(out EntityBase ent))
+            if(other.TryGetComponent(out IEntity ent))
                 OnEnterEntityTrap(other, ent);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.TryGetComponent(out EntityBase ent))
+            if (other.TryGetComponent(out IEntity ent))
                 OnExitEntityTrap(other, ent);
         }
 
-        protected virtual void OnEnterEntityTrap(Collider other, EntityBase entity)
+        protected virtual void OnEnterEntityTrap(Collider other, IEntity entity)
         {
             entity.TakeDamage();
         }
 
-        protected virtual void OnExitEntityTrap(Collider other, EntityBase entity)
+        protected virtual void OnExitEntityTrap(Collider other, IEntity entity)
         {
         }
     }

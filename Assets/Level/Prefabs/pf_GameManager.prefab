@@ -44,7 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2b95bb1e1354504caf2ba62d00e8ddd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _music: {fileID: 0}
+  Music: {fileID: 0}
+  StereoSourceEffect: {fileID: 0}
+  StereoSourceEffects: []
   _portalClip: {fileID: 8300000, guid: 712ca645095b2dd4c989a21c3200054f, type: 3}
 --- !u!1 &1109289120283723251
 GameObject:
@@ -76,6 +78,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3619215173628995495}
+  - {fileID: 2412155436936613195}
   m_Father: {fileID: 6868593674866161336}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -95,6 +98,8 @@ MonoBehaviour:
     _dictionary:
     - Key: AudioSFXPool
       Value: {fileID: 6728092446373947435}
+    - Key: FallingTrapsPool
+      Value: {fileID: 1484535540177707443}
 --- !u!1 &2573472017463860808
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +196,54 @@ MonoBehaviour:
     type: 3}
   _instancesAtStart: 2
   _isCapped: 0
+--- !u!1 &6874259313589588205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2412155436936613195}
+  - component: {fileID: 1484535540177707443}
+  m_Layer: 0
+  m_Name: FallingTraps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2412155436936613195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874259313589588205}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6932064242874605951}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1484535540177707443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6874259313589588205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1542232aca87374b9eab185b13b80c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pooledObject: {fileID: 6587472758719143661, guid: 7a373f700080a794a8be1ea3e7b206ce,
+    type: 3}
+  _instancesAtStart: 3
+  _isCapped: 0
 --- !u!1 &8872645044108756300
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,4 +290,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64

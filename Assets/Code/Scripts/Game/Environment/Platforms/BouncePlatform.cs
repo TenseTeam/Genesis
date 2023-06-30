@@ -11,16 +11,16 @@ namespace ProjectGenesis.Environment.Platforms
         [SerializeField]
         private Vector3Direction _direction;
 
-        protected override void OnCollisionEnter(Collision collision)
+        protected override void OnEntityEnterPlatform(Collision entityCollision)
         {
-            if(collision.transform.TryGetComponent(out IEntity entity))
-                Bounce(collision.rigidbody);
+            base.OnEntityEnterPlatform(entityCollision);
+            Bounce(entityCollision.rigidbody);
         }
 
-        private void Bounce(Rigidbody interactor)
+        private void Bounce(Rigidbody bouncer)
         {
-            interactor.velocity = Vector3.zero;
-            interactor.AddForce(_direction.GetDirection() * _bounceForce, ForceMode.Impulse);
+            bouncer.velocity = Vector3.zero;
+            bouncer.AddForce(_direction.GetDirection() * _bounceForce, ForceMode.Impulse);
         }
     }
 }

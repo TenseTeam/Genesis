@@ -4,9 +4,13 @@
     using System.Linq;
     using UnityEngine;
     using VUDK.Generic.Structures;
+    using VUDK.Generic.Systems.EntitySystem.Interfaces;
 
     public class MovingPlatform : Platform
     {
+        [SerializeField, Header("Platform Anchor")]
+        private PlatformAnchor _anchor;
+
         [SerializeField, Header("Waypoints Path")]
         private LoopList<Vector3> _positions;
 
@@ -38,9 +42,22 @@
             }
         }
 
+        protected override void OnEntityEnterPlatform(Collision entityCollision)
+        {
+            base.OnEntityEnterPlatform(entityCollision);
+            entityCollision.transform.parent = _anchor.transform;
+        }
+
+        protected override void OnEntityExitPlatform(Collision entityCollision)
+        {
+            base.OnEntityExitPlatform(entityCollision);
+            entityCollision.transform.parent = null;
+        }
+
 #if DEBUG
         private void OnDrawGizmos()
         {
+            if (_positions.List.Count == 0) return;
             List<Vector3> pos = _positions.List.ToList();
 
             Gizmos.color = Color.red;

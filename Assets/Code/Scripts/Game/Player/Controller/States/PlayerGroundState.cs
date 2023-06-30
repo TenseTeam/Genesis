@@ -3,11 +3,14 @@ namespace ProjectGenesis.Player.States
     using VUDK.Patterns.StateMachine;
     using ProjectGenesis.Player.Controller;
     using UnityEngine;
+    using UnityEngine.InputSystem;
+    using System;
 
     public class PlayerGroundState : State<PlayerContext>
     {
         public PlayerGroundState(StateMachine relatedStateMachine, Context context) : base(relatedStateMachine, context)
         {
+            Context.Inputs.PlayerMovement.Jump.started += ChangeToJump;
         }
 
         public override void Enter()
@@ -21,7 +24,6 @@ namespace ProjectGenesis.Player.States
 
         public override void PhysicsProcess()
         {
-
         }
 
         public override void Process()
@@ -30,6 +32,12 @@ namespace ProjectGenesis.Player.States
 
             if (!Context.PlayerMovement.IsGrounded)
                 ChangeState(PlayerStateKey.Air);
+        }
+
+        private void ChangeToJump(InputAction.CallbackContext context)
+        {
+            if (!Context.PlayerMovement.IsJumpInCooldown)
+                ChangeState(PlayerStateKey.Jump);
         }
     }
 }

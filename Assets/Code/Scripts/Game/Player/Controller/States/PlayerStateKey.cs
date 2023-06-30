@@ -3,6 +3,7 @@
     public enum PlayerStateKey : int
     {
         Ground,
-        Air,
+        Jump,
+        Air
     }
 }

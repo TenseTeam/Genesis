@@ -1,8 +1,9 @@
-﻿namespace ProjectGenesis.Tools.Factories
+﻿namespace ProjectGenesis.Generic.Factories
 {
     using VUDK.Patterns.StateMachine;
     using ProjectGenesis.Player;
     using ProjectGenesis.Player.Controller;
+    using VUDK.Patterns.Factory.Interfaces;
 
     public static class ContextFactory
     {

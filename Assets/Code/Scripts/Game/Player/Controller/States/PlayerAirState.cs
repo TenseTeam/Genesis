@@ -11,16 +11,16 @@ namespace ProjectGenesis.Player.States
 
         public override void Enter()
         {
-            Context.PlayerMovement.SetSpeed(Context.PlayerMovement.AirSpeed);
-            Context.Graphics.AnimateJump();
             Context.Graphics.AnimateFalling(true);
+            Context.PlayerMovement.SetSpeed(Context.PlayerMovement.AirSpeed);
             Context.Inputs.PlayerMovement.Jump.Disable();
         }
 
         public override void Exit()
         {
-            Context.Inputs.PlayerMovement.Jump.Enable();
             Context.Graphics.AnimateFalling(false);
+            Context.PlayerMovement.StartJumpCooldown();
+            Context.Inputs.PlayerMovement.Jump.Enable();
         }
 
         public override void PhysicsProcess()

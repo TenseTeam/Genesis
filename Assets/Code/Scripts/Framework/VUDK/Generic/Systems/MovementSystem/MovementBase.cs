@@ -2,31 +2,30 @@
 {
     using UnityEngine;
     using VUDK.Generic.Systems.MovementSystem.Interfaces;
-    using VUDK.Generic.Utility;
 
     public abstract class MovementBase : MonoBehaviour, IMovement
     {
         protected Rigidbody Rigidbody;
+        protected LayerMask GroundLayers;
 
         [SerializeField, Min(0f), Header("Ground")]
-        private float _groundedRadius;
+        protected Vector3 GroundedOffset;
         [SerializeField]
-        private Vector3 _groundedOffset;
+        private float _groundedRadius;
 
-        private LayerMask _groundLayers;
         public float Speed { get; protected set; }
 
         public bool IsGrounded
         {
             get
             {
-                return Physics.CheckSphere(transform.position + _groundedOffset, _groundedRadius, _groundLayers, QueryTriggerInteraction.Ignore);
+                return Physics.CheckSphere(transform.position + GroundedOffset, _groundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
             }
         }
 
         public virtual void Init(Rigidbody rigidBody, LayerMask groundLayers)
         {
-            _groundLayers = groundLayers;
+            GroundLayers = groundLayers;
             Init(rigidBody);
         }
 
@@ -45,10 +44,15 @@
         }
 
 #if DEBUG
-        private void OnDrawGizmos()
+        protected virtual void OnDrawGizmos()
+        {
+            DrawCheckGroundSphere();
+        }
+
+        private void DrawCheckGroundSphere()
         {
             Gizmos.color = new Color(0.0f, 1.0f, 0.0f, 0.35f);
-            Gizmos.DrawSphere(transform.position + _groundedOffset, _groundedRadius);
+            Gizmos.DrawSphere(transform.position + GroundedOffset, _groundedRadius);
         }
 #endif
     }

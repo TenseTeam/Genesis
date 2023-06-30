@@ -14,6 +14,9 @@
 
                 case PlayerStateKey.Ground:
                     return new PlayerGroundState(relatedStateMachine, context);
+
+                case PlayerStateKey.Jump:
+                    return new PlayerJumpState(relatedStateMachine, context);
             }
 
             return null;

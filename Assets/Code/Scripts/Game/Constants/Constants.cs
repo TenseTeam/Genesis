@@ -11,5 +11,10 @@
                 public const string Falling = "falling";
             }
         }
+
+        public static class Pools
+        {
+            public const string FallingTraps = "FallingTrapsPool";
+        }
     }
 }

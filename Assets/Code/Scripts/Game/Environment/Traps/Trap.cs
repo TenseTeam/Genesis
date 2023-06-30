@@ -1,19 +1,19 @@
 namespace ProjectGenesis.Environment.Traps
 {
     using UnityEngine;
-    using VUDK.Generic.Systems.EntitySystem;
     using VUDK.Generic.Systems.EntitySystem.Interfaces;
+    using VUDK.Generic.Utility;
 
     [RequireComponent(typeof(Collider))]
-    public class Trap : MonoBehaviour
+    public class Trap : TriggerEvent
     {
-        private void OnTriggerEnter(Collider other)
+        protected override void OnTriggerEnter(Collider other)
         {
             if(other.TryGetComponent(out IEntity ent))
                 OnEnterEntityTrap(other, ent);
         }
 
-        private void OnTriggerExit(Collider other)
+        protected override void OnTriggerExit(Collider other)
         {
             if (other.TryGetComponent(out IEntity ent))
                 OnExitEntityTrap(other, ent);

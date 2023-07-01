@@ -1,17 +1,14 @@
 ﻿namespace ProjectGenesis.Environment.Portals
 {
     using UnityEngine;
-    using UnityEngine.Events;
     using VUDK.Extensions.Transform;
     using VUDK.Extensions.Gizmos;
     using VUDK.Generic.Systems.EventsSystem;
-    using ProjectGenesis.Events;
     using ProjectGenesis.Player;
+    using ProjectGenesis.Constants.Events;
 
     public class PortalTeleport : PortalBase
     {
-        public UnityEvent OnArrive;
-
         [SerializeField, Header("Destination")]
         private PortalTeleport _portalDestination;
 
@@ -20,19 +17,19 @@
 
         public bool IsTeleporting { get; private set; }
 
-        public override void Interact(GameObject interactor)
+        protected override void OnTriggerEnter(Collider interactor)
         {
             if(interactor.TryGetComponent(out PlayerController player) && !IsTeleporting)
             {
-                OnUse?.Invoke();
+                OnEnter?.Invoke();
                 _portalDestination.TeleportAtThisPortal(interactor.transform);
             }
         }
 
         public void TeleportAtThisPortal(Transform traveler)
         {
-            OnArrive?.Invoke();
-            EventManager.TriggerEvent(Events.Portals.OnEnterPortal, transform.position);
+            OnExit?.Invoke();
+            EventManager.TriggerEvent(EventKeys.OnEnterPortal, transform.position);
             IsTeleporting = true;
             traveler.SetPosition(transform.position + DestinationOnArriveOffset);
         }
@@ -42,13 +39,13 @@
             return _portalDestination;
         }
 
-        private void OnTriggerExit(Collider other)
+        protected override void OnTriggerExit(Collider other)
         {
             IsTeleporting = false;
         }
 
 #if DEBUG
-        private void OnDrawGizmos()
+        protected override void OnDrawGizmos()
         {
             Vector3 _dest = transform.position + DestinationOnArriveOffset;
             float size = transform.localScale.magnitude / 8f;

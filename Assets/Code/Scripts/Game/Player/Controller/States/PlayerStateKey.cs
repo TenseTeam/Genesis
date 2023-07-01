@@ -4,6 +4,7 @@
     {
         Ground,
         Jump,
-        Air
+        Air,
+        GrapRope
     }
 }

@@ -8,11 +8,11 @@ namespace ProjectGenesis.Environment.Portals
         [SerializeField, Min(0.001f), Header("Scale")]
         private Vector3 _newSize;
 
-        public override void Interact(GameObject interactor)
+        protected override void OnTriggerEnter(Collider other)
         {
-            if (interactor.TryGetComponent(out PlayerController player))
+            if (other.TryGetComponent(out PlayerController player))
             {
-                base.Interact(interactor);
+                base.OnTriggerEnter(other);
                 player.Status.ToggleResize(_newSize);
             }
         }

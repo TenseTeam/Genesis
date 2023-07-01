@@ -53,10 +53,10 @@ namespace VUDK.Patterns.StateMachine
         /// </summary>
         /// <param name="stateKey">State key.</param>
         /// <param name="timeToWait">Time to wait in seconds.</param>
-        public void ChangeStateIn(Enum stateKey, float timeToWait)
+        public void ChangeState(Enum stateKey, float timeToWait)
         {
             if (_isChanging) return;
-            StartCoroutine(WaitSecondsAndGoToStateRoutine(stateKey, timeToWait));
+            StartCoroutine(WaitForSecondsChangeStateRoutine(stateKey, timeToWait));
         }
 
         /// <summary>
@@ -84,12 +84,12 @@ namespace VUDK.Patterns.StateMachine
         /// <param name="stateKey">State Key.</param>
         /// <param name="time">Time in Seconds.</param>
         /// <returns></returns>
-        private IEnumerator WaitSecondsAndGoToStateRoutine(Enum stateKey, float time)
+        private IEnumerator WaitForSecondsChangeStateRoutine(Enum stateKey, float time)
         {
             _isChanging = true;
             yield return new WaitForSeconds(time);
-            ChangeState(stateKey);
             _isChanging = false;
+            ChangeState(stateKey);
         }
     }
 }

@@ -1,17 +1,24 @@
 ﻿namespace ProjectGenesis.Environment.Platforms
 {
+    using System.Collections;
     using UnityEngine;
-    using VUDK.Generic.Utility;
+    using VUDK.Generic.Serializable.Mathematics;
 
     public class UnsafePlatform : Platform
     {
-        [SerializeField, Header("Looper")]
-        public GameobjectEnablerLoop _gameobjectLooper;
+        [SerializeField, Header("Time")]
+        private Range<float> _time;
 
         protected override void OnEntityEnterPlatform(Collision entityCollision)
         {
             base.OnEntityEnterPlatform(entityCollision);
-            _gameobjectLooper.StartLoop();
+            StartCoroutine(WaitBeforeDisablePlatform());
+        }
+
+        private IEnumerator WaitBeforeDisablePlatform()
+        {
+            yield return new WaitForSeconds(_time.Random());
+            gameObject.SetActive(false);
         }
     }
 }

@@ -19,7 +19,6 @@ namespace ProjectGenesis.Player.States
         public override void Exit()
         {
             Context.Graphics.AnimateFalling(false);
-            Context.PlayerMovement.StartJumpCooldown();
             Context.Inputs.PlayerMovement.Jump.Enable();
         }
 

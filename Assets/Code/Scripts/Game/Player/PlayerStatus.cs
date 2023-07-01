@@ -1,10 +1,9 @@
-﻿using System;
-using UnityEngine;
-using VUDK.Extensions.Transform;
-using VUDK.Extensions.Vectors;
-
-namespace ProjectGenesis.Player
+﻿namespace ProjectGenesis.Player
 {
+    using System;
+    using UnityEngine;
+    using VUDK.Extensions.Transform;
+
     public class PlayerStatus : MonoBehaviour, ICloneable
     {
         [SerializeField, Min(0.1f), Header("Resize")]

@@ -15,6 +15,7 @@
         public static class Pools
         {
             public const string FallingTraps = "FallingTrapsPool";
+            public const string BulletTraps = "BulletTrapsPool";
         }
     }
 }

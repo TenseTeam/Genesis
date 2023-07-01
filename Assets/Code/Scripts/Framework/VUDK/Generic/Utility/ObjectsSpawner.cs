@@ -2,21 +2,30 @@
 {
     using System.Collections;
     using UnityEngine;
-    using VUDK.Generic.Serializable.Mathematics;
 
     public abstract class ObjectsSpawner : MonoBehaviour
     {
         [SerializeField, Min(0), Header("Rate")]
         private float _spawnRate = 1f;
-        //[SerializeField]
-        //private Range<int> _dropRate;
+
+        protected bool IsStarted { get; private set; }
 
         /// <summary>
         /// Begins the spawn.
         /// </summary>
         public virtual void StartSpawner()
         {
+            IsStarted = true;
             StartCoroutine(SpawObjectsRoutine());
+        }
+
+        /// <summary>
+        /// Stops the spawn coroutine.
+        /// </summary>
+        public void StopSpawn()
+        {
+            IsStarted = false;
+            StopAllCoroutines();
         }
 
         /// <summary>
@@ -32,7 +41,6 @@
         {
             while (true)
             {
-                //for(int i = 0; i < _dropRate.Random(); i++)
                 SpawnObject();
                 yield return new WaitForSeconds(_spawnRate);
             }

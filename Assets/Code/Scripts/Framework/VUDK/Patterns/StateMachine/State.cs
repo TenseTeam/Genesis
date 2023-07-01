@@ -49,9 +49,9 @@
         /// </summary>
         /// <param name="stateKey">State key.</param>
         /// <param name="timeToWait">Time to wait in seconds.</param>
-        protected void ChangeStateIn(Enum key, float time)
+        protected void ChangeState(Enum key, float time)
         {
-            _relatedStateMachine?.ChangeStateIn(key, time);
+            _relatedStateMachine.ChangeState(key, time);
         }
     }
 

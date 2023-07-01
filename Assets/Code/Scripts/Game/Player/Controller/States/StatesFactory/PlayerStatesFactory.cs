@@ -17,6 +17,9 @@
 
                 case PlayerStateKey.Jump:
                     return new PlayerJumpState(relatedStateMachine, context);
+
+                case PlayerStateKey.GrapRope:
+                    return new PlayerGrapRopeState(relatedStateMachine, context);
             }
 
             return null;

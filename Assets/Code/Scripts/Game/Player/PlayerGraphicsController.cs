@@ -1,8 +1,6 @@
 ﻿namespace ProjectGenesis.Player
 {
     using UnityEngine;
-    using VUDK.Generic.Systems.EventsSystem;
-    using ProjectGenesis.Events;
     using ProjectGenesis.Constants;
 
     public class PlayerGraphicsController : MonoBehaviour

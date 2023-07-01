@@ -22,12 +22,12 @@
         [SerializeField]
         private bool _isSpeedAffectedByScale;
 
-        [SerializeField, Range(0f, 90f), Header("Slope")]
-        private float _maxSlopeDegree;
-        [SerializeField]
-        private float _raySlopeLength;
-        [SerializeField]
-        private float _raySlopeOffset;
+        //[SerializeField, Range(0f, 90f), Header("Slope")]
+        //private float _maxSlopeDegree;
+        //[SerializeField]
+        //private float _raySlopeLength;
+        //[SerializeField]
+        //private float _raySlopeOffset;
 
         private Quaternion _targetRotation;
         private bool _isRotating;
@@ -41,8 +41,8 @@
         public float Horizontal { get; private set; }
         public bool IsJumpInCooldown { get; private set; }
 
-        private bool _canClimbSlope => SlopeAngle() <= _maxSlopeDegree;
-        private Vector3 _raySlopeOrigin => transform.position + (Vector3.up * _raySlopeOffset);
+        //private bool _canClimbSlope => SlopeAngle() <= _maxSlopeDegree;
+        //private Vector3 _raySlopeOrigin => transform.position + (Vector3.up * _raySlopeOffset);
 
         private void OnEnable()
         {
@@ -66,7 +66,7 @@
 
         public override void Move()
         {
-            if (!_canClimbSlope) return;
+            //if (!_canClimbSlope) return;
             float effectiveSpeed = (_isSpeedAffectedByScale ? Speed * transform.lossyScale.magnitude : Speed) / Rigidbody.mass;
             Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * effectiveSpeed);
         }
@@ -83,6 +83,7 @@
 
         public void StartJumpCooldown()
         {
+            StopCoroutine(JumpCooldownRoutine());
             StartCoroutine(JumpCooldownRoutine());
         }
 
@@ -117,16 +118,16 @@
             _targetRotation = Quaternion.Euler(transform.eulerAngles.x, direction >= 0f ? 0f : 180f, transform.eulerAngles.z);
         }
 
-        private float SlopeAngle()
-        {
-            if (Physics.Raycast(_raySlopeOrigin, -transform.up, out RaycastHit hit, _raySlopeLength, GroundLayers)
-                && Physics.Raycast(_raySlopeOrigin, transform.forward, _raySlopeLength, GroundLayers))
-            {
-                return Vector3.Angle(hit.normal, transform.up);
-            }
+        //private float SlopeAngle()
+        //{
+        //    if (Physics.Raycast(_raySlopeOrigin, -transform.up, out RaycastHit hit, _raySlopeLength, GroundLayers)
+        //        && Physics.Raycast(_raySlopeOrigin, transform.forward, _raySlopeLength, GroundLayers))
+        //    {
+        //        return Vector3.Angle(hit.normal, transform.up);
+        //    }
 
-            return 0f;
-        }
+        //    return 0f;
+        //}
 
         private IEnumerator JumpCooldownRoutine()
         {
@@ -135,19 +136,19 @@
         }
 
 #if DEBUG
-        protected override void OnDrawGizmos()
-        {
-            base.OnDrawGizmos();
-            DrawSlopeRays();
-        }
+        //protected override void OnDrawGizmos()
+        //{
+        //    base.OnDrawGizmos();
+        //    DrawSlopeRays();
+        //}
 
-        private void DrawSlopeRays()
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(_raySlopeOrigin, _raySlopeOrigin - transform.up * _raySlopeLength);
-            Gizmos.color = Color.blue;
-            Gizmos.DrawLine(_raySlopeOrigin, _raySlopeOrigin + transform.forward * _raySlopeLength);
-        }
+        //private void DrawSlopeRays()
+        //{
+        //    Gizmos.color = Color.green;
+        //    Gizmos.DrawLine(_raySlopeOrigin, _raySlopeOrigin - transform.up * _raySlopeLength);
+        //    Gizmos.color = Color.blue;
+        //    Gizmos.DrawLine(_raySlopeOrigin, _raySlopeOrigin + transform.forward * _raySlopeLength);
+        //}
 #endif
     }
 }

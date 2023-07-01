@@ -6,19 +6,19 @@
     [RequireComponent(typeof(Collider))]
     public class TriggerEvent : MonoBehaviour
     {
+        [SerializeField, Header("Events")]
+        protected UnityEvent OnEnter;
         [SerializeField]
-        private UnityEvent _onTriggerEnter;
-        [SerializeField]
-        private UnityEvent _onTriggerExit;
+        protected UnityEvent OnExit;
 
         protected virtual void OnTriggerEnter(Collider other)
         {
-            _onTriggerEnter?.Invoke();
+            OnEnter?.Invoke();
         }
 
         protected virtual void OnTriggerExit(Collider other)
         {
-            _onTriggerExit?.Invoke();
+            OnExit?.Invoke();
         }
 
         protected virtual void OnTriggerStay(Collider other)

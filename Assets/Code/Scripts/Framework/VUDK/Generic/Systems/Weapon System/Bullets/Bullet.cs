@@ -6,7 +6,7 @@
     using VUDK.Patterns.ObjectPool;
     using VUDK.Patterns.ObjectPool.Interfaces;
 
-    [RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
+    [RequireComponent(typeof(Collider), typeof(Rigidbody))]
     public class Bullet : MonoBehaviour, IPooledObject
     {
         [Header("Bullet settings")]
@@ -19,8 +19,6 @@
         protected Rigidbody Rigidbody;
 
         public Pool RelatedPool { get; private set; }
-
-        public static event Action<Vector3> OnBulletHit;
 
         /// <summary>
         /// Initializes this <see cref="Bullet"/>.
@@ -35,7 +33,7 @@
 
         protected virtual void Awake()
         {
-            TryGetComponent(out Collider2D collider);
+            TryGetComponent(out Collider collider);
             TryGetComponent(out Rigidbody);
             collider.isTrigger = true;
         }
@@ -85,7 +83,6 @@
                 ent.TakeDamage(Damage);
 
             Dispose();
-            OnBulletHit?.Invoke(other.ClosestPoint(transform.position));
         }
     }
 }

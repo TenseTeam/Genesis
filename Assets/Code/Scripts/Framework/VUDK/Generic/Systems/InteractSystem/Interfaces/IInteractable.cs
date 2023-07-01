@@ -2,12 +2,12 @@
 {
     using UnityEngine;
 
-    public interface IInteract
+    public interface IInteractable
     {
         /// <summary>
         /// Interacts with this object.
         /// </summary>
         /// <param name="Interactor">Interactor GameObject.</param>
-        public void Interact(GameObject interactor);
+        public void Interact(InteractorBase interactor);
     }
 }

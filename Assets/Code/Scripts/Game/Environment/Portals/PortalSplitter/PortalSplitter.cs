@@ -18,11 +18,11 @@
             _linkedPlayerManager.gameObject.SetActive(false);
         }
 
-        public override void Interact(GameObject interactor)
+        protected override void OnTriggerEnter(Collider other)
         {
-            base.Interact(interactor);
+            base.OnTriggerEnter(other);
 
-            if (interactor.TryGetComponent(out PlayerController player))
+            if (other.TryGetComponent(out PlayerController player))
             {
                 if (!player.Status.IsSplitted)
                     EnableDouble(player);
@@ -52,7 +52,7 @@
         }
 
 #if DEBUG
-        private void OnDrawGizmos()
+        protected override void OnDrawGizmos()
         {
             Vector3 playerPos = transform.position + _playerAlignPosition;
             Vector3 linkedPos = transform.position + _linkedPlayerAlignPosition;

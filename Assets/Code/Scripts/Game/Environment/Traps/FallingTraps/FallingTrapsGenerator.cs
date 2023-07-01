@@ -1,4 +1,4 @@
-﻿namespace ProhectGenesis.Traps
+﻿namespace ProhectGenesis.Environment.Traps
 {
     using System.Collections.Generic;
     using UnityEngine;

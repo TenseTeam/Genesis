@@ -1,19 +1,16 @@
 namespace ProjectGenesis.Environment.Portals
 {
     using UnityEngine;
-    using UnityEngine.Events;
     using VUDK.Generic.Systems.EventsSystem;
-    using VUDK.Generic.Systems.InteractSystem;
-    using ProjectGenesis.Events;
+    using ProjectGenesis.Constants.Events;
+    using VUDK.Generic.Utility;
 
-    public abstract class PortalBase : TriggerInteractBase
+    public abstract class PortalBase : TriggerEvent
     {
-        public UnityEvent OnUse;
-
-        public override void Interact(GameObject interactor)
+        protected override void OnTriggerEnter(Collider other)
         {
-            EventManager.TriggerEvent(Events.Portals.OnEnterPortal, transform.position);
-            OnUse?.Invoke();
+            base.OnTriggerEnter(other);
+            EventManager.TriggerEvent(EventKeys.OnEnterPortal, transform.position);
         }
     }
 }

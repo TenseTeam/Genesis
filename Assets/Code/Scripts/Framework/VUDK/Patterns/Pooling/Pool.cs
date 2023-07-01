@@ -5,7 +5,7 @@ namespace VUDK.Patterns.ObjectPool
     using VUDK.Extensions.Transform;
     using VUDK.Patterns.ObjectPool.Interfaces;
 
-    public abstract class Pool : MonoBehaviour
+    public class Pool : MonoBehaviour
     {
         [SerializeField]
         private GameObject _pooledObject;

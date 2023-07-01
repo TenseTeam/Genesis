@@ -2,7 +2,7 @@
 {
     using UnityEngine;
     using VUDK.Generic.Systems.EventsSystem;
-    using ProjectGenesis.Events;
+    using ProjectGenesis.Constants.Events;
 
     public class AudioManager : VUDK.Generic.Managers.AudioManager
     {
@@ -11,12 +11,12 @@
 
         protected override void OnEnable()
         {
-            EventManager.AddListener<Vector3>(Events.Portals.OnEnterPortal, (position) => Play3DClip(_portalClip, position));
+            EventManager.AddListener<Vector3>(EventKeys.OnEnterPortal, (position) => Play3DClip(_portalClip, position));
         }
 
         protected override void OnDisable()
         {
-            EventManager.RemoveListener<Vector3>(Events.Portals.OnEnterPortal, (position) => Play3DClip(_portalClip, position));
+            EventManager.RemoveListener<Vector3>(EventKeys.OnEnterPortal, (position) => Play3DClip(_portalClip, position));
         }
     }
 }

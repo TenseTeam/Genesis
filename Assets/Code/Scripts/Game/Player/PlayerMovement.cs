@@ -84,7 +84,13 @@
         public void StartJumpCooldown()
         {
             StopCoroutine(JumpCooldownRoutine());
-            StartCoroutine(JumpCooldownRoutine());
+            try
+            {
+                StartCoroutine(JumpCooldownRoutine());
+            }
+            catch
+            {
+            }
         }
 
         public void Jump()
@@ -105,7 +111,6 @@
             Stop();
             _isRotating = false;
         }
-
 
         private void Rotate()
         {
@@ -134,21 +139,5 @@
             yield return new WaitForSeconds(_jumpCooldown);
             IsJumpInCooldown = false;
         }
-
-#if DEBUG
-        //protected override void OnDrawGizmos()
-        //{
-        //    base.OnDrawGizmos();
-        //    DrawSlopeRays();
-        //}
-
-        //private void DrawSlopeRays()
-        //{
-        //    Gizmos.color = Color.green;
-        //    Gizmos.DrawLine(_raySlopeOrigin, _raySlopeOrigin - transform.up * _raySlopeLength);
-        //    Gizmos.color = Color.blue;
-        //    Gizmos.DrawLine(_raySlopeOrigin, _raySlopeOrigin + transform.forward * _raySlopeLength);
-        //}
-#endif
     }
 }

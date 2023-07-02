@@ -1,14 +1,29 @@
 namespace ProjectGenesis.Player
 {
+    using ProjectGenesis.Constants.Events;
+    using System;
     using UnityEngine;
     using VUDK.Extensions.Transform;
     using VUDK.Generic.Systems.CheckpointSystem;
     using VUDK.Generic.Systems.EntitySystem;
+    using VUDK.Generic.Systems.EventsSystem;
 
     public class PlayerEntity : EntityBase
     {
         private PlayerController _manager;
         private Vector3 _startPosition;
+
+        private void OnEnable()
+        {
+            OnHitPointsSetUp += (current, max) => EventManager.TriggerEvent(EventKeys.OnHitPointsPlayerSetup, (int)current, (int)max);
+            OnTakeDamage += () => EventManager.TriggerEvent(EventKeys.OnPlayerTakeDamage);
+        }
+
+        private void OnDisable()
+        {
+            OnHitPointsSetUp -= (current, max) => EventManager.TriggerEvent(EventKeys.OnHitPointsPlayerSetup, (int)current, (int)max);
+            OnTakeDamage -= () => EventManager.TriggerEvent(EventKeys.OnPlayerTakeDamage);
+        }
 
         public void Init(PlayerController manager, Vector3 _startPosition)
         {

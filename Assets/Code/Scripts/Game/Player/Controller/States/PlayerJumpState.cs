@@ -14,12 +14,11 @@
             Context.PlayerMovement.Jump();
             Context.Graphics.AnimateJump();
             Context.PlayerMovement.SetIsJumpInCoolDown(true);
-            ChangeState(PlayerStateKey.Air, .2f);
+            ChangeState(PlayerStateKey.Air);
         }
 
         public override void Exit()
         {
-            Context.PlayerMovement.StartJumpCooldown();
         }
 
         public override void PhysicsProcess()

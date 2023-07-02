@@ -1,4 +1,4 @@
-namespace ProhectGenesis.Environment.GrapplingSystem
+namespace ProjectGenesis.Environment.GrapplingSystem
 {
     using Unity.VisualScripting;
     using UnityEngine;

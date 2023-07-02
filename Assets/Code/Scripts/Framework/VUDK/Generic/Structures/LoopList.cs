@@ -61,5 +61,13 @@ namespace VUDK.Generic.Structures
             return obj;
         }
 
+        /// <summary>
+        /// Checks if the List is empty.
+        /// </summary>
+        /// <returns>True if the List is empty, False if not.</returns>
+        public bool IsEmpty()
+        {
+            return List.Count == 0;
+        }
     }
 }

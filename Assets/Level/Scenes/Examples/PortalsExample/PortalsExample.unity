@@ -171,24 +171,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae7360e036b5ec4f84db97bf72ea071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUse:
+  OnEnter:
     m_PersistentCalls:
       m_Calls: []
-  OnArrive:
+  OnExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 391236321}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _portalDestination: {fileID: 1479089086}
   <DestinationOnArriveOffset>k__BackingField: {x: 0, y: -1, z: 1}
 --- !u!65 &99673265
@@ -5329,7 +5317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
-  _cameraOffset: {x: 10, y: 4, z: 0}
+  _cameraOffset: {x: 10, y: 2, z: 0}
   _target: {fileID: 4960937988132379908}
 --- !u!1 &391236318
 GameObject:
@@ -10206,6 +10194,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abed4c6f6061834f90949351b23d400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &436776870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10324,6 +10318,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abed4c6f6061834f90949351b23d400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &667073356
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10483,37 +10483,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae7360e036b5ec4f84db97bf72ea071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUse:
+  OnEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1479089086}
-        m_TargetAssemblyTypeName: ProjectGenesis.Environment.Portals.PortalTeleport,
-          Assembly-CSharp
-        m_MethodName: TeleportAtThisPortal
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4960937988132379908}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnArrive:
+      m_Calls: []
+  OnExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1501411518}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _portalDestination: {fileID: 1706447283}
   <DestinationOnArriveOffset>k__BackingField: {x: 0, y: 1, z: 1}
 --- !u!65 &722255191
@@ -10684,6 +10659,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 138d62584371d8d499d24bc9accefe26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _onEntityOnPlatform:
+    m_PersistentCalls:
+      m_Calls: []
+  _onEntityOffPlatform:
+    m_PersistentCalls:
+      m_Calls: []
   _anchor: {fileID: 943907202}
   _positions:
     <List>k__BackingField:
@@ -10963,7 +10944,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d8158395470e44fac9724ec5f74c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUse:
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
     m_PersistentCalls:
       m_Calls: []
   _newSize: {x: 0.5, y: 0.5, z: 0.5}
@@ -11177,24 +11161,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae7360e036b5ec4f84db97bf72ea071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUse:
+  OnEnter:
     m_PersistentCalls:
       m_Calls: []
-  OnArrive:
+  OnExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 179947989}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _portalDestination: {fileID: 1978708960}
   <DestinationOnArriveOffset>k__BackingField: {x: 0, y: -1, z: 1}
 --- !u!65 &1011777578
@@ -11268,6 +11240,74 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011777572}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1067441327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1067441330}
+  - component: {fileID: 1067441329}
+  - component: {fileID: 1067441328}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1067441328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067441327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1067441329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067441327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1067441330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1067441327}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1139177684
 GameObject:
   m_ObjectHideFlags: 0
@@ -16096,6 +16136,76 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1189536952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1189536953}
+  - component: {fileID: 1189536955}
+  - component: {fileID: 1189536956}
+  m_Layer: 5
+  m_Name: Hearts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1189536953
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189536952}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1549950717}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.7647778}
+  m_AnchorMax: {x: 0.314, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -3, y: -4}
+  m_Pivot: {x: 0, y: 1}
+--- !u!222 &1189536955
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189536952}
+  m_CullTransparentMesh: 1
+--- !u!114 &1189536956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189536952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 60
+    m_Right: 0
+    m_Top: 60
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 100, y: 100}
+  m_Spacing: {x: 25, y: 15}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &1237521809
 GameObject:
   m_ObjectHideFlags: 0
@@ -16141,10 +16251,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78f2e2eb16387904ab447489fc946fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trap: {fileID: 1841002307}
+  _gameObject: {fileID: 0}
   _cooldown:
     <Max>k__BackingField: 1
     <Min>k__BackingField: 2
+  _startOnAwake: 0
 --- !u!1 &1243561584
 GameObject:
   m_ObjectHideFlags: 0
@@ -16211,6 +16322,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a35cf99982a8b24cbcec01702b20e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1295888479
 GameObject:
   m_ObjectHideFlags: 0
@@ -16258,7 +16375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23d8158395470e44fac9724ec5f74c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUse:
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
     m_PersistentCalls:
       m_Calls: []
   _newSize: {x: 0.5, y: 0.5, z: 0.5}
@@ -21349,24 +21469,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae7360e036b5ec4f84db97bf72ea071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUse:
+  OnEnter:
     m_PersistentCalls:
       m_Calls: []
-  OnArrive:
+  OnExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1139177687}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _portalDestination: {fileID: 99673264}
   <DestinationOnArriveOffset>k__BackingField: {x: 0, y: -1, z: -1}
 --- !u!65 &1479089087
@@ -26268,6 +26376,125 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1549950713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1549950717}
+  - component: {fileID: 1549950716}
+  - component: {fileID: 1549950715}
+  - component: {fileID: 1549950714}
+  - component: {fileID: 1549950718}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1549950714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549950713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1549950715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549950713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1920, y: 1080}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1549950716
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549950713}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 352219457}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1549950717
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549950713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1189536953}
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &1549950718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549950713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a3b329bdb624e409aad1dab1086518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heartGrid: {fileID: 1189536956}
+  _heartPrefab: {fileID: 8364506573018727168, guid: c4f2034e0433d03499a37ef34d3457db,
+    type: 3}
 --- !u!1 &1611027590
 GameObject:
   m_ObjectHideFlags: 0
@@ -26386,7 +26613,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c705bc4a0897f39419d99750024a9dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUse:
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
     m_PersistentCalls:
       m_Calls: []
   _linkedPlayerManager: {fileID: 9211534292360035058}
@@ -26563,37 +26793,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae7360e036b5ec4f84db97bf72ea071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUse:
+  OnEnter:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 99673264}
-        m_TargetAssemblyTypeName: ProjectGenesis.Environment.Portals.PortalTeleport,
-          Assembly-CSharp
-        m_MethodName: TeleportAtThisPortal
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 4960937988132379908}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnArrive:
+      m_Calls: []
+  OnExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1861398508}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _portalDestination: {fileID: 722255190}
   <DestinationOnArriveOffset>k__BackingField: {x: 0, y: 1, z: -1}
 --- !u!65 &1706447284
@@ -26728,6 +26933,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a35cf99982a8b24cbcec01702b20e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1709077774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26796,7 +27007,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c705bc4a0897f39419d99750024a9dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUse:
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
     m_PersistentCalls:
       m_Calls: []
   _linkedPlayerManager: {fileID: 9211534292360035058}
@@ -26991,6 +27205,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abed4c6f6061834f90949351b23d400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1861398507
 GameObject:
   m_ObjectHideFlags: 0
@@ -31969,6 +32189,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a35cf99982a8b24cbcec01702b20e34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1881162188
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32037,6 +32263,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1abed4c6f6061834f90949351b23d400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1951605514
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32227,24 +32459,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ae7360e036b5ec4f84db97bf72ea071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnUse:
+  OnEnter:
     m_PersistentCalls:
       m_Calls: []
-  OnArrive:
+  OnExit:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1327543453}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _portalDestination: {fileID: 1011777576}
   <DestinationOnArriveOffset>k__BackingField: {x: 0, y: -1, z: -1}
 --- !u!1 &2072316431
@@ -33094,9 +33314,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa03c068bee3924d8b5671459bc9474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _triggableLayers:
-    serializedVersion: 2
-    m_Bits: 0
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &3319885023726490232
 Transform:
   m_ObjectHideFlags: 0
@@ -33984,9 +34207,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa03c068bee3924d8b5671459bc9474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _triggableLayers:
-    serializedVersion: 2
-    m_Bits: 0
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5525526255379386580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35351,13 +35577,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6160569de3ef04fb549a5cec8c0219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GroundedOffset: {x: 0, y: 0, z: 0}
   _groundedRadius: 0.3
-  _groundedOffset: {x: 0, y: 0, z: 0}
   _rotationSpeed: 0.1
-  _jumpForce: 5
-  _jumpCooldown: 0
-  _isJumpAffectedByScale: 0
-  _isSpeedAffectedByScale: 0
+  _jumpForce: 4
+  _jumpCooldown: 1
+  _isJumpAffectedByScale: 1
+  _isSpeedAffectedByScale: 1
   <GroundSpeed>k__BackingField: 5
   <AirSpeed>k__BackingField: 4
 --- !u!1 &9222462685116782677

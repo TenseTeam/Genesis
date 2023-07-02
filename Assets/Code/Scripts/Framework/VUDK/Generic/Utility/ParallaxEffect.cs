@@ -1,43 +1,46 @@
 ﻿namespace VUDK.Generic.Utility
 {
     using UnityEngine;
+    using UnityEngine.ProBuilder.Shapes;
 
     [RequireComponent(typeof(SpriteRenderer))]
     public class ParralaxEffect : MonoBehaviour
     {
         [SerializeField]
-        public Camera _camera;
+        public GameObject _anchor;
         [SerializeField]
         public float _parallaxValue;
 
         private float _length;
-        private float _xOrignalPosition;
+        private float _zOrignalPosition;
         private float _yOriginalPosition;
+
+        private SpriteRenderer _sprite;
 
         private void Awake()
         {
-            TryGetComponent(out SpriteRenderer sprite);
-            _length = sprite.bounds.size.x;
+            TryGetComponent(out _sprite);
+            _length = _sprite.bounds.size.z;
         }
 
         private void Start()
         {
-            _xOrignalPosition = transform.position.x;
+            _zOrignalPosition = transform.position.z;
             _yOriginalPosition = transform.position.y;
         }
 
         private void Update()
         {
-            float temp = (_camera.transform.position.x * (1 - _parallaxValue));
-            float dist = (_camera.transform.position.x * _parallaxValue);
-            float ydist = (_camera.transform.position.y * _parallaxValue);
+            float temp = (_anchor.transform.position.z * (1 - _parallaxValue));
+            float dist = (_anchor.transform.position.z * _parallaxValue);
+            float ydist = (_anchor.transform.position.y * _parallaxValue);
 
-            transform.position = new Vector3(_xOrignalPosition + dist, _yOriginalPosition + ydist, transform.position.z);
+            transform.position = new Vector3(transform.position.x, _yOriginalPosition + ydist, _zOrignalPosition + dist);
 
-            if (temp > _xOrignalPosition + _length)
-                _xOrignalPosition += _length;
-            else if (temp < _xOrignalPosition - _length)
-                _xOrignalPosition -= _length;
+            if (temp > _zOrignalPosition + _length)
+                _zOrignalPosition += _length;
+            else if (temp < _zOrignalPosition - _length)
+                _zOrignalPosition -= _length;
         }
     }
 }

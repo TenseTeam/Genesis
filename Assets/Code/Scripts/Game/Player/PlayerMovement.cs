@@ -83,9 +83,9 @@
 
         public void StartJumpCooldown()
         {
-            StopCoroutine(JumpCooldownRoutine());
             try
             {
+                StopCoroutine(JumpCooldownRoutine());
                 StartCoroutine(JumpCooldownRoutine());
             }
             catch

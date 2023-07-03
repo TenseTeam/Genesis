@@ -7,5 +7,8 @@
 
         public const string OnHitPointsPlayerSetup = "OnHitPointsPlayerSetup";
         public const string OnPlayerTakeDamage = "OnPlayerTakeDamage";
+
+        public const string OnBeginDay = "OnBeginDay";
+        public const string OnBeginNight = "OnBeginNight";
     }
 }

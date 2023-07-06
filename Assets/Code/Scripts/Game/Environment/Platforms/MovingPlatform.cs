@@ -4,7 +4,6 @@
     using System.Linq;
     using UnityEngine;
     using VUDK.Generic.Structures;
-    using VUDK.Generic.Systems.EntitySystem.Interfaces;
 
     public class MovingPlatform : Platform
     {

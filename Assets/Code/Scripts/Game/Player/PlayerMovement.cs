@@ -76,27 +76,27 @@
             Horizontal = 0f;
         }
 
-        public void SetIsJumpInCoolDown(bool isJumpInCooldown)
-        {
-            IsJumpInCooldown = isJumpInCooldown;
-        }
-
-        public void StartJumpCooldown()
-        {
-            try
-            {
-                StopCoroutine(JumpCooldownRoutine());
-                StartCoroutine(JumpCooldownRoutine());
-            }
-            catch
-            {
-            }
-        }
 
         public void Jump()
         {
             float effectiveJumpForce = _isJumpAffectedByScale ? _jumpForce * transform.lossyScale.magnitude : _jumpForce;
             Rigidbody.AddForce(transform.up * effectiveJumpForce, ForceMode.Impulse);
+        }
+
+        public void InvokeDisableJumpCooldown()
+        {
+            CancelInvoke("DisableJumpCooldown");
+            Invoke("DisableJumpCooldown", _jumpCooldown);
+        }
+
+        public void EnableJumpCooldown()
+        {
+            IsJumpInCooldown = true;
+        }
+
+        private void DisableJumpCooldown()
+        {
+            IsJumpInCooldown = false;
         }
 
         private void PerformMoving(InputAction.CallbackContext input)
@@ -133,11 +133,5 @@
 
         //    return 0f;
         //}
-
-        private IEnumerator JumpCooldownRoutine()
-        {
-            yield return new WaitForSeconds(_jumpCooldown);
-            IsJumpInCooldown = false;
-        }
     }
 }

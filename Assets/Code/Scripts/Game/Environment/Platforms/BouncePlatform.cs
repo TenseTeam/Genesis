@@ -1,7 +1,6 @@
 namespace ProjectGenesis.Environment.Platforms
 {
     using UnityEngine;
-    using VUDK.Generic.Systems.EntitySystem.Interfaces;
     using VUDK.Extensions.Vectors;
 
     public class BouncePlatform : Platform

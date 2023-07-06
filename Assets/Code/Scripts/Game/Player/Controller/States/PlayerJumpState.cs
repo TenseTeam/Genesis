@@ -13,7 +13,7 @@
         {
             Context.PlayerMovement.Jump();
             Context.Graphics.AnimateJump();
-            Context.PlayerMovement.SetIsJumpInCoolDown(true);
+            Context.PlayerMovement.EnableJumpCooldown();
             ChangeState(PlayerStateKey.Air);
         }
 

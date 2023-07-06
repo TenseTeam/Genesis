@@ -6,6 +6,9 @@ namespace VUDK.Generic.Utility
 
     public class SwitchScene : MonoBehaviour
     {
+        [SerializeField]
+        private float _waitTime;
+
         /// <summary>
         /// Switches to a scene.
         /// </summary>
@@ -25,16 +28,15 @@ namespace VUDK.Generic.Utility
         }
 
         /// <summary>
-        /// Waits N seconds and then switches to a scene.
+        /// Waits for seconds and then switches to a scene.
         /// </summary>
         /// <param name="sceneToLoad">Scene to load in a string format.</param>
-        /// <param name="time">Time to wait before switching to a new scene.</param>
-        public void ChangeSceneIn(string sceneToLoad, float time)
+        public void ChangeSceneIn(string sceneToLoad)
         {
-            StartCoroutine(ChangeSceneRoutine(time, sceneToLoad));
+            StartCoroutine(ChangeSceneRoutine(sceneToLoad, _waitTime));
         }
 
-        private IEnumerator ChangeSceneRoutine(float time, string sceneToLoad)
+        private IEnumerator ChangeSceneRoutine(string sceneToLoad, float time)
         {
             yield return new WaitForSeconds(time);
             SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);

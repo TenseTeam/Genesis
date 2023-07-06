@@ -13,7 +13,6 @@ namespace ProjectGenesis.Player.States
         {
             Context.Graphics.AnimateFalling(true);
             Context.PlayerMovement.SetSpeed(Context.PlayerMovement.AirSpeed);
-            Context.PlayerMovement.StartJumpCooldown();
             Context.Inputs.PlayerMovement.Jump.Disable();
         }
 
@@ -21,6 +20,7 @@ namespace ProjectGenesis.Player.States
         {
             Context.Graphics.AnimateFalling(false);
             Context.Inputs.PlayerMovement.Jump.Enable();
+            Context.PlayerMovement.InvokeDisableJumpCooldown();
         }
 
         public override void PhysicsProcess()

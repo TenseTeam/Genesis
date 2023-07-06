@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: glass
+  m_Name: glass 3
   m_Shader: {fileID: -6465566751694194690, guid: 30fa68ce467463643a86b839ca0eb195,
     type: 3}
   m_Parent: {fileID: 0}
@@ -141,16 +141,16 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _METALNESS: 6.18
+    - _METALNESS: 9.31
     - _Metallic: 0
-    - _OPACITY: 0.163
+    - _OPACITY: 0.733
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 1
     - _QueueOffset: 25
     - _ReceiveShadows: 0
-    - _SPECULAR_IOR: 2.47
-    - _SPECULAR_ROUGHNESS: -0.38
+    - _SPECULAR_IOR: -0.48
+    - _SPECULAR_ROUGHNESS: 0.76
     - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -159,11 +159,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BASE_COLOR: {r: 0.50271446, g: 0.745283, b: 0.5460303, a: 1}
+    - _BASE_COLOR: {r: 0.4433962, g: 0.13246693, b: 0, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EMISSION_COLOR: {r: 0.05015131, g: 0.46226418, b: 0.07871356, a: 0}
+    - _EMISSION_COLOR: {r: 0.41509432, g: 0.08570633, b: 0, a: 0}
     - _EmissionColor: {r: 0, g: 0.21398352, b: 0.01783196, a: 1}
-    - _SPECULAR_COLOR: {r: 0.40466323, g: 0.7264151, b: 0.33922213, a: 0}
+    - _SPECULAR_COLOR: {r: 0.3490566, g: 0.0966426, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []

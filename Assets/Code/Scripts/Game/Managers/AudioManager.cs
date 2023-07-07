@@ -11,12 +11,12 @@
 
         protected override void OnEnable()
         {
-            EventManager.AddListener<Vector3>(EventKeys.OnEnterPortal, (position) => Play3DClip(_portalClip, position));
+            EventManager.AddListener<Vector3>(EventKeys.OnEnterPortal, (position) => PlaySpatialAudio(_portalClip, position));
         }
 
         protected override void OnDisable()
         {
-            EventManager.RemoveListener<Vector3>(EventKeys.OnEnterPortal, (position) => Play3DClip(_portalClip, position));
+            EventManager.RemoveListener<Vector3>(EventKeys.OnEnterPortal, (position) => PlaySpatialAudio(_portalClip, position));
         }
     }
 }

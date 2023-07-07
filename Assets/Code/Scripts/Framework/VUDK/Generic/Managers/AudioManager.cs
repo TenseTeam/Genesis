@@ -18,12 +18,20 @@
 
         protected abstract void OnDisable();
 
-        protected void Play3DClip(AudioClip clip, Vector3 position)
+        public void PlaySpatialAudio(AudioClip clip, Vector3 position)
         {
             AudioExtension.PlayClipAtPoint(clip, position);
         }
 
-        protected void Play2DClip(AudioClip clip)
+        public void PlayStereoAudio(AudioClip clip, bool isConcurrent = false)
+        {
+            if(isConcurrent)
+                PlayConcurrentEffectAudio(clip);
+            else
+                PlayUncuncurrentEffectAudio(clip);
+        }
+
+        public void PlayConcurrentEffectAudio(AudioClip clip)
         {
             AudioSource audio;
 
@@ -36,6 +44,11 @@
             }
 
             PlayAudio(audio, clip);
+        }
+
+        public void PlayUncuncurrentEffectAudio(AudioClip clip)
+        {
+            PlayAudio(StereoSourceEffect, clip);
         }
 
         protected void PlayAudio(AudioSource source, AudioClip clip)

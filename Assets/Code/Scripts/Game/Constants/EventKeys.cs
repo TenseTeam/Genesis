@@ -10,5 +10,7 @@
 
         public const string OnBeginDay = "OnBeginDay";
         public const string OnBeginNight = "OnBeginNight";
+
+        public const string OnUIButtonClick = "OnUIButtonClick";
     }
 }

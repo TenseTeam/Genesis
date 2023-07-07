@@ -104,7 +104,8 @@ MonoBehaviour:
   - {fileID: 5991461094138938473}
   - {fileID: 5458320546086351057}
   - {fileID: 2049018957666021091}
-  _portalClip: {fileID: 8300000, guid: 712ca645095b2dd4c989a21c3200054f, type: 3}
+  _buttonClick: {fileID: 8300000, guid: 712ca645095b2dd4c989a21c3200054f, type: 3}
+  _enterPortal: {fileID: 8300000, guid: 712ca645095b2dd4c989a21c3200054f, type: 3}
 --- !u!1 &1109289120283723251
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +194,7 @@ Transform:
   - {fileID: 5715749139918930935}
   - {fileID: 6932064242874605951}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3428986148979004667
 MonoBehaviour:
@@ -690,7 +691,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

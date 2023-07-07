@@ -1,33 +1,40 @@
 namespace VUDK.UI.Menu
 {
-    using VUDK.DataSave.MenuPreferences;
     using UnityEngine;
     using UnityEngine.Audio;
     using UnityEngine.UI;
+    using VUDK.DataSave.MenuPreferences;
 
     public class UIVolumeSettings : MonoBehaviour
     {
-        public AudioMixer mixer;
-        public Slider masterSlider, musicSlider, effectsSlider;
+        [SerializeField, Header("Mixer Group")]
+        private AudioMixer _mixer;
 
-        private void Awake()
+        [SerializeField, Header("Sliders")]
+        private Slider _masterSlider;
+        [SerializeField]
+        private Slider _musicSlider;
+        [SerializeField]
+        private Slider _effectsSlider;
+
+        private void Start() // Need to do it on start cause the mixer is loaded after the awake
         {
             if (MenuPrefsSaver.Audio.LoadVolume(out float master, out float music, out float sfx))
             {
-                mixer.SetFloat("Master", master);
-                mixer.SetFloat("Music", music);
-                mixer.SetFloat("Effects", sfx);
+                _mixer.SetFloat("Master", master);
+                _mixer.SetFloat("Music", music);
+                _mixer.SetFloat("Effects", sfx);
 
-                masterSlider.value = master;
-                musicSlider.value = music;
-                effectsSlider.value = sfx;
+                _masterSlider.value = master;
+                _musicSlider.value = music;
+                _effectsSlider.value = sfx;
             }
             else
             {
                 // If there were no saved values then we set the volume to 0 (that means +0dB)
-                mixer.SetFloat("Master", 0);
-                mixer.SetFloat("Music", 0);
-                mixer.SetFloat("Effects", 0);
+                _mixer.SetFloat("Master", 0f);
+                _mixer.SetFloat("Music", 0f);
+                _mixer.SetFloat("Effects", 0f);
             }
         }
 
@@ -36,8 +43,8 @@ namespace VUDK.UI.Menu
         /// </summary>
         public void SetMaster()
         {
-            mixer.SetFloat("Master", masterSlider.value);
-            MenuPrefsSaver.Audio.SaveVolume(masterSlider.value, musicSlider.value, effectsSlider.value);
+            _mixer.SetFloat("Master", _masterSlider.value);
+            MenuPrefsSaver.Audio.SaveVolume(_masterSlider.value, _musicSlider.value, _effectsSlider.value);
         }
 
         /// <summary>
@@ -45,17 +52,17 @@ namespace VUDK.UI.Menu
         /// </summary>
         public void SetMusic()
         {
-            mixer.SetFloat("Music", musicSlider.value);
-            MenuPrefsSaver.Audio.SaveVolume(masterSlider.value, musicSlider.value, effectsSlider.value);
+            _mixer.SetFloat("Music", _musicSlider.value);
+            MenuPrefsSaver.Audio.SaveVolume(_masterSlider.value, _musicSlider.value, _effectsSlider.value);
         }
 
         /// <summary>
-        /// Sets
+        /// Sets the effects volume.
         /// </summary>
         public void SetEffects()
         {
-            mixer.SetFloat("Effects", effectsSlider.value);
-            MenuPrefsSaver.Audio.SaveVolume(masterSlider.value, musicSlider.value, effectsSlider.value);
+            _mixer.SetFloat("Effects", _effectsSlider.value);
+            MenuPrefsSaver.Audio.SaveVolume(_masterSlider.value, _musicSlider.value, _effectsSlider.value);
         }
     }
 }

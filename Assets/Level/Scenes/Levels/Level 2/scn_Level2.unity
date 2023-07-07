@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 12525838}
   - component: {fileID: 12525837}
   m_Layer: 6
-  m_Name: Cube (28)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +154,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &12525837
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 62412047}
   - component: {fileID: 62412046}
   m_Layer: 0
-  m_Name: Cube (53)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -470,7 +470,7 @@ GameObject:
   - component: {fileID: 68742640}
   - component: {fileID: 68742639}
   m_Layer: 6
-  m_Name: Cube (24)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,7 +488,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.7569913, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &68742639
@@ -590,11 +590,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 73643817}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -17.642796, y: -3.47, z: 252.93}
+  m_LocalPosition: {x: -17.642796, y: -3.4700003, z: 252.93}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1598270782}
+  m_Father: {fileID: 2109535828}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &73643819
@@ -700,7 +700,7 @@ GameObject:
   - component: {fileID: 80204221}
   - component: {fileID: 80204220}
   m_Layer: 6
-  m_Name: Cube
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -789,7 +789,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &114907520
@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 114907523}
   - component: {fileID: 114907522}
   m_Layer: 6
-  m_Name: Cube (5)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -823,7 +823,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &114907522
@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 115302349}
   - component: {fileID: 115302348}
   m_Layer: 6
-  m_Name: Cube (30)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -928,7 +928,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 4.2248}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &115302348
@@ -1015,7 +1015,7 @@ GameObject:
   - component: {fileID: 134335172}
   - component: {fileID: 134335171}
   m_Layer: 6
-  m_Name: Cube (16)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1033,7 +1033,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1.2230946}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &134335171
@@ -1120,7 +1120,7 @@ GameObject:
   - component: {fileID: 143515691}
   - component: {fileID: 143515690}
   m_Layer: 6
-  m_Name: Cube (36)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1138,7 +1138,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 4.2248}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &143515690
@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 155937604}
   - component: {fileID: 155937603}
   m_Layer: 6
-  m_Name: Cube (7)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1243,7 +1243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 14}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &155937603
@@ -1331,7 +1331,7 @@ GameObject:
   - component: {fileID: 168382400}
   - component: {fileID: 168382399}
   m_Layer: 0
-  m_Name: Cube (13)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1486,7 +1486,7 @@ GameObject:
   - component: {fileID: 198411663}
   - component: {fileID: 198411662}
   m_Layer: 0
-  m_Name: Cube (48)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1610,7 +1610,7 @@ GameObject:
   - component: {fileID: 212520923}
   - component: {fileID: 212520922}
   m_Layer: 0
-  m_Name: Cube (25)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1860,7 +1860,7 @@ GameObject:
   - component: {fileID: 288770192}
   - component: {fileID: 288770191}
   m_Layer: 6
-  m_Name: Cube (18)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1878,7 +1878,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.7569913, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &288770191
@@ -1965,7 +1965,7 @@ GameObject:
   - component: {fileID: 292893082}
   - component: {fileID: 292893081}
   m_Layer: 6
-  m_Name: Cube (39)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,7 +2070,7 @@ GameObject:
   - component: {fileID: 296234815}
   - component: {fileID: 296234814}
   m_Layer: 6
-  m_Name: Cube (14)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2088,7 +2088,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &296234814
@@ -2281,7 +2281,7 @@ GameObject:
   - component: {fileID: 347889127}
   - component: {fileID: 347889126}
   m_Layer: 0
-  m_Name: Cube (52)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2405,7 +2405,7 @@ GameObject:
   - component: {fileID: 376093450}
   - component: {fileID: 376093449}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2560,7 +2560,7 @@ GameObject:
   - component: {fileID: 408233372}
   - component: {fileID: 408233371}
   m_Layer: 0
-  m_Name: Cube (31)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2670,6 +2670,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408233369}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &441690512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 441690513}
+  m_Layer: 6
+  m_Name: MovingPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &441690513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441690512}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1484934224}
+  - {fileID: 2145707869}
+  m_Father: {fileID: 1575418993}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &471651071
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,7 +2717,7 @@ GameObject:
   - component: {fileID: 471651074}
   - component: {fileID: 471651073}
   m_Layer: 0
-  m_Name: Cube (40)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2808,7 +2841,7 @@ GameObject:
   - component: {fileID: 480019483}
   - component: {fileID: 480019482}
   m_Layer: 0
-  m_Name: Cube (42)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2931,7 +2964,7 @@ GameObject:
   - component: {fileID: 484507274}
   - component: {fileID: 484507273}
   m_Layer: 6
-  m_Name: Cube (4)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2949,7 +2982,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &484507273
@@ -3051,11 +3084,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 522757562}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -17.642796, y: 1.505111, z: 176.06177}
+  m_LocalPosition: {x: -17.642796, y: 1.5051107, z: 176.06177}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1598270782}
+  m_Father: {fileID: 2109535828}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &522757564
@@ -3276,15 +3309,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571806249}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3.08, z: 8.179993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1885882273}
   - {fileID: 1960039243}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 2018962978}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &578584673
 GameObject:
@@ -3300,7 +3333,7 @@ GameObject:
   - component: {fileID: 578584676}
   - component: {fileID: 578584675}
   m_Layer: 0
-  m_Name: Cube (7)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3424,7 +3457,7 @@ GameObject:
   - component: {fileID: 640865014}
   - component: {fileID: 640865017}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3548,7 +3581,7 @@ GameObject:
   - component: {fileID: 643513282}
   - component: {fileID: 643513281}
   m_Layer: 0
-  m_Name: Cube (51)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3672,7 +3705,7 @@ GameObject:
   - component: {fileID: 643793021}
   - component: {fileID: 643793020}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3876,7 +3909,7 @@ GameObject:
   - component: {fileID: 687554113}
   - component: {fileID: 687554112}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Checkpoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3964,11 +3997,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 688160757}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -17.642796, y: 1.505111, z: 195.06177}
+  m_LocalPosition: {x: -17.642796, y: 1.5051107, z: 195.06177}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1598270782}
+  m_Father: {fileID: 2109535828}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &688160759
@@ -4075,7 +4108,7 @@ GameObject:
   - component: {fileID: 689273666}
   - component: {fileID: 689273665}
   m_Layer: 0
-  m_Name: Cube (37)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4279,7 +4312,7 @@ GameObject:
   - component: {fileID: 714467030}
   - component: {fileID: 714467031}
   m_Layer: 7
-  m_Name: Falling traps generator (1)
+  m_Name: Falling traps generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4345,11 +4378,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723848295}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -17.642796, y: -2.147, z: 267.645}
+  m_LocalPosition: {x: -17.642796, y: -2.1470003, z: 267.645}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1598270782}
+  m_Father: {fileID: 2109535828}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &723848297
@@ -4539,7 +4572,7 @@ GameObject:
   - component: {fileID: 726548997}
   - component: {fileID: 726548996}
   m_Layer: 6
-  m_Name: Cube (41)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4557,7 +4590,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 4.3674192}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &726548996
@@ -4710,7 +4743,7 @@ GameObject:
   - component: {fileID: 753711922}
   - component: {fileID: 753711921}
   m_Layer: 0
-  m_Name: Cube (21)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4833,7 +4866,7 @@ GameObject:
   - component: {fileID: 766722181}
   - component: {fileID: 766722180}
   m_Layer: 6
-  m_Name: Cube (11)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4851,7 +4884,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 12}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &766722180
@@ -4938,7 +4971,7 @@ GameObject:
   - component: {fileID: 766782207}
   - component: {fileID: 766782206}
   m_Layer: 6
-  m_Name: Cube (33)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4956,7 +4989,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1.1588627}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &766782206
@@ -5044,7 +5077,7 @@ GameObject:
   - component: {fileID: 768390202}
   - component: {fileID: 768390201}
   m_Layer: 0
-  m_Name: Cube (14)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5260,8 +5293,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782279516}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -11, z: -89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5269,8 +5302,8 @@ Transform:
   - {fileID: 687554111}
   - {fileID: 1087427657}
   - {fileID: 2001196464}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1259539033}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &847772783
 GameObject:
@@ -5286,7 +5319,7 @@ GameObject:
   - component: {fileID: 847772786}
   - component: {fileID: 847772785}
   m_Layer: 0
-  m_Name: Cube (43)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5410,7 +5443,7 @@ GameObject:
   - component: {fileID: 851682300}
   - component: {fileID: 851682299}
   m_Layer: 0
-  m_Name: Cube (10)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5533,7 +5566,7 @@ GameObject:
   - component: {fileID: 862185901}
   - component: {fileID: 862185900}
   m_Layer: 6
-  m_Name: Cube (39)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5551,7 +5584,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.9573397}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &862185900
@@ -5639,7 +5672,7 @@ GameObject:
   - component: {fileID: 878680011}
   - component: {fileID: 878680010}
   m_Layer: 0
-  m_Name: Cube (9)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5762,7 +5795,7 @@ GameObject:
   - component: {fileID: 889259602}
   - component: {fileID: 889259601}
   m_Layer: 6
-  m_Name: Cube (38)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5780,7 +5813,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.9573397}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &889259601
@@ -5868,7 +5901,7 @@ GameObject:
   - component: {fileID: 932201513}
   - component: {fileID: 932201512}
   m_Layer: 0
-  m_Name: Cube (30)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6074,7 +6107,7 @@ GameObject:
   - component: {fileID: 948347687}
   - component: {fileID: 948347686}
   m_Layer: 6
-  m_Name: Cube (2)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6092,7 +6125,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &948347686
@@ -6259,7 +6292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 976619426}
   m_Layer: 0
-  m_Name: Spike
+  m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6452,7 +6485,7 @@ GameObject:
   - component: {fileID: 989641247}
   - component: {fileID: 989641246}
   m_Layer: 6
-  m_Name: Cube (27)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6470,7 +6503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.7569913, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &989641246
@@ -6637,7 +6670,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1002992635
 MonoBehaviour:
@@ -6676,7 +6709,7 @@ GameObject:
   - component: {fileID: 1009223177}
   - component: {fileID: 1009223176}
   m_Layer: 0
-  m_Name: Cube (50)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6799,7 +6832,7 @@ GameObject:
   - component: {fileID: 1017536514}
   - component: {fileID: 1017536513}
   m_Layer: 6
-  m_Name: Cube (45)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6904,7 +6937,7 @@ GameObject:
   - component: {fileID: 1047990778}
   - component: {fileID: 1047990777}
   m_Layer: 6
-  m_Name: Cube (21)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6922,7 +6955,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1047990777
@@ -7008,7 +7041,7 @@ GameObject:
   - component: {fileID: 1087427659}
   - component: {fileID: 1087427658}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Checkpoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7078,7 +7111,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1088553224}
   m_Layer: 7
-  m_Name: Spawn position
+  m_Name: Spawn position (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7256,7 +7289,7 @@ PrefabInstance:
     - target: {fileID: 7031479535940967094, guid: 23c0b7c46a6c42348a6c4a63af4a45ee,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7031479535940967094, guid: 23c0b7c46a6c42348a6c4a63af4a45ee,
         type: 3}
@@ -7332,7 +7365,7 @@ GameObject:
   - component: {fileID: 1151788558}
   - component: {fileID: 1151788557}
   m_Layer: 0
-  m_Name: Cube (8)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7456,7 +7489,7 @@ GameObject:
   - component: {fileID: 1226638659}
   - component: {fileID: 1226638658}
   m_Layer: 0
-  m_Name: Cube (26)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7579,7 +7612,7 @@ GameObject:
   - component: {fileID: 1247744965}
   - component: {fileID: 1247744964}
   m_Layer: 6
-  m_Name: Cube (32)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7597,7 +7630,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1.1588627}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1247744964
@@ -7684,7 +7717,7 @@ GameObject:
   - component: {fileID: 1253912240}
   - component: {fileID: 1253912239}
   m_Layer: 6
-  m_Name: Cube (34)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7702,7 +7735,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1.1588627}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1253912239
@@ -7789,7 +7822,7 @@ GameObject:
   - component: {fileID: 1259334015}
   - component: {fileID: 1259334014}
   m_Layer: 6
-  m_Name: Cube (19)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7807,7 +7840,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.7569913, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1259334014
@@ -7881,6 +7914,41 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1259334012}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1259539032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259539033}
+  m_Layer: 0
+  m_Name: Environment
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1259539033
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259539032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 11, z: 89}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1977532705}
+  - {fileID: 2018962978}
+  - {fileID: 1598270782}
+  - {fileID: 782279517}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1266113990
 GameObject:
   m_ObjectHideFlags: 0
@@ -7894,7 +7962,7 @@ GameObject:
   - component: {fileID: 1266113993}
   - component: {fileID: 1266113992}
   m_Layer: 6
-  m_Name: Cube (13)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7912,7 +7980,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1266113992
@@ -8000,7 +8068,7 @@ GameObject:
   - component: {fileID: 1270187883}
   - component: {fileID: 1270187882}
   m_Layer: 0
-  m_Name: Cube (5)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8123,7 +8191,7 @@ GameObject:
   - component: {fileID: 1317423534}
   - component: {fileID: 1317423533}
   m_Layer: 6
-  m_Name: Cube (8)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8141,7 +8209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 12}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1317423533
@@ -8424,7 +8492,7 @@ PrefabInstance:
     - target: {fileID: 6868593674866161336, guid: 10ec1f320946b034cb477d6bccb4b28d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6868593674866161336, guid: 10ec1f320946b034cb477d6bccb4b28d,
         type: 3}
@@ -8494,7 +8562,7 @@ GameObject:
   - component: {fileID: 1348150593}
   - component: {fileID: 1348150592}
   m_Layer: 6
-  m_Name: Cube (29)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8507,12 +8575,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348150590}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 3.44, z: 273.62}
   m_LocalScale: {x: 1, y: 1, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1348150592
@@ -8600,7 +8668,7 @@ GameObject:
   - component: {fileID: 1349509312}
   - component: {fileID: 1349509311}
   m_Layer: 0
-  m_Name: Cube (34)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8738,11 +8806,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351874160}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -17.642796, y: 1.505111, z: 191.06177}
+  m_LocalPosition: {x: -17.642796, y: 1.5051107, z: 191.06177}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1598270782}
+  m_Father: {fileID: 2109535828}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &1351874162
@@ -8849,7 +8917,7 @@ GameObject:
   - component: {fileID: 1386329359}
   - component: {fileID: 1386329358}
   m_Layer: 0
-  m_Name: Cube (33)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8973,7 +9041,7 @@ GameObject:
   - component: {fileID: 1396726319}
   - component: {fileID: 1396726318}
   m_Layer: 0
-  m_Name: Cube (16)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9096,7 +9164,7 @@ GameObject:
   - component: {fileID: 1411293174}
   - component: {fileID: 1411293173}
   m_Layer: 6
-  m_Name: Cube (20)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9114,7 +9182,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.7569913, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1411293173
@@ -9201,7 +9269,7 @@ GameObject:
   - component: {fileID: 1411984017}
   - component: {fileID: 1411984016}
   m_Layer: 6
-  m_Name: Cube (22)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9219,7 +9287,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1411984016
@@ -9307,7 +9375,7 @@ GameObject:
   - component: {fileID: 1413426871}
   - component: {fileID: 1413426870}
   m_Layer: 0
-  m_Name: Cube (15)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9514,7 +9582,7 @@ GameObject:
   - component: {fileID: 1449685168}
   - component: {fileID: 1449685171}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9637,7 +9705,7 @@ GameObject:
   - component: {fileID: 1457801580}
   - component: {fileID: 1457801579}
   m_Layer: 6
-  m_Name: Cube (40)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9651,11 +9719,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1457801577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -3.699, z: 300.0421}
+  m_LocalPosition: {x: 0, y: -3.699, z: 300.0421}
   m_LocalScale: {x: 1, y: 1, z: 12.292201}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1457801579
@@ -9743,7 +9811,7 @@ GameObject:
   - component: {fileID: 1460369817}
   - component: {fileID: 1460369820}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9867,7 +9935,7 @@ GameObject:
   - component: {fileID: 1468076871}
   - component: {fileID: 1468076870}
   m_Layer: 0
-  m_Name: Cube (12)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9991,7 +10059,7 @@ GameObject:
   - component: {fileID: 1469645569}
   - component: {fileID: 1469645568}
   m_Layer: 0
-  m_Name: Cube (27)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10219,12 +10287,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484934219}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.45, z: 281.11}
+  m_LocalPosition: {x: 0, y: 1.2, z: 272}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 441690513}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1496146010
 GameObject:
@@ -10250,12 +10318,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1496146010}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.953241, y: 1.8079281, z: -25.780075}
+  m_LocalPosition: {x: -17.953241, y: 1.8079281, z: -33.780075}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1101407815}
-  m_Father: {fileID: 2018962978}
+  m_Father: {fileID: 1977532705}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1521799493
@@ -10271,7 +10339,7 @@ GameObject:
   - component: {fileID: 1521799496}
   - component: {fileID: 1521799495}
   m_Layer: 6
-  m_Name: Cube (31)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10289,7 +10357,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1.1588627}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1521799495
@@ -10377,7 +10445,7 @@ GameObject:
   - component: {fileID: 1535065294}
   - component: {fileID: 1535065293}
   m_Layer: 0
-  m_Name: Cube (20)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10688,7 +10756,7 @@ GameObject:
   - component: {fileID: 1565015377}
   - component: {fileID: 1565015376}
   m_Layer: 6
-  m_Name: Cube (3)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10706,7 +10774,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1565015376
@@ -10780,6 +10848,38 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565015374}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1575418992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1575418993}
+  m_Layer: 6
+  m_Name: Moving Platforms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1575418993
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575418992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 441690513}
+  m_Father: {fileID: 1977532705}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1579808928
 GameObject:
   m_ObjectHideFlags: 0
@@ -10790,7 +10890,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1579808929}
   m_Layer: 6
-  m_Name: Unsafe Platform
+  m_Name: Unsafe Platforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10840,7 +10940,7 @@ GameObject:
   - component: {fileID: 1586283165}
   - component: {fileID: 1586283164}
   m_Layer: 0
-  m_Name: Cube (17)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10973,21 +11073,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1598270781}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.544586, y: 0.19337627, z: 43.93824}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.544586, y: -10.806623, z: -45.06176}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 522757563}
-  - {fileID: 1351874161}
-  - {fileID: 688160758}
-  - {fileID: 2031131752}
-  - {fileID: 2078977005}
-  - {fileID: 1970697442}
-  - {fileID: 73643818}
-  - {fileID: 723848296}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  - {fileID: 2109535828}
+  m_Father: {fileID: 1259539033}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1603741655
 GameObject:
@@ -11002,7 +11095,7 @@ GameObject:
   - component: {fileID: 1603741658}
   - component: {fileID: 1603741657}
   m_Layer: 6
-  m_Name: Cube (25)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11020,7 +11113,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.7569913, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1603741657
@@ -11107,7 +11200,7 @@ GameObject:
   - component: {fileID: 1613115960}
   - component: {fileID: 1613115959}
   m_Layer: 6
-  m_Name: Cube (1)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11125,7 +11218,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1613115959
@@ -11213,7 +11306,7 @@ GameObject:
   - component: {fileID: 1623876437}
   - component: {fileID: 1623876436}
   m_Layer: 0
-  m_Name: Cube (19)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11416,7 +11509,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!114 &1640737594
 MonoBehaviour:
@@ -11504,7 +11597,7 @@ GameObject:
   - component: {fileID: 1641573428}
   - component: {fileID: 1641573427}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Checkpoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11577,7 +11670,7 @@ GameObject:
   - component: {fileID: 1643504138}
   - component: {fileID: 1643504137}
   m_Layer: 6
-  m_Name: Cube (10)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11595,7 +11688,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 12}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1643504137
@@ -11682,7 +11775,7 @@ GameObject:
   - component: {fileID: 1646120290}
   - component: {fileID: 1646120289}
   m_Layer: 6
-  m_Name: Cube (23)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12081,7 +12174,7 @@ GameObject:
   - component: {fileID: 1716619843}
   - component: {fileID: 1716619842}
   m_Layer: 0
-  m_Name: Cube (28)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12275,7 +12368,7 @@ GameObject:
   - component: {fileID: 1739651178}
   - component: {fileID: 1739651177}
   m_Layer: 0
-  m_Name: Cube (18)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12504,7 +12597,7 @@ GameObject:
   - component: {fileID: 1749454352}
   - component: {fileID: 1749454351}
   m_Layer: 0
-  m_Name: Cube (29)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12697,6 +12790,79 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1765217226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1765217227}
+  m_Layer: 6
+  m_Name: Normal Platforms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1765217227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765217226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 80204223}
+  - {fileID: 1613115958}
+  - {fileID: 948347685}
+  - {fileID: 1565015375}
+  - {fileID: 484507272}
+  - {fileID: 114907521}
+  - {fileID: 1856123848}
+  - {fileID: 155937602}
+  - {fileID: 1936176053}
+  - {fileID: 1317423532}
+  - {fileID: 1643504136}
+  - {fileID: 766722179}
+  - {fileID: 1920427708}
+  - {fileID: 1266113991}
+  - {fileID: 296234813}
+  - {fileID: 2035439478}
+  - {fileID: 134335170}
+  - {fileID: 1854741811}
+  - {fileID: 288770190}
+  - {fileID: 1259334013}
+  - {fileID: 1411293172}
+  - {fileID: 1047990776}
+  - {fileID: 1411984015}
+  - {fileID: 2031528622}
+  - {fileID: 68742638}
+  - {fileID: 1603741656}
+  - {fileID: 2145374209}
+  - {fileID: 989641245}
+  - {fileID: 12525836}
+  - {fileID: 1348150591}
+  - {fileID: 115302347}
+  - {fileID: 1521799494}
+  - {fileID: 1247744963}
+  - {fileID: 766782205}
+  - {fileID: 1253912238}
+  - {fileID: 1929134317}
+  - {fileID: 143515689}
+  - {fileID: 1773259750}
+  - {fileID: 889259600}
+  - {fileID: 862185899}
+  - {fileID: 1457801578}
+  - {fileID: 726548995}
+  m_Father: {fileID: 1977532705}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1773259749
 GameObject:
   m_ObjectHideFlags: 0
@@ -12710,7 +12876,7 @@ GameObject:
   - component: {fileID: 1773259752}
   - component: {fileID: 1773259751}
   m_Layer: 6
-  m_Name: Cube (37)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12728,7 +12894,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.9573397}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1773259751
@@ -12816,7 +12982,7 @@ GameObject:
   - component: {fileID: 1786870659}
   - component: {fileID: 1786870658}
   m_Layer: 0
-  m_Name: Cube (41)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12940,7 +13106,7 @@ GameObject:
   - component: {fileID: 1803142212}
   - component: {fileID: 1803142211}
   m_Layer: 0
-  m_Name: Cube (36)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13162,7 +13328,7 @@ RectTransform:
   m_Children:
   - {fileID: 1738422093}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -13367,7 +13533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1851357658}
   m_Layer: 7
-  m_Name: Spawn position
+  m_Name: Spawn position (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13401,7 +13567,7 @@ GameObject:
   - component: {fileID: 1854741813}
   - component: {fileID: 1854741812}
   m_Layer: 6
-  m_Name: Cube (17)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13415,11 +13581,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854741810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 2, z: 207.055}
+  m_LocalPosition: {x: 0, y: 2, z: 207.055}
   m_LocalScale: {x: 1, y: 1, z: 2.6390316}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1854741812
@@ -13506,7 +13672,7 @@ GameObject:
   - component: {fileID: 1856123850}
   - component: {fileID: 1856123849}
   m_Layer: 6
-  m_Name: Cube (6)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13524,7 +13690,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1856123849
@@ -13612,7 +13778,7 @@ GameObject:
   - component: {fileID: 1857670309}
   - component: {fileID: 1857670308}
   m_Layer: 0
-  m_Name: Cube (38)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13734,7 +13900,7 @@ GameObject:
   - component: {fileID: 1885882275}
   - component: {fileID: 1885882274}
   m_Layer: 6
-  m_Name: Cube (42)
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13808,7 +13974,7 @@ GameObject:
   - component: {fileID: 1888747220}
   - component: {fileID: 1888747219}
   m_Layer: 0
-  m_Name: Cube (35)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14020,7 +14186,7 @@ GameObject:
   - component: {fileID: 1920427710}
   - component: {fileID: 1920427709}
   m_Layer: 6
-  m_Name: Cube (12)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14038,7 +14204,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 8}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1920427709
@@ -14125,7 +14291,7 @@ GameObject:
   - component: {fileID: 1929134319}
   - component: {fileID: 1929134318}
   m_Layer: 6
-  m_Name: Cube (35)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14143,7 +14309,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 3.0993135}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1929134318
@@ -14230,7 +14396,7 @@ GameObject:
   - component: {fileID: 1936176055}
   - component: {fileID: 1936176054}
   m_Layer: 6
-  m_Name: Cube (9)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14248,7 +14414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 9}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1936176054
@@ -14336,7 +14502,7 @@ GameObject:
   - component: {fileID: 1948963213}
   - component: {fileID: 1948963212}
   m_Layer: 0
-  m_Name: Cube (47)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14460,7 +14626,7 @@ GameObject:
   - component: {fileID: 1950183106}
   - component: {fileID: 1950183105}
   m_Layer: 0
-  m_Name: Cube (46)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14584,7 +14750,7 @@ GameObject:
   - component: {fileID: 1955614563}
   - component: {fileID: 1955614562}
   m_Layer: 0
-  m_Name: Cube (44)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14706,7 +14872,7 @@ GameObject:
   - component: {fileID: 1960039245}
   - component: {fileID: 1960039244}
   m_Layer: 6
-  m_Name: Cube (43)
+  m_Name: Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14794,11 +14960,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1970697441}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -17.642796, y: -3.47, z: 243.889}
+  m_LocalPosition: {x: -17.642796, y: -3.4700003, z: 243.889}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1598270782}
+  m_Father: {fileID: 2109535828}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &1970697443
@@ -14901,7 +15067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1977532705}
   m_Layer: 6
-  m_Name: Grounds
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14914,55 +15080,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1977532704}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -11, z: -81}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 80204223}
-  - {fileID: 1613115958}
-  - {fileID: 948347685}
-  - {fileID: 1565015375}
-  - {fileID: 484507272}
-  - {fileID: 114907521}
-  - {fileID: 1856123848}
-  - {fileID: 155937602}
-  - {fileID: 1936176053}
-  - {fileID: 1317423532}
-  - {fileID: 1643504136}
-  - {fileID: 766722179}
-  - {fileID: 1920427708}
-  - {fileID: 1266113991}
-  - {fileID: 296234813}
-  - {fileID: 2035439478}
-  - {fileID: 134335170}
-  - {fileID: 1854741811}
-  - {fileID: 288770190}
-  - {fileID: 1259334013}
-  - {fileID: 1411293172}
-  - {fileID: 1047990776}
-  - {fileID: 1411984015}
-  - {fileID: 2031528622}
-  - {fileID: 68742638}
-  - {fileID: 1603741656}
-  - {fileID: 2145374209}
-  - {fileID: 989641245}
-  - {fileID: 12525836}
-  - {fileID: 1348150591}
-  - {fileID: 115302347}
-  - {fileID: 1521799494}
-  - {fileID: 1247744963}
-  - {fileID: 766782205}
-  - {fileID: 1253912238}
-  - {fileID: 1929134317}
-  - {fileID: 143515689}
-  - {fileID: 1773259750}
-  - {fileID: 889259600}
-  - {fileID: 862185899}
-  - {fileID: 1457801578}
-  - {fileID: 726548995}
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  - {fileID: 1765217227}
+  - {fileID: 1575418993}
+  - {fileID: 1496146011}
+  m_Father: {fileID: 1259539033}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1986162228
 GameObject:
@@ -14978,7 +15105,7 @@ GameObject:
   - component: {fileID: 1986162231}
   - component: {fileID: 1986162230}
   m_Layer: 0
-  m_Name: Cube (22)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15100,7 +15227,7 @@ GameObject:
   - component: {fileID: 2001196463}
   - component: {fileID: 2001196462}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Checkpoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15257,7 +15384,7 @@ GameObject:
   - component: {fileID: 2002729176}
   - component: {fileID: 2002729175}
   m_Layer: 0
-  m_Name: Cube (32)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15381,7 +15508,7 @@ GameObject:
   - component: {fileID: 2005933730}
   - component: {fileID: 2005933729}
   m_Layer: 0
-  m_Name: Cube (24)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15514,17 +15641,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018962977}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -11, z: -89}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 976619426}
   - {fileID: 1579808929}
   - {fileID: 745559202}
-  - {fileID: 1496146011}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  - {fileID: 571806250}
+  m_Father: {fileID: 1259539033}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2031131751
 GameObject:
@@ -15554,11 +15681,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031131751}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -17.642796, y: 1.505111, z: 226.06177}
+  m_LocalPosition: {x: -17.642796, y: 1.5051107, z: 226.06177}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1598270782}
+  m_Father: {fileID: 2109535828}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &2031131753
@@ -15769,7 +15896,7 @@ GameObject:
   - component: {fileID: 2031528624}
   - component: {fileID: 2031528623}
   m_Layer: 6
-  m_Name: Cube (23)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15783,11 +15910,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031528621}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 261.0693}
+  m_LocalPosition: {x: 0, y: 0, z: 261.0693}
   m_LocalScale: {x: 1, y: 1, z: 4.1384}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2031528623
@@ -15979,7 +16106,7 @@ GameObject:
   - component: {fileID: 2035439480}
   - component: {fileID: 2035439479}
   m_Layer: 6
-  m_Name: Cube (15)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15997,7 +16124,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 6.2472}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2035439479
@@ -16085,7 +16212,7 @@ GameObject:
   - component: {fileID: 2053557649}
   - component: {fileID: 2053557648}
   m_Layer: 0
-  m_Name: Cube (11)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16205,7 +16332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2077910597}
   m_Layer: 7
-  m_Name: Spawn position
+  m_Name: Spawn position (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16254,11 +16381,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078977004}
   m_LocalRotation: {x: -0, y: 0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: -17.642796, y: -3.47, z: 231.47}
+  m_LocalPosition: {x: -17.642796, y: -3.4700003, z: 231.47}
   m_LocalScale: {x: 1, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1598270782}
+  m_Father: {fileID: 2109535828}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!114 &2078977006
@@ -16365,7 +16492,7 @@ GameObject:
   - component: {fileID: 2104927422}
   - component: {fileID: 2104927421}
   m_Layer: 0
-  m_Name: Cube (49)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16475,6 +16602,45 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104927419}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2109535827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2109535828}
+  m_Layer: 0
+  m_Name: Portal Scalers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2109535828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109535827}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 522757563}
+  - {fileID: 1351874161}
+  - {fileID: 688160758}
+  - {fileID: 2031131752}
+  - {fileID: 2078977005}
+  - {fileID: 1970697442}
+  - {fileID: 73643818}
+  - {fileID: 723848296}
+  m_Father: {fileID: 1598270782}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2127129789
 GameObject:
   m_ObjectHideFlags: 0
@@ -16572,7 +16738,7 @@ GameObject:
   - component: {fileID: 2139938017}
   - component: {fileID: 2139938016}
   m_Layer: 0
-  m_Name: Cube (6)
+  m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16695,7 +16861,7 @@ GameObject:
   - component: {fileID: 2145374211}
   - component: {fileID: 2145374210}
   m_Layer: 6
-  m_Name: Cube (26)
+  m_Name: Ground Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16713,7 +16879,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.7569913, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1977532705}
+  m_Father: {fileID: 1765217227}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2145374210
@@ -16938,13 +17104,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145707863}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 272.571}
+  m_LocalPosition: {x: 0, y: 0, z: 264.571}
   m_LocalScale: {x: 1, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 228996962}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 441690513}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &84622240268327392
 BoxCollider:
@@ -17000,10 +17166,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2077910597}
   - {fileID: 657193532}
   - {fileID: 390794088}
   - {fileID: 184266975}
+  - {fileID: 2077910597}
   m_Father: {fileID: 745559202}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17122,10 +17288,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawnRate: 1
   _positions:
-  - {fileID: 2077910597}
   - {fileID: 657193532}
   - {fileID: 390794088}
   - {fileID: 184266975}
+  - {fileID: 2077910597}
   _disposeTime: 10
 --- !u!23 &3034061445413731561
 MeshRenderer:

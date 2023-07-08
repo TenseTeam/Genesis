@@ -1,14 +1,11 @@
 ﻿namespace ProjectGenesis.Player.PlayerSpark
 {
-    using System;
     using System.Collections.Generic;
     using UnityEngine;
-    using UnityEngine.InputSystem;
     using VUDK.Extensions.Gizmos;
-    using VUDK.Extensions.Vectors;
     using VUDK.Generic.Structures;
-    using VUDK.Generic.Systems.InputSystem;
 
+    [RequireComponent(typeof(Collider))]
     public class PathRunner : MonoBehaviour
     {
         [SerializeField]

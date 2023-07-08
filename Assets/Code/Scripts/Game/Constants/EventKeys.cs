@@ -12,5 +12,6 @@
         public const string OnBeginNight = "OnBeginNight";
 
         public const string OnUIButtonClick = "OnUIButtonClick";
+        //public const string OnUIPauseOpen = "OnUIPauseOpen";
     }
 }

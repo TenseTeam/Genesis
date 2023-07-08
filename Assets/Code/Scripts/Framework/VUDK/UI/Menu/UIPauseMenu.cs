@@ -3,55 +3,66 @@ namespace VUDK.UI.Menu
     using System;
     using UnityEngine;
     using UnityEngine.InputSystem;
+    using VUDK.Generic.Systems.InputSystem;
 
     public class UIPauseMenu : MonoBehaviour
     {
-        [field: SerializeField, Header("UI")]
-        public GameObject PanelPauseUI { get; set; }
-        [field: SerializeField]
-        public GameObject PauseMainUI { get; set; }
+        [SerializeField, Header("Pause Panel")]
+        private RectTransform _pausePanel;
 
-        public bool IsPaused { get; private set; }
+        private bool _isPaused;
 
-        public Action OnPause { get; set; }
+        private void Awake() => DisablePause();
+
+        private void OnEnable()
+        {
+            InputsManager.Inputs.UI.PauseMenuToggle.started += PauseToggle;
+        }
+
+        private void OnDisable()
+        {
+            InputsManager.Inputs.UI.PauseMenuToggle.started -= PauseToggle;
+        }
 
         /// <summary>
-        /// Pauses the game by setting the time scale.
+        /// Pauses and unpauses the game by setting the time scale.
         /// </summary>
         public void PauseToggle()
         {
-            IsPaused = !IsPaused;
-
-            if (IsPaused)
-                SetTimeScale(0);
+            if (_isPaused)
+                DisablePause();
             else
-                SetTimeScale(1);
+                EnablePause();
 
-            TogglePlayerInputs();
-            PanelPauseUI.SetActive(IsPaused);
-
-            if (IsPaused)
-                ResetPauseMenu();
+            _isPaused = !_isPaused;
         }
 
-        private void TogglePlayerInputs()
+        public void EnablePause()
         {
-            OnPause?.Invoke();
+            Debug.Log("hey?");
+            _isPaused = true;
+            _pausePanel.gameObject.SetActive(true);
+            InputsManager.Inputs.Disable();
+            InputsManager.Inputs.UI.Enable();
+            SetTimeScale(0f);
         }
 
-        public void ResetPauseMenu()
+        public void DisablePause()
         {
-            for(int i = 0; i < PanelPauseUI.transform.childCount; i++)
-            {
-                PanelPauseUI.transform.GetChild(i).gameObject.SetActive(false);
-            }
-
-            PauseMainUI.SetActive(true);
+            _isPaused = false;
+            _pausePanel.gameObject.SetActive(false);
+            InputsManager.Inputs.Enable();
+            SetTimeScale(1f);
         }
 
-        public void SetTimeScale(int t)
+        private void PauseToggle(InputAction.CallbackContext context)
         {
-            Time.timeScale = t;
+            PauseToggle();
+        }
+
+        private void SetTimeScale(float timeScale)
+        {
+            Time.timeScale = timeScale;
         }
     }
 }

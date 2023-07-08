@@ -2,6 +2,7 @@
 {
     using UnityEngine;
     using UnityEngine.Events;
+    using VUDK.Extensions.Gizmos;
 
     [RequireComponent(typeof(Collider))]
     public class TriggerEvent : MonoBehaviour
@@ -34,7 +35,7 @@
         protected virtual void DrawTrigger()
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireCube(transform.position, transform.lossyScale);
+            GizmosExtension.DrawWireCubeWithRotation(transform.position, transform.rotation, transform.lossyScale);
         }
 #endif
     }

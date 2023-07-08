@@ -18,5 +18,11 @@
             public const string OnScoreChange = "OnScoreChange";
             public const string OnHighScoreChange = "OnHighScoreChange";
         }
+
+        public static class DialogueEvents
+        {
+            public const string OnDialougeTypedLetter = "OnDialougeTypedLetter";
+            public const string OnTriggerDialouge = "OnTriggerDialogue";
+        }
     }
 }

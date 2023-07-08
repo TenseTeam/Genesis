@@ -21,6 +21,7 @@
 
         public static class DialogueEvents
         {
+            public const string OnDialougeTypedLetter = "OnDialougeTypedLetter";
             public const string OnTriggerDialouge = "OnTriggerDialogue";
         }
     }

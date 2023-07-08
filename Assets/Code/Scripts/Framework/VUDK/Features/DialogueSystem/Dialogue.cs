@@ -2,32 +2,27 @@
 {
 	using UnityEngine;
 
+	public struct Sentence
+	{
+		public string SpeakerName;
+		public Sprite SpeakerImage;
+		public string SpeakerPhrase;
+    }
+
 	[System.Serializable]
 	public class Dialogue
 	{
-		[SerializeField]
-		private string _speakerName;
-		[TextArea(3, 10), SerializeField]
-		private string[] _sentences;
-		[SerializeField]
-		private SpriteRenderer _speakerImage;
+		[TextArea(3, 10), SerializeField, Header("Sentences")]
+		private Sentence[] _sentences;
+
 		private int _index = 0;
 
         public bool IsEnded => _index == _sentences.Length - 1;
 
-        public string Next()
-		{
-			return _sentences[_index++];
-		}
+        public Sentence Next => _sentences[_index++];
 
-		public string Previous()
-		{
-			return _sentences[_index--];
-		}
+		public Sentence Previous => _sentences[_index--];
 
-		public string Current()
-		{
-			return _sentences[_index];
-		}
+		public Sentence Current => _sentences[_index];
 	}
 }

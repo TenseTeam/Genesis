@@ -12,9 +12,9 @@ namespace VUDK.Features.DialogueSystem
 		private float _displayLetterTime = 0.5f;
 
 		[SerializeField, Header("Text")]
-		private TMP_Text _dialogueText;
-		[SerializeField]
 		private RectTransform _dialoguePanel;
+		[SerializeField]
+		private TMP_Text _sentenceText;
 
 		private Dialogue _dialogue;
 
@@ -44,7 +44,7 @@ namespace VUDK.Features.DialogueSystem
 			else
 			{
 				IsTalking = false;
-				_dialogueText.text = _dialogue.Current();
+				_sentenceText.text = _dialogue.Current();
 			}
 		}
 
@@ -58,16 +58,16 @@ namespace VUDK.Features.DialogueSystem
         private void EndDialogue()
 		{
 			_dialoguePanel.gameObject.SetActive(false);
-            _dialogueText.text = "";
+            _sentenceText.text = "";
 		}
 
         private IEnumerator TypeSentenceRoutine(string sentence)
         {
-            _dialogueText.text = "";
+            _sentenceText.text = "";
             IsTalking = true;
             foreach (char letter in sentence.ToCharArray())
             {
-                _dialogueText.text += letter;
+                _sentenceText.text += letter;
                 yield return new WaitForSeconds(_displayLetterTime);
             }
             IsTalking = false;

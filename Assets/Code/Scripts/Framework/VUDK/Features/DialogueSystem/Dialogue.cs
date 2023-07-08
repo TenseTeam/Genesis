@@ -5,8 +5,12 @@
 	[System.Serializable]
 	public class Dialogue
 	{
+		[SerializeField]
+		private string _speakerName;
 		[TextArea(3, 10), SerializeField]
 		private string[] _sentences;
+		[SerializeField]
+		private SpriteRenderer _speakerImage;
 		private int _index = 0;
 
         public bool IsEnded => _index == _sentences.Length - 1;

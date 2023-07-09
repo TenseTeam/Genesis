@@ -3,7 +3,6 @@
     using System.Collections.Generic;
     using UnityEngine;
     using VUDK.Features.DialogueSystem.Data;
-    using VUDK.Generic.Serializable;
 
     [System.Serializable]
     public struct Sentence

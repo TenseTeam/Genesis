@@ -350,17 +350,31 @@ MonoBehaviour:
       m_Calls: []
   _dialogue:
     _speakers:
+    - {fileID: 11400000, guid: 48a82e318620d7f4abf3f7bac815738d, type: 2}
     - {fileID: 11400000, guid: a3d437fd401b8a44083178e792361b8d, type: 2}
+    - {fileID: 11400000, guid: 393308f266e30ef44b808305cb8a01f5, type: 2}
+    - {fileID: 11400000, guid: b94c018dad4865a4396d654e7b704af2, type: 2}
     - {fileID: 11400000, guid: ed8657e4941663142b3b5da62a12b02f, type: 2}
     - {fileID: 11400000, guid: 9388c761d47de4b4eba6300600d776e1, type: 2}
     _sentences:
     - SpeakerId: 0
-      Phrase: "Oila? Bla bla bla Oila? Bla bla bla Oila? Bla bla bla?\t"
+      Phrase: 'Ciccio ciccio Ciccio ciccio Ciccio ciccio Ciccio ciccio Ciccio ciccio
+        Ciccio ciccio Ciccio ciccio Ciccio ciccio '
     - SpeakerId: 1
-      Phrase: No no no No no no No no no No no no No no no No no no No no no
+      Phrase: 'Gino Gino Gino Gino Gino Gino Gino Gino Gino Gino Gino Gino Gino Gino
+        Gino Gino Gino Gino Gino Gino '
     - SpeakerId: 2
-      Phrase: Beh si si si Beh si si si Beh si si si Beh si si si si si Beh si si
-        si Beh si si si
+      Phrase: 'Giovan Giovan Giovan Giovan Giovan Giovan Giovan Giovan Giovan Giovan
+        Giovan Giovan Giovan Giovan '
+    - SpeakerId: 2
+      Phrase: 'Lello Lello Lello Lello Lello Lello Lello Lello Lello Lello Lello
+        Lello Lello Lello Lello Lello Lello Lello Lello Lello '
+    - SpeakerId: 2
+      Phrase: 'Pasquale Pasquale Pasquale Pasquale Pasquale Pasquale Pasquale Pasquale
+        Pasquale Pasquale '
+    - SpeakerId: 2
+      Phrase: 'Pippo Pippo Pippo Pippo Pippo Pippo Pippo Pippo Pippo Pippo Pippo
+        Pippo Pippo Pippo Pippo Pippo '
 --- !u!1 &776203007
 GameObject:
   m_ObjectHideFlags: 0

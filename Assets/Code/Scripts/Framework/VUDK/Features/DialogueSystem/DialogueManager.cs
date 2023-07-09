@@ -24,6 +24,7 @@ namespace VUDK.Features.DialogueSystem
 
         private Dialogue _dialogue;
         private Sentence _currentSentence;
+        private SpeakerData _currentSpeaker;
 
         public bool IsDialogueOpen => _dialoguePanel.gameObject.activeSelf;
         public bool IsTalking { get; private set; }
@@ -58,7 +59,8 @@ namespace VUDK.Features.DialogueSystem
             if (!IsTalking)
             {
                 _currentSentence = _dialogue.NextSentence();
-                SetSentenceSpeaker(_dialogue.GetSpeakerForSentence(_currentSentence));
+                _currentSpeaker = _dialogue.GetSpeakerForSentence(_currentSentence);
+                SetSentenceSpeaker(_currentSpeaker);
                 StartCoroutine(TypeSentenceRoutine(_currentSentence));
             }
             else
@@ -81,7 +83,7 @@ namespace VUDK.Features.DialogueSystem
             IsTalking = true;
             foreach (char letter in sentence.Phrase.ToCharArray())
             {
-                EventManager.TriggerEvent(EventKeys.DialogueEvents.OnDialougeTypedLetter);
+                EventManager.TriggerEvent(EventKeys.DialogueEvents.OnDialougeTypedLetter, _currentSpeaker);
                 _sentenceText.text += letter;
                 yield return new WaitForSeconds(_displayLetterTime);
             }

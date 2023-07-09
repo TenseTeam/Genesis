@@ -1,8 +1,10 @@
 ﻿namespace VUDK.Generic.Managers
 {
     using System.Collections.Generic;
+    using Unity.VisualScripting;
     using UnityEngine;
     using VUDK.Extensions.Audio;
+    using VUDK.Generic.Serializable.Mathematics;
 
     public abstract class AudioManager : MonoBehaviour
     {
@@ -46,13 +48,16 @@
             PlayAudio(audio, clip);
         }
 
-        public void PlayUncuncurrentEffectAudio(AudioClip clip)
+        public void PlayUncuncurrentEffectAudio(AudioClip clip, Range<float> pitchVariation = null)
         {
-            PlayAudio(StereoSourceEffect, clip);
+            PlayAudio(StereoSourceEffect, clip, pitchVariation);
         }
 
-        protected void PlayAudio(AudioSource source, AudioClip clip)
+        protected void PlayAudio(AudioSource source, AudioClip clip, Range<float> pitchVariation = null)
         {
+            if(pitchVariation != null)
+                source.pitch = pitchVariation.Random();
+
             source.clip = clip;
             source.Play();
         }

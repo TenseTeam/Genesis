@@ -32,5 +32,10 @@
             public const string OnPauseEnter = "OnPauseEnter";
             public const string OnPauseExit = "OnPuaseExit";
         }
+
+        public static class SceneEvents
+        {
+            public const string OnBeforeChangeScene = "OnBeforeChangeScene";
+        }
     }
 }

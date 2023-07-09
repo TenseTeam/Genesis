@@ -48,7 +48,7 @@ namespace ProjectGenesis.Player
 
         protected override void DeathEffects()
         {
-            Debug.Log("Gameover!"); //TO DO -> What happen on Gameover?
+            EventManager.TriggerEvent(EventKeys.OnGameover);
         }
     }
 }

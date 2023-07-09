@@ -13,7 +13,7 @@
 
     [RequireComponent(typeof(MovementBase))]
     [RequireComponent(typeof(PlayerGraphicsController))]
-    [RequireComponent(typeof(PlayerInputsController))]
+    //[RequireComponent(typeof(PlayerInputsController))]
     [RequireComponent(typeof(PlayerStatus))]
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Animator))]

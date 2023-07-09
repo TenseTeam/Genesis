@@ -12,6 +12,7 @@
         public const string OnBeginNight = "OnBeginNight";
 
         public const string OnUIButtonClick = "OnUIButtonClick";
-        //public const string OnUIPauseOpen = "OnUIPauseOpen";
+
+        public const string OnGameover = "OnGameover";
     }
 }

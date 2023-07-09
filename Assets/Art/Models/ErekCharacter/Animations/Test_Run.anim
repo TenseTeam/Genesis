@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rigged Run
+  m_Name: Test_Run
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: {x: 0, y: 0, z: 180}
-        inSlope: {x: 0, y: 0, z: 0}
+        inSlope: {x: 120.68999, y: 7.1999993, z: 9.592551}
         outSlope: {x: 149.99998, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
@@ -30,16 +30,16 @@ AnimationClip:
         time: 0.13333334
         value: {x: 20, y: 0, z: 180}
         inSlope: {x: 149.99998, y: -0, z: -0}
-        outSlope: {x: -171.42859, y: 0, z: 0}
+        outSlope: {x: -149.99998, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: {x: 0, y: 0, z: 180}
-        inSlope: {x: -171.42859, y: -0, z: -0}
-        outSlope: {x: -342.85712, y: 0, z: 0}
+        inSlope: {x: -149.99998, y: -0, z: -0}
+        outSlope: {x: -400.00003, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -47,7 +47,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.36666667
         value: {x: -40, y: 0, z: 180}
-        inSlope: {x: -342.85712, y: -0, z: -0}
+        inSlope: {x: -400.00003, y: -0, z: -0}
         outSlope: {x: 300.00003, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
@@ -65,14 +65,14 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: {x: 0, y: 0, z: -180}
-        inSlope: {x: 0, y: 0, z: 0}
+        inSlope: {x: 154.4775, y: -9.179999, z: -52.379948}
         outSlope: {x: -299.99997, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
@@ -82,16 +82,16 @@ AnimationClip:
         time: 0.13333334
         value: {x: -40, y: 0, z: -180}
         inSlope: {x: -299.99997, y: -0, z: -0}
-        outSlope: {x: 342.85718, y: 0, z: 0}
+        outSlope: {x: 299.99997, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: {x: 0, y: 0, z: -180}
-        inSlope: {x: 342.85718, y: -0, z: -0}
-        outSlope: {x: 171.42856, y: 0, z: 0}
+        inSlope: {x: 299.99997, y: -0, z: -0}
+        outSlope: {x: 200.00002, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -99,7 +99,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.36666667
         value: {x: 20, y: 0, z: -180}
-        inSlope: {x: 171.42856, y: -0, z: -0}
+        inSlope: {x: 200.00002, y: -0, z: -0}
         outSlope: {x: -150.00002, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
@@ -117,14 +117,14 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: {x: 1.764, y: -13.335, z: 130}
-        inSlope: {x: 0, y: 0, z: 0}
+        inSlope: {x: -0, y: -0, z: 300.2625}
         outSlope: {x: 0, y: 325.01248, z: -74.99999}
         tangentMode: 0
         weightedMode: 0
@@ -134,16 +134,16 @@ AnimationClip:
         time: 0.13333334
         value: {x: 1.764, y: 30, z: 120}
         inSlope: {x: -0, y: 325.01248, z: -74.99999}
-        outSlope: {x: 0, y: -371.44287, z: 85.714294}
+        outSlope: {x: 0, y: -325.01248, z: 74.99999}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: {x: 1.764, y: -13.335, z: 130}
-        inSlope: {x: -0, y: -371.44287, z: 85.714294}
-        outSlope: {x: 261.36, y: -120.58285, z: 0}
+        inSlope: {x: -0, y: -325.01248, z: 74.99999}
+        outSlope: {x: 304.92, y: -140.68001, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -151,7 +151,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.36666667
         value: {x: 32.256, y: -27.403, z: 130}
-        inSlope: {x: 261.36, y: -120.58285, z: -0}
+        inSlope: {x: 304.92, y: -140.68001, z: -0}
         outSlope: {x: -228.69002, y: 105.51, z: 0}
         tangentMode: 0
         weightedMode: 0
@@ -169,14 +169,14 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: {x: 1.764, y: 13.335, z: -130}
-        inSlope: {x: 0, y: 0, z: 0}
+        inSlope: {x: -0, y: -0, z: -300.2625}
         outSlope: {x: 0, y: 124.9875, z: 0}
         tangentMode: 0
         weightedMode: 0
@@ -186,16 +186,16 @@ AnimationClip:
         time: 0.13333334
         value: {x: 1.764, y: 30, z: -130}
         inSlope: {x: -0, y: 124.9875, z: -0}
-        outSlope: {x: 0, y: -142.84288, z: 0}
+        outSlope: {x: 0, y: -124.9875, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: {x: 1.764, y: 13.335, z: -130}
-        inSlope: {x: -0, y: -142.84288, z: -0}
-        outSlope: {x: 0, y: -285.72855, z: 85.71428}
+        inSlope: {x: -0, y: -124.9875, z: -0}
+        outSlope: {x: 0, y: -333.35, z: 100.00001}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -203,7 +203,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.36666667
         value: {x: 1.764, y: -20, z: -120}
-        inSlope: {x: -0, y: -285.72855, z: 85.71428}
+        inSlope: {x: -0, y: -333.35, z: 100.00001}
         outSlope: {x: 0, y: 250.01251, z: -75.00001}
         tangentMode: 0
         weightedMode: 0
@@ -221,7 +221,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
@@ -234,7 +234,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 2098460719
+      path: 1292659040
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -243,7 +243,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1257381820
+      path: 2062388979
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -252,7 +252,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3497973576
+      path: 2125775226
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -261,7 +261,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3910755859
+      path: 1205039137
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -281,7 +281,7 @@ AnimationClip:
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
     m_LoopTime: 1
-    m_LoopBlend: 1
+    m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
     m_LoopBlendPositionXZ: 0
@@ -298,7 +298,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
+        inSlope: 120.68999
         outSlope: 149.99998
         tangentMode: 69
         weightedMode: 0
@@ -308,16 +308,16 @@ AnimationClip:
         time: 0.13333334
         value: 20
         inSlope: 149.99998
-        outSlope: -171.42859
+        outSlope: -149.99998
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 0
-        inSlope: -171.42859
-        outSlope: -342.85712
+        inSlope: -149.99998
+        outSlope: -400.00003
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -325,7 +325,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.36666667
         value: -40
-        inSlope: -342.85712
+        inSlope: -400.00003
         outSlope: 300.00003
         tangentMode: 69
         weightedMode: 0
@@ -344,7 +344,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -355,7 +355,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
+        inSlope: 7.1999993
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -371,7 +371,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 0
         inSlope: -0
         outSlope: 0
@@ -401,7 +401,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -412,7 +412,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 180
-        inSlope: 0
+        inSlope: 9.592551
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -428,7 +428,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 180
         inSlope: -0
         outSlope: 0
@@ -458,7 +458,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -469,7 +469,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
+        inSlope: 154.4775
         outSlope: -299.99997
         tangentMode: 69
         weightedMode: 0
@@ -479,16 +479,16 @@ AnimationClip:
         time: 0.13333334
         value: -40
         inSlope: -299.99997
-        outSlope: 342.85718
+        outSlope: 299.99997
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 0
-        inSlope: 342.85718
-        outSlope: 171.42856
+        inSlope: 299.99997
+        outSlope: 200.00002
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -496,7 +496,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.36666667
         value: 20
-        inSlope: 171.42856
+        inSlope: 200.00002
         outSlope: -150.00002
         tangentMode: 69
         weightedMode: 0
@@ -515,7 +515,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -526,7 +526,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
+        inSlope: -9.179999
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -542,7 +542,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 0
         inSlope: -0
         outSlope: 0
@@ -572,7 +572,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -583,7 +583,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -180
-        inSlope: 0
+        inSlope: -52.379948
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -599,7 +599,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: -180
         inSlope: -0
         outSlope: 0
@@ -629,7 +629,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -640,7 +640,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 1.764
-        inSlope: 0
+        inSlope: -0
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -656,10 +656,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 1.764
         inSlope: -0
-        outSlope: 261.36
+        outSlope: 304.92
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -667,7 +667,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.36666667
         value: 32.256
-        inSlope: 261.36
+        inSlope: 304.92
         outSlope: -228.69002
         tangentMode: 69
         weightedMode: 0
@@ -686,7 +686,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -697,7 +697,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -13.335
-        inSlope: 0
+        inSlope: -0
         outSlope: 325.01248
         tangentMode: 69
         weightedMode: 0
@@ -707,16 +707,16 @@ AnimationClip:
         time: 0.13333334
         value: 30
         inSlope: 325.01248
-        outSlope: -371.44287
+        outSlope: -325.01248
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: -13.335
-        inSlope: -371.44287
-        outSlope: -120.58285
+        inSlope: -325.01248
+        outSlope: -140.68001
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -724,7 +724,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.36666667
         value: -27.403
-        inSlope: -120.58285
+        inSlope: -140.68001
         outSlope: 105.51
         tangentMode: 69
         weightedMode: 0
@@ -743,7 +743,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -754,7 +754,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 130
-        inSlope: 0
+        inSlope: 300.2625
         outSlope: -74.99999
         tangentMode: 69
         weightedMode: 0
@@ -764,15 +764,15 @@ AnimationClip:
         time: 0.13333334
         value: 120
         inSlope: -74.99999
-        outSlope: 85.714294
+        outSlope: 74.99999
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 130
-        inSlope: 85.714294
+        inSlope: 74.99999
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -800,7 +800,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -811,7 +811,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 1.764
-        inSlope: 0
+        inSlope: -0
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -827,7 +827,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 1.764
         inSlope: -0
         outSlope: 0
@@ -857,7 +857,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.x
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -868,7 +868,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 13.335
-        inSlope: 0
+        inSlope: -0
         outSlope: 124.9875
         tangentMode: 69
         weightedMode: 0
@@ -878,16 +878,16 @@ AnimationClip:
         time: 0.13333334
         value: 30
         inSlope: 124.9875
-        outSlope: -142.84288
+        outSlope: -124.9875
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: 13.335
-        inSlope: -142.84288
-        outSlope: -285.72855
+        inSlope: -124.9875
+        outSlope: -333.35
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -895,7 +895,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.36666667
         value: -20
-        inSlope: -285.72855
+        inSlope: -333.35
         outSlope: 250.01251
         tangentMode: 69
         weightedMode: 0
@@ -914,7 +914,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -925,7 +925,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -130
-        inSlope: 0
+        inSlope: -300.2625
         outSlope: 0
         tangentMode: 69
         weightedMode: 0
@@ -941,10 +941,10 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.25
+        time: 0.26666668
         value: -130
         inSlope: -0
-        outSlope: 85.71428
+        outSlope: 100.00001
         tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
@@ -952,7 +952,7 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.36666667
         value: -120
-        inSlope: 85.71428
+        inSlope: 100.00001
         outSlope: -75.00001
         tangentMode: 69
         weightedMode: 0
@@ -971,7 +971,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -984,7 +984,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -996,7 +996,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1008,7 +1008,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1020,7 +1020,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1032,7 +1032,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1044,7 +1044,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_L_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1056,7 +1056,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1068,7 +1068,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1080,7 +1080,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_L_Thigh
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Pelvis/CC_Base_R_Thigh
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1092,7 +1092,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1104,7 +1104,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -1116,7 +1116,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
+    path: Rigged_Character_Final/RL_BoneRoot/CC_Base_Hip/CC_Base_Waist/CC_Base_Spine01/CC_Base_Spine02/CC_Base_R_Clavicle
     classID: 4
     script: {fileID: 0}
     flags: 0

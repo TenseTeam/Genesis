@@ -1,7 +1,7 @@
 ﻿namespace ProjectGenesis.Environment.Platforms
 {
     using UnityEngine;
-    using VUDK.Generic.Utility;
+    using VUDK.Generic.Systems.TriggerSystem;
 
     public class PlatformSwitch : TriggerEvent
     {

@@ -24,7 +24,7 @@
 
         private int _index = 0;
 
-        public bool IsEnded => _index == _sentences.Count - 1;
+        public bool IsEnded => _index == _sentences.Count;
 
         public Sentence NextSentence()
         {

@@ -1,10 +1,8 @@
 namespace ProjectGenesis.Player.States
 {
-    using VUDK.Patterns.StateMachine;
-    using ProjectGenesis.Player.Controller;
-    using UnityEngine;
     using UnityEngine.InputSystem;
-    using System;
+    using ProjectGenesis.Player.Controller;
+    using VUDK.Patterns.StateMachine;
 
     public class PlayerGroundState : State<PlayerContext>
     {

@@ -2,7 +2,7 @@ namespace ProjectGenesis.Environment.Traps
 {
     using UnityEngine;
     using VUDK.Generic.Systems.EntitySystem.Interfaces;
-    using VUDK.Generic.Utility;
+    using VUDK.Generic.Systems.TriggerSystem;
 
     [RequireComponent(typeof(Collider))]
     public class Trap : TriggerEvent

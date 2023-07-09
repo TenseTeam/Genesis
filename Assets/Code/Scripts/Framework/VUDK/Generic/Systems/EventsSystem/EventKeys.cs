@@ -22,7 +22,15 @@
         public static class DialogueEvents
         {
             public const string OnDialougeTypedLetter = "OnDialougeTypedLetter";
-            public const string OnTriggerDialouge = "OnTriggerDialogue";
+            public const string OnTriggeredDialouge = "OnTriggeredDialouge";
+            public const string OnStartDialogue = "OnStartDialogue";
+            public const string OnEndDialogue = "OnEndDialogue";
+        }
+
+        public static class PauseEvents
+        {
+            public const string OnPauseEnter = "OnPauseEnter";
+            public const string OnPauseExit = "OnPuaseExit";
         }
     }
 }

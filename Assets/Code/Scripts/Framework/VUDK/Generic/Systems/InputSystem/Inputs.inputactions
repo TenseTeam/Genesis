@@ -265,6 +265,45 @@
             ]
         },
         {
+            "name": "Dialogue",
+            "id": "e1e0a056-3bc6-44dd-a1b8-f911dba54923",
+            "actions": [
+                {
+                    "name": "SkipSentence",
+                    "type": "Button",
+                    "id": "3933f35a-445b-466f-a8fd-390984fc5bc4",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e709ff18-d964-4960-a657-18b5bb7b39ce",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipSentence",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09839ca6-f25d-4d35-98a9-3357780bba62",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SkipSentence",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "UI",
             "id": "ea8b7d6d-5932-4fa3-95f4-1fe07045998f",
             "actions": [
@@ -272,15 +311,6 @@
                     "name": "PauseMenuToggle",
                     "type": "Button",
                     "id": "ee4b8d50-0b2d-4f50-b304-d49786fb25a7",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "NextDialogue",
-                    "type": "Button",
-                    "id": "373e79af-575e-4796-9848-b40d1277f65c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -318,17 +348,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "PauseMenuToggle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7fa904dd-cbad-4bb6-bbe9-bb8b478cb7c4",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "NextDialogue",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

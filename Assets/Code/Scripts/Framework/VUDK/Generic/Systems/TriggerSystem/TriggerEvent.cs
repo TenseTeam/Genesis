@@ -1,4 +1,4 @@
-﻿namespace VUDK.Generic.Utility
+﻿namespace VUDK.Generic.Systems.TriggerSystem
 {
     using UnityEngine;
     using UnityEngine.Events;

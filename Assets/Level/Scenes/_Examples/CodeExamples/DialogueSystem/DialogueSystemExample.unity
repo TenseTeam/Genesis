@@ -276,6 +276,18 @@ MonoBehaviour:
   _speed: 4
   _cameraOffset: {x: 5.5, y: 2, z: 0}
   _target: {fileID: 990817461}
+--- !u!114 &585076315 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 92709767372806111, guid: 10ec1f320946b034cb477d6bccb4b28d,
+    type: 3}
+  m_PrefabInstance: {fileID: 865197418}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52ced372fe915d849b3a40a567dadca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &764577727
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,12 +367,12 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 9388c761d47de4b4eba6300600d776e1, type: 2}
     _sentences:
     - SpeakerId: 0
-      Phrase: 'Oila? Bla bla bla Oila? Bla bla bla Oila? Bla bla bla '
+      Phrase: "Oila? Bla bla bla Oila? Bla bla bla Oila? Bla bla bla?\t"
     - SpeakerId: 1
-      Phrase: No no noNo no noNo no noNo no noNo no noNo no noNo no no
+      Phrase: No no no No no no No no no No no no No no no No no no No no no
     - SpeakerId: 2
-      Phrase: Beh si si si Beh si si siBeh si si siBeh si si siBeh si si siBeh si
-        si siBeh si si si
+      Phrase: Beh si si si Beh si si si Beh si si si Beh si si si si si Beh si si
+        si Beh si si si
 --- !u!1 &776203007
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,11 +506,21 @@ PrefabInstance:
       propertyPath: _dialoguePanel
       value: 
       objectReference: {fileID: 865546582}
+    - target: {fileID: 92709767372806111, guid: 10ec1f320946b034cb477d6bccb4b28d,
+        type: 3}
+      propertyPath: _displayLetterTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 2573472017463860808, guid: 10ec1f320946b034cb477d6bccb4b28d,
         type: 3}
       propertyPath: m_Name
       value: pf_GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3428986148979004667, guid: 10ec1f320946b034cb477d6bccb4b28d,
+        type: 3}
+      propertyPath: <DialogueManager>k__BackingField
+      value: 
+      objectReference: {fileID: 585076315}
     - target: {fileID: 6868593674866161336, guid: 10ec1f320946b034cb477d6bccb4b28d,
         type: 3}
       propertyPath: m_RootOrder
@@ -677,7 +699,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7405736133810469756, guid: 222bdb5fa3e532e49aaa40befd742602,
+    - target: {fileID: 6185310426692438953, guid: 222bdb5fa3e532e49aaa40befd742602,
         type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -4,62 +4,74 @@
     using VUDK.Extensions.Transform;
     using VUDK.Generic.Systems.EntitySystem.Interfaces;
     using VUDK.Generic.Systems.InputSystem;
+    using VUDK.Patterns.StateMachine;
     using ProjectGenesis.Settings;
     using ProjectGenesis.Player;
-    using ProjectGenesis.Player.Interfaces;
-    using Unity.VisualScripting;
 
-    public class LinkedPlayerController : PlayerController, IEntity, Player.Interfaces.IPlayer
+    [RequireComponent(typeof(PlayerMovement))]
+    [RequireComponent(typeof(PlayerGraphicsController))]
+    [RequireComponent(typeof(PlayerStatus))]
+    [RequireComponent(typeof(Rigidbody))]
+    [RequireComponent(typeof(Animator))]
+
+    public class LinkedPlayerController : StateMachine, Player.Interfaces.IPlayer, IEntity
     {
         [SerializeField]
         private PlayerController _originalPlayer;
 
-        protected override void Awake()
+        private Rigidbody _rigibody;
+        private Animator _anim;
+
+        private PlayerMovement _movement;
+        private PlayerGraphicsController _graphics;
+        private PlayerStatus _status;
+
+        protected void Awake()
         {
-            TryGetComponent(out PlayerMovement movement);
-            TryGetComponent(out PlayerGraphicsController graphics);
-            TryGetComponent(out PlayerStatus status);
-            TryGetComponent(out Rigidbody);
-            TryGetComponent(out Animator);
+            TryGetComponent(out _movement);
+            TryGetComponent(out _graphics);
+            TryGetComponent(out _status);
+            TryGetComponent(out _rigibody);
+            TryGetComponent(out _anim);
 
-            Movement = movement;
-            Graphics = graphics;
-            Status = status;
-
-            Movement.Init(Rigidbody, GameSettings.GroundLayers);
-            Graphics.Init(Animator);
+            _movement.Init(_rigibody, GameSettings.GroundLayers);
+            _graphics.Init(_anim);
             Init(_originalPlayer);
         }
 
         public void Init(PlayerController realPlayer)
         {
-            Status = realPlayer.Status;
-            Entity = realPlayer.Entity;
+            _status = realPlayer.Status;
             Init();
+        }
+
+        public override void Init()
+        {
+            States = _originalPlayer.States;
         }
 
         public void Enable()
         {
             InputsManager.Inputs.Disable();
             InputsManager.Inputs.Enable();
-            SetAsRealPlayer();
             gameObject.SetActive(true);
+            SetAsRealPlayer();
         }
 
         public void HealHitPoints(float healPoints)
         {
-            Entity.HealHitPoints(healPoints);
+            _originalPlayer.Entity.HealHitPoints(healPoints);
         }
 
         public void TakeDamage(float hitDamage = 1)
         {
             gameObject.SetActive(false);
-            Entity.TakeDamage(hitDamage);
+            _originalPlayer.Entity.TakeDamage(hitDamage);
         }
 
         public void Death()
         {
-            Entity.Death();
+            _originalPlayer.Entity.Death();
         }
 
         private void SetAsRealPlayer()

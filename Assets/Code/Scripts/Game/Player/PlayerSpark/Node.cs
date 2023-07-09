@@ -1,7 +1,7 @@
 ﻿namespace ProjectGenesis.Player.PlayerSpark
 {
     using UnityEngine;
-    using VUDK.Generic.Utility;
+    using VUDK.Generic.Systems.TriggerSystem;
 
     public class Node : TriggerEvent
     {

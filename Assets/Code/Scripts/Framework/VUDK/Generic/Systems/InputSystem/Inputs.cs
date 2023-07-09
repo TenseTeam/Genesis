@@ -287,6 +287,45 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Dialogue"",
+            ""id"": ""e1e0a056-3bc6-44dd-a1b8-f911dba54923"",
+            ""actions"": [
+                {
+                    ""name"": ""SkipSentence"",
+                    ""type"": ""Button"",
+                    ""id"": ""3933f35a-445b-466f-a8fd-390984fc5bc4"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""e709ff18-d964-4960-a657-18b5bb7b39ce"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkipSentence"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""09839ca6-f25d-4d35-98a9-3357780bba62"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkipSentence"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""UI"",
             ""id"": ""ea8b7d6d-5932-4fa3-95f4-1fe07045998f"",
             ""actions"": [
@@ -294,15 +333,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""name"": ""PauseMenuToggle"",
                     ""type"": ""Button"",
                     ""id"": ""ee4b8d50-0b2d-4f50-b304-d49786fb25a7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""NextDialogue"",
-                    ""type"": ""Button"",
-                    ""id"": ""373e79af-575e-4796-9848-b40d1277f65c"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -342,17 +372,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""PauseMenuToggle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""7fa904dd-cbad-4bb6-bbe9-bb8b478cb7c4"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""NextDialogue"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -383,10 +402,12 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         m_PlayerSpark_Down = m_PlayerSpark.FindAction("Down", throwIfNotFound: true);
         m_PlayerSpark_Left = m_PlayerSpark.FindAction("Left", throwIfNotFound: true);
         m_PlayerSpark_Right = m_PlayerSpark.FindAction("Right", throwIfNotFound: true);
+        // Dialogue
+        m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
+        m_Dialogue_SkipSentence = m_Dialogue.FindAction("SkipSentence", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_PauseMenuToggle = m_UI.FindAction("PauseMenuToggle", throwIfNotFound: true);
-        m_UI_NextDialogue = m_UI.FindAction("NextDialogue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -615,17 +636,61 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     }
     public PlayerSparkActions @PlayerSpark => new PlayerSparkActions(this);
 
+    // Dialogue
+    private readonly InputActionMap m_Dialogue;
+    private List<IDialogueActions> m_DialogueActionsCallbackInterfaces = new List<IDialogueActions>();
+    private readonly InputAction m_Dialogue_SkipSentence;
+    public struct DialogueActions
+    {
+        private @Inputs m_Wrapper;
+        public DialogueActions(@Inputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SkipSentence => m_Wrapper.m_Dialogue_SkipSentence;
+        public InputActionMap Get() { return m_Wrapper.m_Dialogue; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DialogueActions set) { return set.Get(); }
+        public void AddCallbacks(IDialogueActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DialogueActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Add(instance);
+            @SkipSentence.started += instance.OnSkipSentence;
+            @SkipSentence.performed += instance.OnSkipSentence;
+            @SkipSentence.canceled += instance.OnSkipSentence;
+        }
+
+        private void UnregisterCallbacks(IDialogueActions instance)
+        {
+            @SkipSentence.started -= instance.OnSkipSentence;
+            @SkipSentence.performed -= instance.OnSkipSentence;
+            @SkipSentence.canceled -= instance.OnSkipSentence;
+        }
+
+        public void RemoveCallbacks(IDialogueActions instance)
+        {
+            if (m_Wrapper.m_DialogueActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDialogueActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DialogueActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DialogueActions @Dialogue => new DialogueActions(this);
+
     // UI
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_PauseMenuToggle;
-    private readonly InputAction m_UI_NextDialogue;
     public struct UIActions
     {
         private @Inputs m_Wrapper;
         public UIActions(@Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @PauseMenuToggle => m_Wrapper.m_UI_PauseMenuToggle;
-        public InputAction @NextDialogue => m_Wrapper.m_UI_NextDialogue;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -638,9 +703,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @PauseMenuToggle.started += instance.OnPauseMenuToggle;
             @PauseMenuToggle.performed += instance.OnPauseMenuToggle;
             @PauseMenuToggle.canceled += instance.OnPauseMenuToggle;
-            @NextDialogue.started += instance.OnNextDialogue;
-            @NextDialogue.performed += instance.OnNextDialogue;
-            @NextDialogue.canceled += instance.OnNextDialogue;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -648,9 +710,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @PauseMenuToggle.started -= instance.OnPauseMenuToggle;
             @PauseMenuToggle.performed -= instance.OnPauseMenuToggle;
             @PauseMenuToggle.canceled -= instance.OnPauseMenuToggle;
-            @NextDialogue.started -= instance.OnNextDialogue;
-            @NextDialogue.performed -= instance.OnNextDialogue;
-            @NextDialogue.canceled -= instance.OnNextDialogue;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -702,9 +761,12 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         void OnLeft(InputAction.CallbackContext context);
         void OnRight(InputAction.CallbackContext context);
     }
+    public interface IDialogueActions
+    {
+        void OnSkipSentence(InputAction.CallbackContext context);
+    }
     public interface IUIActions
     {
         void OnPauseMenuToggle(InputAction.CallbackContext context);
-        void OnNextDialogue(InputAction.CallbackContext context);
     }
 }

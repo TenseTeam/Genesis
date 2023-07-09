@@ -1,10 +1,8 @@
 ﻿namespace ProjectGenesis.Player
 {
-    using System;
     using UnityEngine.InputSystem;
     using VUDK.Features.DialogueSystem;
     using VUDK.Generic.Managers;
-    using VUDK.Generic.Systems.EventsSystem;
     using VUDK.Generic.Systems.InputSystem;
     using VUDK.Generic.Systems.InteractSystem;
 
@@ -19,22 +17,20 @@
 
         private void OnEnable()
         {
-            InputsManager.Inputs.UI.NextDialogue.started += SkipDialogue;
+            InputsManager.Inputs.Dialogue.SkipSentence.started += SkipDialogue;
             InputsManager.Inputs.PlayerInteract.Interact.started += TriggerInteract;
-            //EventManager.AddListener();
-        }
-
-        private void SkipDialogue(InputAction.CallbackContext obj)
-        {
-            if (_dialogueManager.IsInUse)
-            {
-                _dialogueManager.DisplayNextSentence();
-            }
         }
 
         private void OnDisable()
         {
-            InputsManager.Inputs.PlayerInteract.Interact.started -= TriggerInteract;            
+            InputsManager.Inputs.Dialogue.SkipSentence.started -= SkipDialogue;
+            InputsManager.Inputs.PlayerInteract.Interact.started -= TriggerInteract;
+        }
+
+        private void SkipDialogue(InputAction.CallbackContext obj)
+        {
+            if (_dialogueManager.IsDialogueOpen)
+                _dialogueManager.DisplayNextSentence();
         }
 
         private void TriggerInteract(InputAction.CallbackContext context)

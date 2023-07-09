@@ -23,50 +23,54 @@ namespace VUDK.Features.DialogueSystem
         private TMP_Text _sentenceText;
 
         private Dialogue _dialogue;
+        private Sentence _currentSentence;
 
-        public bool IsInUse { get; private set; }
+        public bool IsDialogueOpen => _dialoguePanel.gameObject.activeSelf;
+        public bool IsTalking { get; private set; }
 
         private void OnEnable()
         {
-            EventManager.AddListener<Dialogue>(EventKeys.DialogueEvents.OnTriggerDialouge, StartDialogue);
+            EventManager.AddListener<Dialogue>(EventKeys.DialogueEvents.OnTriggeredDialouge, StartDialogue);
         }
 
         private void OnDisable()
         {
-            EventManager.RemoveListener<Dialogue>(EventKeys.DialogueEvents.OnTriggerDialouge, StartDialogue);
+            EventManager.RemoveListener<Dialogue>(EventKeys.DialogueEvents.OnTriggeredDialouge, StartDialogue);
+        }
+
+        public void StartDialogue(Dialogue dialogue)
+        {
+            EventManager.TriggerEvent(EventKeys.DialogueEvents.OnStartDialogue);
+            _dialogue = dialogue;
+            _dialoguePanel.gameObject.SetActive(true);
+            DisplayNextSentence();
         }
 
         public void DisplayNextSentence()
         {
-            if (_dialogue.IsEnded && !IsInUse)
+            if (_dialogue.IsEnded && !IsTalking)
             {
                 EndDialogue();
                 return;
             }
 
             StopAllCoroutines();
-            if (!IsInUse)
+            if (!IsTalking)
             {
-                Sentence sentence = _dialogue.NextSentence();
-                SetSentenceSpeaker(_dialogue.GetSpeakerForSentence(sentence));
-                StartCoroutine(TypeSentenceRoutine(sentence));
+                _currentSentence = _dialogue.NextSentence();
+                SetSentenceSpeaker(_dialogue.GetSpeakerForSentence(_currentSentence));
+                StartCoroutine(TypeSentenceRoutine(_currentSentence));
             }
             else
             {
-                IsInUse = false;
-                SetCompleteSentence(_dialogue.CurrentSentence());
+                IsTalking = false;
+                SetCompleteSentence(_currentSentence);
             }
-        }
-
-        public void StartDialogue(Dialogue dialogue)
-        {
-            _dialogue = dialogue;
-            _dialoguePanel.gameObject.SetActive(true);
-            DisplayNextSentence();
         }
 
         private void EndDialogue()
         {
+            EventManager.TriggerEvent(EventKeys.DialogueEvents.OnEndDialogue);
             _dialoguePanel.gameObject.SetActive(false);
             _sentenceText.text = "";
         }
@@ -74,14 +78,14 @@ namespace VUDK.Features.DialogueSystem
         private IEnumerator TypeSentenceRoutine(Sentence sentence)
         {
             _sentenceText.text = "";
-            IsInUse = true;
+            IsTalking = true;
             foreach (char letter in sentence.Phrase.ToCharArray())
             {
                 EventManager.TriggerEvent(EventKeys.DialogueEvents.OnDialougeTypedLetter);
                 _sentenceText.text += letter;
                 yield return new WaitForSeconds(_displayLetterTime);
             }
-            IsInUse = false;
+            IsTalking = false;
         }
 
         private void SetSentenceSpeaker(SpeakerData speaker)

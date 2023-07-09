@@ -7,11 +7,11 @@ namespace VUDK.Patterns.StateMachine
 
     public abstract class StateMachine : MonoBehaviour
     {
-        protected Dictionary<Enum, State> States = new Dictionary<Enum, State>();
+        private bool _isChangingState;
+
+        public Dictionary<Enum, State> States { get; protected set; } = new Dictionary<Enum, State>();
 
         public State CurrentState { get; private set; }
-
-        private bool _isChanging;
 
         protected virtual void Start()
         {
@@ -39,7 +39,7 @@ namespace VUDK.Patterns.StateMachine
         /// <param name="stateKey">State key.</param>
         public void ChangeState(Enum stateKey)
         {
-            if(_isChanging) return;
+            if(_isChangingState) return;
             if (States[stateKey] != CurrentState)
             {
                 CurrentState?.Exit();
@@ -55,7 +55,7 @@ namespace VUDK.Patterns.StateMachine
         /// <param name="timeToWait">Time to wait in seconds.</param>
         public void ChangeState(Enum stateKey, float timeToWait)
         {
-            if (_isChanging) return;
+            if (_isChangingState) return;
             StartCoroutine(WaitForSecondsChangeStateRoutine(stateKey, timeToWait));
         }
 
@@ -86,9 +86,9 @@ namespace VUDK.Patterns.StateMachine
         /// <returns></returns>
         private IEnumerator WaitForSecondsChangeStateRoutine(Enum stateKey, float time)
         {
-            _isChanging = true;
+            _isChangingState = true;
             yield return new WaitForSeconds(time);
-            _isChanging = false;
+            _isChangingState = false;
             ChangeState(stateKey);
         }
     }

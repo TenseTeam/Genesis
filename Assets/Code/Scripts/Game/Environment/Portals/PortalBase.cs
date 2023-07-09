@@ -3,7 +3,7 @@ namespace ProjectGenesis.Environment.Portals
     using UnityEngine;
     using VUDK.Generic.Systems.EventsSystem;
     using ProjectGenesis.Constants.Events;
-    using VUDK.Generic.Utility;
+    using VUDK.Generic.Systems.TriggerSystem;
 
     public abstract class PortalBase : TriggerEvent
     {

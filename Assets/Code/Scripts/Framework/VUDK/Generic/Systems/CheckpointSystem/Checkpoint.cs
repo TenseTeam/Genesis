@@ -2,7 +2,7 @@
 {
     using UnityEngine;
     using VUDK.Generic.Systems.EntitySystem.Interfaces;
-    using VUDK.Generic.Utility;
+    using VUDK.Generic.Systems.TriggerSystem;
 
     public abstract class Checkpoint<T> : TriggerEvent where T : IEntity
     {

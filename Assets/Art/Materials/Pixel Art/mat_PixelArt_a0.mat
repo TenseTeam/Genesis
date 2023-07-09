@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4553866565340250562
+--- !u!114 &-2147617856727088745
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,23 +20,30 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: water
-  m_Shader: {fileID: -6465566751694194690, guid: f830299e0a7fcb54a815559ab6b25851,
+  m_Name: mat_PixelArt_a0
+  m_Shader: {fileID: -6465566751694194690, guid: 911a1ef81df5aa749990352107b71fd1,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
-  m_LightmapFlags: 2
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - DepthOnly
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTexture:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -51,16 +58,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Power: 5.07
+    - _AlphaClip: 0
+    - _AlphaToMask: 0
+    - _Bits: 16
+    - _Blend: 0
+    - _CastShadows: 1
+    - _Cull: 2
+    - _DstBlend: 10
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Ripplescale: 12.3
-    - _Ripplespeed: 1.5
-    - _gloss: 0.1
-    - _metallic: 0.1
-    - _normal_strenght: 0
+    - _SrcBlend: 5
+    - _Surface: 1
+    - _ZTest: 4
+    - _ZWrite: 0
+    - _ZWriteControl: 0
     m_Colors:
-    - _Tiling: {r: 2, g: 2, b: 0, a: 0}
-    - _basecolor: {r: 0, g: 0.28565428, b: 0.7578583, a: 1}
-    - _ripplecolor: {r: 0.104635246, g: 0.17458105, b: 0.8215804, a: 1}
+    - _Color: {r: 7.4642644, g: 4.424809, b: 0, a: 0.4627451}
   m_BuildTextureStacks: []

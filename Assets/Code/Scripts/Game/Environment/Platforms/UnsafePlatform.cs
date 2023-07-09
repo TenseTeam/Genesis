@@ -5,6 +5,7 @@
     using VUDK.Generic.Serializable.Mathematics;
     using VUDK.Generic.Systems.EventsSystem;
     using ProjectGenesis.Constants.Events;
+    using VUDK.Generic.Managers;
 
     public class UnsafePlatform : Platform
     {
@@ -16,12 +17,12 @@
 
         private void OnEnable()
         {
-            EventManager.AddListener(EventKeys.OnPlayerTakeDamage, () => SetEnablePlatform(true));
+            GameManager.Instance.EventManager.AddListener(EventKeys.OnPlayerTakeDamage, () => SetEnablePlatform(true));
         }
 
         private void OnDisable()
         {
-            EventManager.RemoveListener(EventKeys.OnPlayerTakeDamage, () => SetEnablePlatform(true));
+            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnPlayerTakeDamage, () => SetEnablePlatform(true));
         }
 
         protected override void OnEntityEnterPlatform(Collision entityCollision)

@@ -4,6 +4,7 @@ namespace ProjectGenesis.Player
     using System;
     using UnityEngine;
     using VUDK.Extensions.Transform;
+    using VUDK.Generic.Managers;
     using VUDK.Generic.Systems.CheckpointSystem;
     using VUDK.Generic.Systems.EntitySystem;
     using VUDK.Generic.Systems.EventsSystem;
@@ -15,14 +16,14 @@ namespace ProjectGenesis.Player
 
         private void OnEnable()
         {
-            OnHitPointsSetUp += (current, max) => EventManager.TriggerEvent(EventKeys.OnHitPointsPlayerSetup, (int)current, (int)max);
-            OnTakeDamage += () => EventManager.TriggerEvent(EventKeys.OnPlayerTakeDamage);
+            OnHitPointsSetUp += (current, max) => GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnHitPointsPlayerSetup, (int)current, (int)max);
+            OnTakeDamage += () => GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerTakeDamage);
         }
 
         private void OnDisable()
         {
-            OnHitPointsSetUp -= (current, max) => EventManager.TriggerEvent(EventKeys.OnHitPointsPlayerSetup, (int)current, (int)max);
-            OnTakeDamage -= () => EventManager.TriggerEvent(EventKeys.OnPlayerTakeDamage);
+            OnHitPointsSetUp -= (current, max) => GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnHitPointsPlayerSetup, (int)current, (int)max);
+            OnTakeDamage -= () => GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerTakeDamage);
         }
 
         public void Init(PlayerController manager, Vector3 _startPosition)
@@ -48,7 +49,7 @@ namespace ProjectGenesis.Player
 
         protected override void DeathEffects()
         {
-            EventManager.TriggerEvent(EventKeys.OnGameover);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnGameover);
         }
     }
 }

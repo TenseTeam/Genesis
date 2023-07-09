@@ -5,6 +5,7 @@ namespace VUDK.Features.DialogueSystem
     using UnityEngine;
     using UnityEngine.UI;
     using VUDK.Features.DialogueSystem.Data;
+    using VUDK.Generic.Managers;
     using VUDK.Generic.Systems.EventsSystem;
     using VUDK.Generic.Systems.EventsSystem.Events;
 
@@ -31,17 +32,17 @@ namespace VUDK.Features.DialogueSystem
 
         private void OnEnable()
         {
-            EventManager.AddListener<Dialogue>(EventKeys.DialogueEvents.OnTriggeredDialouge, StartDialogue);
+            GameManager.Instance.EventManager.AddListener<Dialogue>(EventKeys.DialogueEvents.OnTriggeredDialouge, StartDialogue);
         }
 
         private void OnDisable()
         {
-            EventManager.RemoveListener<Dialogue>(EventKeys.DialogueEvents.OnTriggeredDialouge, StartDialogue);
+            GameManager.Instance.EventManager.RemoveListener<Dialogue>(EventKeys.DialogueEvents.OnTriggeredDialouge, StartDialogue);
         }
 
         public void StartDialogue(Dialogue dialogue)
         {
-            EventManager.TriggerEvent(EventKeys.DialogueEvents.OnStartDialogue);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.DialogueEvents.OnStartDialogue);
             _dialogue = dialogue;
             _dialoguePanel.gameObject.SetActive(true);
             DisplayNextSentence();
@@ -72,7 +73,7 @@ namespace VUDK.Features.DialogueSystem
 
         private void EndDialogue()
         {
-            EventManager.TriggerEvent(EventKeys.DialogueEvents.OnEndDialogue);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.DialogueEvents.OnEndDialogue);
             _dialoguePanel.gameObject.SetActive(false);
             _sentenceText.text = "";
         }
@@ -83,7 +84,7 @@ namespace VUDK.Features.DialogueSystem
             IsTalking = true;
             foreach (char letter in sentence.Phrase.ToCharArray())
             {
-                EventManager.TriggerEvent(EventKeys.DialogueEvents.OnDialougeTypedLetter, _currentSpeaker);
+                GameManager.Instance.EventManager.TriggerEvent(EventKeys.DialogueEvents.OnDialougeTypedLetter, _currentSpeaker);
                 _sentenceText.text += letter;
                 yield return new WaitForSeconds(_displayLetterTime);
             }

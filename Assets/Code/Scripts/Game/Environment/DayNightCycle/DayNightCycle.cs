@@ -4,6 +4,7 @@ namespace ProjectGenesis.Environment.DayNightCycleSystem
     using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
+    using VUDK.Generic.Managers;
     using VUDK.Generic.Systems.EventsSystem;
 
     public class DayNightCycle : MonoBehaviour
@@ -46,13 +47,13 @@ namespace ProjectGenesis.Environment.DayNightCycleSystem
         {
             if (_startAsDay)
             {
-                EventManager.TriggerEvent(EventKeys.OnBeginDay);
+                GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnBeginDay);
 
                 SetToDay();
             }
             else
             {
-                EventManager.TriggerEvent(EventKeys.OnBeginNight);
+                GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnBeginNight);
                 SetToNight();
             }
         }
@@ -64,14 +65,14 @@ namespace ProjectGenesis.Environment.DayNightCycleSystem
 
         public void TransitionToDay()
         {
-            EventManager.TriggerEvent(EventKeys.OnBeginDay);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnBeginDay);
             StartCoroutine(BackgroundCycleRoutine(_dayColor));
             StartCoroutine(LightCycleRoutine(_dayLightColor, _dayIntensity));
         }
 
         public void TransitionToNight()
         {
-            EventManager.TriggerEvent(EventKeys.OnBeginNight);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnBeginNight);
             StartCoroutine(BackgroundCycleRoutine(_nightColor));
             StartCoroutine(LightCycleRoutine(_nightLightColor, _nightIntensity));
         }

@@ -2,42 +2,43 @@
 {
     using System;
     using System.Collections.Generic;
+    using UnityEngine;
 
-    public static class EventManager
+    public class EventManager : MonoBehaviour
     {
-        private static Dictionary<string, Delegate> s_EventListeners = new Dictionary<string, Delegate>();
+        private Dictionary<string, Delegate> s_EventListeners = new Dictionary<string, Delegate>();
 
-        public static void AddListener(string eventKey, Action listener)
+        public void AddListener(string eventKey, Action listener)
         {
             RegisterEvent(eventKey, listener);
         }
 
-        public static void AddListener<T>(string eventKey, Action<T> listener)
+        public void AddListener<T>(string eventKey, Action<T> listener)
         {
             RegisterEvent(eventKey, listener);
         }
 
-        public static void AddListener<T1, T2>(string eventKey, Action<T1, T2> listener)
+        public void AddListener<T1, T2>(string eventKey, Action<T1, T2> listener)
         {
             RegisterEvent(eventKey, listener);
         }
 
-        public static void RemoveListener(string eventKey, Action listener)
+        public void RemoveListener(string eventKey, Action listener)
         {
             UnregisterEvent(eventKey, listener);
         }
 
-        public static void RemoveListener<T>(string eventKey, Action<T> listener)
+        public void RemoveListener<T>(string eventKey, Action<T> listener)
         {
             UnregisterEvent(eventKey, listener);
         }
 
-        public static void RemoveListener<T1, T2>(string eventKey, Action<T1, T2> listener)
+        public void RemoveListener<T1, T2>(string eventKey, Action<T1, T2> listener)
         {
             UnregisterEvent(eventKey, listener);
         }
 
-        public static void TriggerEvent(string eventKey)
+        public void TriggerEvent(string eventKey)
         {
             if (s_EventListeners.ContainsKey(eventKey))
             {
@@ -46,7 +47,7 @@
             }
         }
 
-        public static void TriggerEvent<T>(string eventKey, T parameter)
+        public void TriggerEvent<T>(string eventKey, T parameter)
         {
             if (s_EventListeners.ContainsKey(eventKey))
             {
@@ -55,7 +56,7 @@
             }
         }
 
-        public static void TriggerEvent<T1, T2>(string eventKey, T1 param1, T2 param2)
+        public void TriggerEvent<T1, T2>(string eventKey, T1 param1, T2 param2)
         {
             if (s_EventListeners.ContainsKey(eventKey))
             {
@@ -65,7 +66,7 @@
         }
 
         [System.ObsoleteAttribute("This TriggerEvent is obsolete. Use TriggerEvent<T> instead.", false)]
-        public static void TriggerEvent(string eventKey, params object[] parameters)
+        public void TriggerEvent(string eventKey, params object[] parameters)
         {
             if (s_EventListeners.ContainsKey(eventKey))
             {
@@ -73,7 +74,7 @@
             }
         }
 
-        private static void RegisterEvent(string eventKey, Delegate listener)
+        private void RegisterEvent(string eventKey, Delegate listener)
         {
             if (s_EventListeners.ContainsKey(eventKey))
                 s_EventListeners[eventKey] = Delegate.Combine(s_EventListeners[eventKey], listener);
@@ -81,7 +82,7 @@
                 s_EventListeners.Add(eventKey, listener);
         }
 
-        private static void UnregisterEvent(string eventKey, Delegate listener)
+        private void UnregisterEvent(string eventKey, Delegate listener)
         {
             if (s_EventListeners.ContainsKey(eventKey))
                 s_EventListeners[eventKey] = Delegate.Remove(s_EventListeners[eventKey], listener);

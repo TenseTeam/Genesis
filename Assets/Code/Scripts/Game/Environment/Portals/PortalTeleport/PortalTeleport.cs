@@ -6,6 +6,7 @@
     using VUDK.Generic.Systems.EventsSystem;
     using ProjectGenesis.Player;
     using ProjectGenesis.Constants.Events;
+    using VUDK.Generic.Managers;
 
     public class PortalTeleport : PortalBase
     {
@@ -29,7 +30,7 @@
         public void TeleportAtThisPortal(Transform traveler)
         {
             OnExit?.Invoke();
-            EventManager.TriggerEvent(EventKeys.OnEnterPortal, transform.position);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnEnterPortal, transform.position);
             IsTeleporting = true;
             traveler.SetPosition(transform.position + DestinationOnArriveOffset);
         }

@@ -1,7 +1,7 @@
 namespace VUDK.Features.DialogueSystem
 {
     using UnityEngine;
-    using VUDK.Generic.Systems.EventsSystem;
+    using VUDK.Generic.Managers;
     using VUDK.Generic.Systems.EventsSystem.Events;
     using VUDK.Generic.Systems.TriggerSystem;
 
@@ -14,7 +14,7 @@ namespace VUDK.Features.DialogueSystem
         protected override void OnTriggerEnter(Collider other)
         {
             base.OnTriggerEnter(other);
-            EventManager.TriggerEvent(EventKeys.DialogueEvents.OnTriggeredDialouge, _dialogue);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.DialogueEvents.OnTriggeredDialouge, _dialogue);
         }
     }
 }

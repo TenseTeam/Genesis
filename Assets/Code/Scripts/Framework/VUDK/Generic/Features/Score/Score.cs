@@ -1,6 +1,7 @@
 namespace VUDK.Generic.Features.Score
 {
     using UnityEngine;
+    using VUDK.Generic.Managers;
     using VUDK.Generic.Systems.EventsSystem;
     using VUDK.Generic.Systems.EventsSystem.Events;
 
@@ -14,8 +15,8 @@ namespace VUDK.Generic.Features.Score
 
         private void Start()
         {
-            EventManager.TriggerEvent(EventKeys.ScoreEvents.OnScoreChange, ScoreValue);
-            EventManager.TriggerEvent(EventKeys.ScoreEvents.OnHighScoreChange, HighScore);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.ScoreEvents.OnScoreChange, ScoreValue);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.ScoreEvents.OnHighScoreChange, HighScore);
         }
 
         public void ChangeScore(int scoreToAdd)
@@ -33,7 +34,7 @@ namespace VUDK.Generic.Features.Score
             if (ScoreValue > HighScore)
             {
                 PlayerPrefs.SetInt(_scorePref, ScoreValue);
-                EventManager.TriggerEvent(EventKeys.ScoreEvents.OnHighScoreChange, HighScore);
+                GameManager.Instance.EventManager.TriggerEvent(EventKeys.ScoreEvents.OnHighScoreChange, HighScore);
             }
         }
     }

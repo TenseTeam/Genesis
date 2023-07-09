@@ -5,6 +5,7 @@ namespace ProjectGenesis.UI.Player
     using VUDK.Generic.Systems.EventsSystem;
     using ProjectGenesis.Constants.Events;
     using System.Collections.Generic;
+    using VUDK.Generic.Managers;
 
     public class UIPlayer : MonoBehaviour
     {
@@ -17,14 +18,14 @@ namespace ProjectGenesis.UI.Player
 
         private void OnEnable()
         {
-            EventManager.AddListener<int, int>(EventKeys.OnHitPointsPlayerSetup, SetupHealth);
-            EventManager.AddListener(EventKeys.OnPlayerTakeDamage, RemoveHeart);
+            GameManager.Instance.EventManager.AddListener<int, int>(EventKeys.OnHitPointsPlayerSetup, SetupHealth);
+            GameManager.Instance.EventManager.AddListener(EventKeys.OnPlayerTakeDamage, RemoveHeart);
         }
 
         private void OnDisable()
         {
-            EventManager.RemoveListener<int, int>(EventKeys.OnHitPointsPlayerSetup, SetupHealth);
-            EventManager.RemoveListener(EventKeys.OnPlayerTakeDamage, RemoveHeart);
+            GameManager.Instance.EventManager.RemoveListener<int, int>(EventKeys.OnHitPointsPlayerSetup, SetupHealth);
+            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnPlayerTakeDamage, RemoveHeart);
         }
 
         private void SetupHealth(int current, int max)

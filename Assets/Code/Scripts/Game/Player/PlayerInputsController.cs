@@ -5,20 +5,21 @@
     using VUDK.Generic.Systems.InputSystem;
     using EventKeysVUDK = VUDK.Generic.Systems.EventsSystem.Events.EventKeys;
     using EventKeys = ProjectGenesis.Constants.Events.EventKeys;
+    using VUDK.Generic.Managers;
 
     public class PlayerInputsController : MonoBehaviour
     {
         private void OnEnable()
         {
-            EventManager.AddListener(EventKeysVUDK.DialogueEvents.OnStartDialogue, EnableOnlyDialogueInputs);
-            EventManager.AddListener(EventKeysVUDK.DialogueEvents.OnEndDialogue, EnableInputs);
+            GameManager.Instance.EventManager.AddListener(EventKeysVUDK.DialogueEvents.OnStartDialogue, EnableOnlyDialogueInputs);
+            GameManager.Instance.EventManager.AddListener(EventKeysVUDK.DialogueEvents.OnEndDialogue, EnableInputs);
             //EventManager.AddListener(EventKeys.OnGameover, DisableInputs); Not necessary if I use MenuInputsController on the Gameover scene
         }
 
         private void OnDisable()
         {
-            EventManager.RemoveListener(EventKeysVUDK.DialogueEvents.OnStartDialogue, EnableOnlyDialogueInputs);
-            EventManager.RemoveListener(EventKeysVUDK.DialogueEvents.OnEndDialogue, EnableInputs);
+            GameManager.Instance.EventManager.RemoveListener(EventKeysVUDK.DialogueEvents.OnStartDialogue, EnableOnlyDialogueInputs);
+            GameManager.Instance.EventManager.RemoveListener(EventKeysVUDK.DialogueEvents.OnEndDialogue, EnableInputs);
             //EventManager.RemoveListener(EventKeys.OnGameover, DisableInputs);
         }
 

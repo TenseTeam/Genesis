@@ -3,17 +3,18 @@
     using UnityEngine;
     using VUDK.Generic.Systems.EventsSystem;
     using ProjectGenesis.Constants.Events;
+    using VUDK.Generic.Managers;
 
     public class GameoverManager : MonoBehaviour
     {
         private void OnEnable()
         {
-            EventManager.AddListener(EventKeys.OnGameover, Gameover);
+            GameManager.Instance.EventManager.AddListener(EventKeys.OnGameover, Gameover);
         }
 
         private void OnDisable()
         {
-            EventManager.RemoveListener(EventKeys.OnGameover, Gameover);
+            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnGameover, Gameover);
         }
 
         private void Gameover()

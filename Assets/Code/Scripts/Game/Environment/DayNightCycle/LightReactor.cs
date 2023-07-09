@@ -3,6 +3,7 @@ namespace ProjectGenesis.Environment.DayNightCycleSystem
     using ProjectGenesis.Constants.Events;
     using System.Collections;
     using UnityEngine;
+    using VUDK.Generic.Managers;
     using VUDK.Generic.Systems.EventsSystem;
 
     public class LightReactor : MonoBehaviour
@@ -18,14 +19,14 @@ namespace ProjectGenesis.Environment.DayNightCycleSystem
 
         private void OnEnable()
         {
-            EventManager.AddListener(EventKeys.OnBeginDay, () => TransitionTo(_lightIntensityOff));
-            EventManager.AddListener(EventKeys.OnBeginNight, () => TransitionTo(_lightIntensityOn));
+            GameManager.Instance.EventManager.AddListener(EventKeys.OnBeginDay, () => TransitionTo(_lightIntensityOff));
+            GameManager.Instance.EventManager.AddListener(EventKeys.OnBeginNight, () => TransitionTo(_lightIntensityOn));
         }
 
         private void OnDisable()
         {
-            EventManager.RemoveListener(EventKeys.OnBeginDay, () => TransitionTo(_lightIntensityOff));
-            EventManager.RemoveListener(EventKeys.OnBeginNight, () => TransitionTo(_lightIntensityOn));
+            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnBeginDay, () => TransitionTo(_lightIntensityOff));
+            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnBeginNight, () => TransitionTo(_lightIntensityOn));
         }
 
         private void TransitionTo(float toIntensity)

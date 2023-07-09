@@ -3,6 +3,7 @@ namespace VUDK.UI.Menu
     using UnityEngine;
     using UnityEngine.InputSystem;
     using VUDK.Extensions.Time;
+    using VUDK.Generic.Managers;
     using VUDK.Generic.Systems.EventsSystem;
     using VUDK.Generic.Systems.EventsSystem.Events;
     using VUDK.Generic.Systems.InputSystem;
@@ -11,18 +12,20 @@ namespace VUDK.UI.Menu
     {
         [SerializeField, Header("Pause Panel")]
         private RectTransform _pausePanel;
+        [SerializeField]
+        private RectTransform _pauseMenuPanel;
 
         private bool _isPaused;
 
-        private void Awake() => DisablePause();
-
         private void OnEnable()
         {
+            DisablePause();
             InputsManager.Inputs.UI.PauseMenuToggle.canceled += PauseToggle;
         }
 
         private void OnDisable()
         {
+            //DisablePause();
             InputsManager.Inputs.UI.PauseMenuToggle.canceled -= PauseToggle;
         }
 
@@ -32,14 +35,18 @@ namespace VUDK.UI.Menu
         public void PauseToggle(InputAction.CallbackContext context)
         {
             if (_isPaused)
+            {
                 DisablePause();
+            }
             else
+            {
                 EnablePause();
+            }
         }
 
         public void EnablePause()
         {
-            EventManager.TriggerEvent(EventKeys.PauseEvents.OnPauseEnter);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.PauseEvents.OnPauseEnter);
             _isPaused = true;
             _pausePanel.gameObject.SetActive(true);
             TimeExtension.SetTimeScale(0f);
@@ -47,10 +54,19 @@ namespace VUDK.UI.Menu
 
         public void DisablePause()
         {
-            EventManager.TriggerEvent(EventKeys.PauseEvents.OnPauseExit);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.PauseEvents.OnPauseExit);
             _isPaused = false;
             _pausePanel.gameObject.SetActive(false);
             TimeExtension.SetTimeScale(1f);
+            Reset();
+        }
+
+        private void Reset()
+        {
+            _pauseMenuPanel.GetChild(0).gameObject.SetActive(true);
+
+            for (int i = 1; i < _pausePanel.transform.childCount; i++)
+                _pauseMenuPanel.transform.GetChild(i).gameObject.SetActive(false);
         }
     }
 }

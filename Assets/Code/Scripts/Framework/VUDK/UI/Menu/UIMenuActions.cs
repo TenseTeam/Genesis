@@ -3,6 +3,7 @@ namespace VUDK.UI.Menu
     using ProjectGenesis.Constants.Events;
     using UnityEngine;
     using UnityEngine.SceneManagement;
+    using VUDK.Generic.Managers;
     using VUDK.Generic.Systems.EventsSystem;
     using VUDK.Generic.Utility;
 
@@ -30,7 +31,7 @@ namespace VUDK.UI.Menu
 
         public void ClickButton()
         {
-            EventManager.TriggerEvent(EventKeys.OnUIButtonClick);
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnUIButtonClick);
         }
     }
 }

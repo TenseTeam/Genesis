@@ -8,16 +8,17 @@ namespace ProjectGenesis.Player.States
     {
         public PlayerGroundState(StateMachine relatedStateMachine, Context context) : base(relatedStateMachine, context)
         {
-            Context.Inputs.PlayerMovement.Jump.started += ChangeToJump;
         }
 
         public override void Enter()
         {
+            Context.Inputs.PlayerMovement.Jump.started += ChangeToJump;
             Context.PlayerMovement.SetSpeed(Context.PlayerMovement.GroundSpeed);
         }
 
         public override void Exit()
         {
+            Context.Inputs.PlayerMovement.Jump.started -= ChangeToJump;
         }
 
         public override void PhysicsProcess()

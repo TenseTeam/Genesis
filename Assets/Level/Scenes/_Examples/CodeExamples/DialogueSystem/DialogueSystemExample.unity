@@ -323,7 +323,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764577727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.72, z: -15}
+  m_LocalPosition: {x: 0, y: 1.72, z: -17.32}
   m_LocalScale: {x: 1, y: 2.4793, z: 2.6651}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -348,6 +348,19 @@ MonoBehaviour:
   OnExit:
     m_PersistentCalls:
       m_Calls: []
+  _dialogue:
+    _speakers:
+    - {fileID: 11400000, guid: a3d437fd401b8a44083178e792361b8d, type: 2}
+    - {fileID: 11400000, guid: ed8657e4941663142b3b5da62a12b02f, type: 2}
+    - {fileID: 11400000, guid: 9388c761d47de4b4eba6300600d776e1, type: 2}
+    _sentences:
+    - SpeakerId: 0
+      Phrase: 'Oila? Bla bla bla Oila? Bla bla bla Oila? Bla bla bla '
+    - SpeakerId: 1
+      Phrase: No no noNo no noNo no noNo no noNo no noNo no noNo no no
+    - SpeakerId: 2
+      Phrase: Beh si si si Beh si si siBeh si si siBeh si si siBeh si si siBeh si
+        si siBeh si si si
 --- !u!1 &776203007
 GameObject:
   m_ObjectHideFlags: 0
@@ -461,6 +474,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 92709767372806111, guid: 10ec1f320946b034cb477d6bccb4b28d,
+        type: 3}
+      propertyPath: _speakerName
+      value: 
+      objectReference: {fileID: 865546583}
+    - target: {fileID: 92709767372806111, guid: 10ec1f320946b034cb477d6bccb4b28d,
+        type: 3}
+      propertyPath: _sentenceText
+      value: 
+      objectReference: {fileID: 865546584}
+    - target: {fileID: 92709767372806111, guid: 10ec1f320946b034cb477d6bccb4b28d,
+        type: 3}
+      propertyPath: _speakerImage
+      value: 
+      objectReference: {fileID: 865546585}
+    - target: {fileID: 92709767372806111, guid: 10ec1f320946b034cb477d6bccb4b28d,
+        type: 3}
+      propertyPath: _dialoguePanel
+      value: 
+      objectReference: {fileID: 865546582}
     - target: {fileID: 2573472017463860808, guid: 10ec1f320946b034cb477d6bccb4b28d,
         type: 3}
       propertyPath: m_Name
@@ -654,6 +687,48 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 222bdb5fa3e532e49aaa40befd742602, type: 3}
+--- !u!224 &865546582 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5858702260784714869, guid: 222bdb5fa3e532e49aaa40befd742602,
+    type: 3}
+  m_PrefabInstance: {fileID: 865546581}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &865546583 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7480799751434769700, guid: 222bdb5fa3e532e49aaa40befd742602,
+    type: 3}
+  m_PrefabInstance: {fileID: 865546581}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &865546584 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6881643576776994913, guid: 222bdb5fa3e532e49aaa40befd742602,
+    type: 3}
+  m_PrefabInstance: {fileID: 865546581}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &865546585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3644141198093457830, guid: 222bdb5fa3e532e49aaa40befd742602,
+    type: 3}
+  m_PrefabInstance: {fileID: 865546581}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &964134929
 GameObject:
   m_ObjectHideFlags: 0

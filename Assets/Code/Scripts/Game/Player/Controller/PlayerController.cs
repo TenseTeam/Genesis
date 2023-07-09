@@ -10,8 +10,6 @@
     using ProjectGenesis.Generic.Factories;
     using ProjectGenesis.Player.Controller;
     using ProjectGenesis.Player.States;
-    using UnityEngine.InputSystem;
-    using System;
 
     [RequireComponent(typeof(MovementBase))]
     [RequireComponent(typeof(PlayerGraphicsController))]
@@ -57,12 +55,10 @@
             PlayerGroundState groundState = PlayerStatesFactory.Create(PlayerStateKey.Ground, this, context) as PlayerGroundState;
             PlayerAirState airState = PlayerStatesFactory.Create(PlayerStateKey.Air, this, context) as PlayerAirState;
             PlayerJumpState jumpState = PlayerStatesFactory.Create(PlayerStateKey.Jump, this, context) as PlayerJumpState;
-            PlayerGrapRopeState grapState = PlayerStatesFactory.Create(PlayerStateKey.GrapRope, this, context) as PlayerGrapRopeState;
 
             AddState(PlayerStateKey.Ground, groundState);
             AddState(PlayerStateKey.Jump, jumpState);
             AddState(PlayerStateKey.Air, airState);
-            AddState(PlayerStateKey.GrapRope, grapState);
 
             ChangeState(PlayerStateKey.Ground);
         }

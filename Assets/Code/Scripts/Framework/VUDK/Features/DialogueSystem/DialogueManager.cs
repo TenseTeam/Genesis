@@ -1,34 +1,34 @@
 namespace VUDK.Features.DialogueSystem
 {
-	using System.Collections;
+    using System.Collections;
     using TMPro;
     using UnityEngine;
     using UnityEngine.UI;
+    using VUDK.Features.DialogueSystem.Data;
     using VUDK.Generic.Systems.EventsSystem;
     using VUDK.Generic.Systems.EventsSystem.Events;
 
     public class DialogueManager : MonoBehaviour
-	{
-		[SerializeField, Header("Sentence")]
-		private float _displayLetterTime = 0.5f;
+    {
+        [SerializeField, Min(0.01f), Header("Sentence")]
+        private float _displayLetterTime;
 
-		[SerializeField, Header("Dialogue")]
-		private RectTransform _dialoguePanel;
+        [SerializeField, Header("Dialogue")]
+        private RectTransform _dialoguePanel;
         [SerializeField]
         private Image _speakerImage;
         [SerializeField]
         private TMP_Text _speakerName;
-		[SerializeField]
-		private TMP_Text _sentenceText;
+        [SerializeField]
+        private TMP_Text _sentenceText;
 
         private Dialogue _dialogue;
-        private Sentence _currentSentence;
 
-		public bool IsTalking { get; private set; }
+        public bool IsInUse { get; private set; }
 
         private void OnEnable()
         {
-			EventManager.AddListener<Dialogue>(EventKeys.DialogueEvents.OnTriggerDialouge, StartDialogue);
+            EventManager.AddListener<Dialogue>(EventKeys.DialogueEvents.OnTriggerDialouge, StartDialogue);
         }
 
         private void OnDisable()
@@ -36,26 +36,27 @@ namespace VUDK.Features.DialogueSystem
             EventManager.RemoveListener<Dialogue>(EventKeys.DialogueEvents.OnTriggerDialouge, StartDialogue);
         }
 
-		public void DisplayNextSentence()
-		{
-			if (_dialogue.IsEnded && !IsTalking)
-			{
-				EndDialogue();
-				return;
-			}
-
-			StopAllCoroutines();
-            if (!IsTalking)
+        public void DisplayNextSentence()
+        {
+            if (_dialogue.IsEnded && !IsInUse)
             {
-                SetSentenceSpeaker(_dialogue.Next);
-                StartCoroutine(TypeSentenceRoutine(_dialogue.Current));
+                EndDialogue();
+                return;
+            }
+
+            StopAllCoroutines();
+            if (!IsInUse)
+            {
+                Sentence sentence = _dialogue.NextSentence();
+                SetSentenceSpeaker(_dialogue.GetSpeakerForSentence(sentence));
+                StartCoroutine(TypeSentenceRoutine(sentence));
             }
             else
             {
-                IsTalking = false;
-                SetCompleteSentence(_dialogue.Current);
+                IsInUse = false;
+                SetCompleteSentence(_dialogue.CurrentSentence());
             }
-		}
+        }
 
         public void StartDialogue(Dialogue dialogue)
         {
@@ -65,34 +66,34 @@ namespace VUDK.Features.DialogueSystem
         }
 
         private void EndDialogue()
-		{
-			_dialoguePanel.gameObject.SetActive(false);
+        {
+            _dialoguePanel.gameObject.SetActive(false);
             _sentenceText.text = "";
-		}
+        }
 
         private IEnumerator TypeSentenceRoutine(Sentence sentence)
         {
             _sentenceText.text = "";
-            IsTalking = true;
-            foreach (char letter in sentence.SpeakerPhrase.ToCharArray())
+            IsInUse = true;
+            foreach (char letter in sentence.Phrase.ToCharArray())
             {
                 EventManager.TriggerEvent(EventKeys.DialogueEvents.OnDialougeTypedLetter);
                 _sentenceText.text += letter;
                 yield return new WaitForSeconds(_displayLetterTime);
             }
-            IsTalking = false;
+            IsInUse = false;
         }
 
-        private void SetSentenceSpeaker(Sentence sentence)
+        private void SetSentenceSpeaker(SpeakerData speaker)
         {
-            _speakerImage.sprite = sentence.SpeakerImage;
-            _speakerName.text = sentence.SpeakerName;
+            _speakerImage.sprite = speaker.SpeakerImage;
+            _speakerName.text = speaker.SpeakerName;
         }
 
         private void SetCompleteSentence(Sentence sentence)
         {
-            SetSentenceSpeaker(sentence);
-            _sentenceText.text = sentence.SpeakerPhrase;
+            SetSentenceSpeaker(_dialogue.GetSpeakerForSentence(sentence));
+            _sentenceText.text = sentence.Phrase;
         }
     }
 }

@@ -298,6 +298,15 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""373e79af-575e-4796-9848-b40d1277f65c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -333,6 +342,17 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
                     ""action"": ""PauseMenuToggle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7fa904dd-cbad-4bb6-bbe9-bb8b478cb7c4"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -366,6 +386,7 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_PauseMenuToggle = m_UI.FindAction("PauseMenuToggle", throwIfNotFound: true);
+        m_UI_NextDialogue = m_UI.FindAction("NextDialogue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -598,11 +619,13 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_UI;
     private List<IUIActions> m_UIActionsCallbackInterfaces = new List<IUIActions>();
     private readonly InputAction m_UI_PauseMenuToggle;
+    private readonly InputAction m_UI_NextDialogue;
     public struct UIActions
     {
         private @Inputs m_Wrapper;
         public UIActions(@Inputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @PauseMenuToggle => m_Wrapper.m_UI_PauseMenuToggle;
+        public InputAction @NextDialogue => m_Wrapper.m_UI_NextDialogue;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -615,6 +638,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @PauseMenuToggle.started += instance.OnPauseMenuToggle;
             @PauseMenuToggle.performed += instance.OnPauseMenuToggle;
             @PauseMenuToggle.canceled += instance.OnPauseMenuToggle;
+            @NextDialogue.started += instance.OnNextDialogue;
+            @NextDialogue.performed += instance.OnNextDialogue;
+            @NextDialogue.canceled += instance.OnNextDialogue;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -622,6 +648,9 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
             @PauseMenuToggle.started -= instance.OnPauseMenuToggle;
             @PauseMenuToggle.performed -= instance.OnPauseMenuToggle;
             @PauseMenuToggle.canceled -= instance.OnPauseMenuToggle;
+            @NextDialogue.started -= instance.OnNextDialogue;
+            @NextDialogue.performed -= instance.OnNextDialogue;
+            @NextDialogue.canceled -= instance.OnNextDialogue;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -676,5 +705,6 @@ public partial class @Inputs: IInputActionCollection2, IDisposable
     public interface IUIActions
     {
         void OnPauseMenuToggle(InputAction.CallbackContext context);
+        void OnNextDialogue(InputAction.CallbackContext context);
     }
 }

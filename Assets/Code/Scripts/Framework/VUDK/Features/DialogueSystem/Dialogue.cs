@@ -1,28 +1,49 @@
 ﻿namespace VUDK.Features.DialogueSystem
 {
-	using UnityEngine;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using VUDK.Features.DialogueSystem.Data;
+    using VUDK.Generic.Serializable;
 
-	public struct Sentence
-	{
-		public string SpeakerName;
-		public Sprite SpeakerImage;
-		public string SpeakerPhrase;
+    [System.Serializable]
+    public struct Sentence
+    {
+        public int SpeakerId;
+        [TextArea(3, 10)]
+        public string Phrase;
     }
 
-	[System.Serializable]
-	public class Dialogue
-	{
-		[TextArea(3, 10), SerializeField, Header("Sentences")]
-		private Sentence[] _sentences;
+    [System.Serializable]
+    public class Dialogue
+    {
+        [SerializeField, Header("Speakers")]
+        private List<SpeakerData> _speakers;
 
-		private int _index = 0;
+        [SerializeField, Header("Sentences")]
+        private List<Sentence> _sentences;
 
-        public bool IsEnded => _index == _sentences.Length - 1;
+        private int _index = 0;
 
-        public Sentence Next => _sentences[_index++];
+        public bool IsEnded => _index == _sentences.Count - 1;
 
-		public Sentence Previous => _sentences[_index--];
+        public Sentence NextSentence()
+        {
+            return _sentences[_index++];
+        }
 
-		public Sentence Current => _sentences[_index];
-	}
+        public Sentence PreviousSentence()
+        {
+            return _sentences[_index--];
+        }
+
+        public Sentence CurrentSentence()
+        {
+            return _sentences[_index];
+        }
+
+        public SpeakerData GetSpeakerForSentence(Sentence sentence)
+        {
+            return _speakers[sentence.SpeakerId];
+        }
+    }
 }

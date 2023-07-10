@@ -1,9 +1,11 @@
 ﻿namespace ProjectGenesis.Player
 {
+    using ProjectGenesis.Constants.Events;
     using System;
     using System.Collections;
     using UnityEngine;
     using UnityEngine.InputSystem;
+    using VUDK.Generic.Managers;
     using VUDK.Generic.Systems.InputSystem;
     using VUDK.Generic.Systems.MovementSystem;
 
@@ -76,9 +78,9 @@
             Horizontal = 0f;
         }
 
-
         public void Jump()
         {
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerJump, transform.position);
             float effectiveJumpForce = _isJumpAffectedByScale ? _jumpForce * transform.lossyScale.magnitude : _jumpForce;
             Rigidbody.AddForce(transform.up * effectiveJumpForce, ForceMode.Impulse);
         }

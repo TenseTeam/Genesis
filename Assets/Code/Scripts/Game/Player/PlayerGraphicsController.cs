@@ -2,6 +2,8 @@
 {
     using UnityEngine;
     using ProjectGenesis.Constants;
+    using VUDK.Generic.Managers;
+    using ProjectGenesis.Constants.Events;
 
     public class PlayerGraphicsController : MonoBehaviour
     {
@@ -25,6 +27,11 @@
         public void AnimateFalling(bool isFalling)
         {
             _anim.SetBool(Constants.Animations.PlayerAnimations.Falling, isFalling);
+        }
+
+        public void TriggerStep()
+        {
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerStep, transform.position);
         }
     }
 }

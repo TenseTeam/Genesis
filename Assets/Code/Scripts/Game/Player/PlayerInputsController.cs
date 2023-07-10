@@ -23,27 +23,27 @@
             //EventManager.RemoveListener(EventKeys.OnGameover, DisableInputs);
         }
 
-        private void EnableInputs()
+        public void EnableInputs()
         {
             InputsManager.Inputs.Enable();
         }
 
-        private void DisableInputs()
+        public void DisableInputs()
         {
             InputsManager.Inputs.Disable();
         }
 
-        private void EnableMovementInputs()
+        public void EnableMovementInputs()
         {
             InputsManager.Inputs.PlayerMovement.Enable();
         }
 
-        private void DisableMovementInputs()
+        public void DisableMovementInputs()
         {
             InputsManager.Inputs.PlayerMovement.Disable();
         }
 
-        private void EnableOnlyDialogueInputs()
+        public void EnableOnlyDialogueInputs()
         {
             DisableInputs();
             InputsManager.Inputs.Dialogue.Enable();

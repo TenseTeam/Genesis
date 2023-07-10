@@ -2,7 +2,6 @@
 {
     using UnityEngine;
     using VUDK.Generic.Managers;
-    using VUDK.Generic.Systems.EventsSystem;
     using VUDK.Features.DialogueSystem.Data;
     using EventKeysVUDK = VUDK.Generic.Systems.EventsSystem.Events.EventKeys;
     using EventKeys = ProjectGenesis.Constants.Events.EventKeys;
@@ -29,6 +28,8 @@
             GameManager.Instance.EventManager.AddListener<Vector3>(EventKeys.OnPlayerStep, (position) => PlaySpatialAudio(_playerStep, position));
             GameManager.Instance.EventManager.AddListener<Vector3>(EventKeys.OnPlayerJump, (position) => PlaySpatialAudio(_playerStep, position));
 
+            GameManager.Instance.EventManager.AddListener<AudioClip>(EventKeys.OnEnterTriggerVocal, (vocalClip) => PlayUncuncurrentEffectAudio(vocalClip));
+            GameManager.Instance.EventManager.AddListener(EventKeys.OnExitTriggerVocal, StereoSourceEffect.Stop);
         }
 
         protected override void OnDisable()
@@ -39,6 +40,9 @@
 
             GameManager.Instance.EventManager.RemoveListener<Vector3>(EventKeys.OnPlayerStep, (position) => PlaySpatialAudio(_playerStep, position));
             GameManager.Instance.EventManager.RemoveListener<Vector3>(EventKeys.OnPlayerJump, (position) => PlaySpatialAudio(_playerStep, position));
+
+            GameManager.Instance.EventManager.RemoveListener<AudioClip>(EventKeys.OnEnterTriggerVocal, (vocalClip) => PlayUncuncurrentEffectAudio(vocalClip));
+            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnExitTriggerVocal, StereoSourceEffect.Stop);
         }
     }
 }

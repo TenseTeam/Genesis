@@ -49,14 +49,14 @@
         private void OnEnable()
         {
             //InputsManager.Inputs.PlayerMovement.Jump.started += Jump;
-            InputsManager.Inputs.PlayerMovement.Movement.performed += PerformMoving;
+            InputsManager.Inputs.PlayerMovement.Movement.started += PerformMoving;
             InputsManager.Inputs.PlayerMovement.Movement.canceled += StopMoving;
         }
 
         private void OnDisable()
         {
             //InputsManager.Inputs.PlayerMovement.Jump.started -= Jump;
-            InputsManager.Inputs.PlayerMovement.Movement.performed -= PerformMoving;
+            InputsManager.Inputs.PlayerMovement.Movement.started -= PerformMoving;
             InputsManager.Inputs.PlayerMovement.Movement.canceled -= StopMoving;
         }
 

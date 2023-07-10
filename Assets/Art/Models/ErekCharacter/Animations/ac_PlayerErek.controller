@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 86b73bb7f03f8a4448f96ddd49cba637, type: 2}
+  m_Motion: {fileID: 7400000, guid: 3a36c81a4b3a8b34bad5afba8b97eca6, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -36,7 +36,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6bf901120e51fc246a00e7d2fc6a83b0, type: 2}
+    m_Motion: {fileID: 7400000, guid: a2cfda1c17eeddc44acfff10b0d95b9c, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -44,7 +44,7 @@ BlendTree:
     m_DirectBlendParameter: horizontal
     m_Mirror: 1
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: b323613262a8ac2478680961b360d3e5, type: 2}
+    m_Motion: {fileID: 7400000, guid: 2256e040c4d075e4c852ede9d3ea8f4d, type: 2}
     m_Threshold: 0.5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -148,9 +148,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.22715354
+  m_TransitionDuration: 0.102197886
   m_TransitionOffset: 0
-  m_ExitTime: 0.8467718
+  m_ExitTime: 0.89363015
   m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -187,7 +187,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ac_Player
+  m_Name: ac_PlayerErek
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: horizontal
@@ -243,7 +243,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 81483930e482635478114327080bed8a, type: 2}
+  m_Motion: {fileID: 7400000, guid: b4f1698fab06e4248a1c1933a4ff6fdc, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

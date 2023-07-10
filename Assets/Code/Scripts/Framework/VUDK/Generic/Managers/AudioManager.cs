@@ -1,7 +1,6 @@
 ﻿namespace VUDK.Generic.Managers
 {
     using System.Collections.Generic;
-    using Unity.VisualScripting;
     using UnityEngine;
     using VUDK.Extensions.Audio;
     using VUDK.Generic.Serializable.Mathematics;
@@ -10,7 +9,7 @@
     {
         [SerializeField, Header("Uncuncurrent AudioSources")]
         protected AudioSource Music;
-        [SerializeField]
+        [field: SerializeField]
         protected AudioSource StereoSourceEffect;
 
         [SerializeField, Header("Concurrent AudioSources")]

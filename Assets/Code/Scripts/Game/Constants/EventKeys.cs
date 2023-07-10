@@ -16,5 +16,8 @@
         public const string OnUIButtonClick = "OnUIButtonClick";
 
         public const string OnGameover = "OnGameover";
+
+        public const string OnEnterTriggerVocal = "OnEnterTriggerVocal";
+        public const string OnExitTriggerVocal = "OnExitTriggerVocal";
     }
 }

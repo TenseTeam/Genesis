@@ -3,6 +3,7 @@ namespace VUDK.Tools.Debug
     using UnityEditor;
     using UnityEngine;
 
+#if DEBUG
     public class FPSLocker : EditorWindow
     {
         private int _targetFPS = 60;
@@ -37,4 +38,5 @@ namespace VUDK.Tools.Debug
             Debug.Log("FPS Uncapped");
         }
     }
+#endif
 }

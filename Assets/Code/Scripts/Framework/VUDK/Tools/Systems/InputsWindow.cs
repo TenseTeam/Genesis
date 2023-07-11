@@ -4,6 +4,7 @@
     using UnityEngine.InputSystem;
     using UnityEngine;
 
+#if DEBUG
     public class InputsWindow : EditorWindow
     {
         private static InputActionAsset s_inputActionAsset;
@@ -31,4 +32,5 @@
                 Debug.LogWarning("Asset \"Inputs.inputActionAsset\" not found.");
         }
     }
+#endif
 }

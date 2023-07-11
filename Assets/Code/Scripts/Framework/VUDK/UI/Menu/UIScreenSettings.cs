@@ -5,11 +5,17 @@ namespace VUDK.UI.Menu
     using UnityEngine;
     using UnityEngine.UI;
     using VUDK.DataSave.MenuPreferences;
+    using TMPro;
 
     public class UIScreenSettings : MonoBehaviour
     {
-        public Dropdown dropResolution, dropFPS;
-        public Toggle toggleFullscreen;
+        [SerializeField, Header("Dropdown")]
+        private TMP_Dropdown _dropResolution;
+        [SerializeField]
+        private TMP_Dropdown _dropFPS;
+
+        [SerializeField, Header("Toggle")]
+        private Toggle _toggleFullscreen;
 
         public bool Fullscreen { get; set; }
 
@@ -19,14 +25,14 @@ namespace VUDK.UI.Menu
 
             foreach (string resolution in GetCurrentResolutions())
             {
-                dropResolution.options.Add(new Dropdown.OptionData(resolution));
+                _dropResolution.options.Add(new TMP_Dropdown.OptionData(resolution));
             }
 
             if (MenuPrefsSaver.Screen.LoadResolution(out int w, out int h, out int sel))
             {
-                dropResolution.value = sel;
-                toggleFullscreen.isOn = MenuPrefsSaver.Screen.LoadFullscreen();
-                Screen.SetResolution(w, h, toggleFullscreen.isOn);
+                _dropResolution.value = sel;
+                _toggleFullscreen.isOn = MenuPrefsSaver.Screen.LoadFullscreen();
+                Screen.SetResolution(w, h, _toggleFullscreen.isOn);
             }
             else
             {
@@ -36,7 +42,7 @@ namespace VUDK.UI.Menu
             if (MenuPrefsSaver.Screen.LoadRefreshRate(out int hz, out int selectedHz))
             {
                 Application.targetFrameRate = hz;
-                dropFPS.value = selectedHz;
+                _dropFPS.value = selectedHz;
             }
         }
 
@@ -67,12 +73,12 @@ namespace VUDK.UI.Menu
         /// </summary>
         public void SetResolution()
         {
-            string[] res = dropResolution.options[dropResolution.value].text.Split('x');
+            string[] res = _dropResolution.options[_dropResolution.value].text.Split('x');
 
             int width = int.Parse(res[0]);
             int height = int.Parse(res[1]);
 
-            MenuPrefsSaver.Screen.SaveResolution(width + ":" + height + ":" + dropResolution.value);
+            MenuPrefsSaver.Screen.SaveResolution(width + ":" + height + ":" + _dropResolution.value);
 
             Screen.SetResolution(width, height, Fullscreen);
         }
@@ -82,12 +88,12 @@ namespace VUDK.UI.Menu
         /// </summary>
         public void SetRefreshRate()
         {
-            string hz = dropFPS.options[dropFPS.value].text;
+            string hz = _dropFPS.options[_dropFPS.value].text;
             hz = System.Text.RegularExpressions.Regex.Replace(hz, "[^0-9]", ""); // Regular expression
 
             int fps = int.Parse(hz);
 
-            MenuPrefsSaver.Screen.SaveRefreshRate(fps, dropFPS.value);
+            MenuPrefsSaver.Screen.SaveRefreshRate(fps, _dropFPS.value);
             Application.targetFrameRate = fps;
         }
 

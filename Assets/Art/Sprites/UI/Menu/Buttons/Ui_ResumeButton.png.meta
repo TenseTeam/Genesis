@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 934bb1364cb8e924b995c45cc5f10d5a
+guid: bbfbbec0502afca409a68fd0d2036cdf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,10 +108,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Windows Store Apps
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,22 +123,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ui_MaxVolume_0
+      name: Ui_ResumeButton_0
       rect:
         serializedVersion: 2
-        x: 991
-        y: 265
-        width: 649
-        height: 41
+        x: 121
+        y: 458
+        width: 628
+        height: 163
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49458605384974b4ba791aa23ca31b7f
-      internalID: 1036446579
+      spriteID: 364883e65905a734da6a7edd8284172a
+      internalID: 1379807283
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ui_MaxVolume_0: -1850493943
+      Ui_ResumeButton_0: 1379807283
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

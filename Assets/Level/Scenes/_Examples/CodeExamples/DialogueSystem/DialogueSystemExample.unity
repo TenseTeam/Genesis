@@ -350,25 +350,21 @@ MonoBehaviour:
       m_Calls: []
   _dialogue:
     _speakers:
-    - {fileID: 11400000, guid: 48a82e318620d7f4abf3f7bac815738d, type: 2}
-    - {fileID: 11400000, guid: a3d437fd401b8a44083178e792361b8d, type: 2}
-    - {fileID: 11400000, guid: 393308f266e30ef44b808305cb8a01f5, type: 2}
-    - {fileID: 11400000, guid: b94c018dad4865a4396d654e7b704af2, type: 2}
-    - {fileID: 11400000, guid: ed8657e4941663142b3b5da62a12b02f, type: 2}
-    - {fileID: 11400000, guid: 9388c761d47de4b4eba6300600d776e1, type: 2}
+    - {fileID: 11400000, guid: d593ffad3ba59fb44907925a7c5a0539, type: 2}
+    - {fileID: 11400000, guid: a50027cb5c843f447a45ae04b2b9669d, type: 2}
+    - {fileID: 11400000, guid: daa652fc468e232498c40ccc5dcd3824, type: 2}
+    - {fileID: 11400000, guid: b77e3e3b4a39f9e4fb5dbacaed99b80d, type: 2}
     _sentences:
     - SpeakerId: 0
-      Phrase: Ciao come va?
+      Phrase: Ciao come va?Ciao come va?Ciao come va?Ciao come va?Ciao come va?Ciao
+        come va?
     - SpeakerId: 1
-      Phrase: Oi Bene tu?
+      Phrase: Oi Bene tuCiao come va?Ciao come va?Ciao come va?Ciao come va?Ciao
+        come va?
     - SpeakerId: 2
-      Phrase: Malissimo
+      Phrase: Ciao come va?Ciao come va?Ciao come va?Ciao come va?Ciao come va?
     - SpeakerId: 3
-      Phrase: Ma no dio can
-    - SpeakerId: 4
-      Phrase: Dican ostregheta
-    - SpeakerId: 5
-      Phrase: Ciao.
+      Phrase: Ciao come va?Ciao come va?Ciao come va?Ciao come va?Ciao come va?
 --- !u!1 &776203007
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +498,11 @@ PrefabInstance:
       propertyPath: _playerStep
       value: 
       objectReference: {fileID: 8300000, guid: 920640e9717603c41b756822d617ffe5, type: 3}
+    - target: {fileID: 6196753950008130958, guid: 10ec1f320946b034cb477d6bccb4b28d,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6868593674866161336, guid: 10ec1f320946b034cb477d6bccb4b28d,
         type: 3}
       propertyPath: m_RootOrder
@@ -922,9 +923,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 797784973877216820, guid: 23e6181d8a51654428a1d1055cfd86d8,
         type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 797784973877216820, guid: 23e6181d8a51654428a1d1055cfd86d8,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 63a1c22c71f4cd54c8e24e2a29fd4ce2, type: 2}
+    - target: {fileID: 797784973877216820, guid: 23e6181d8a51654428a1d1055cfd86d8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: d7da500d48d259a42b2807bc338df04b, type: 2}
     - target: {fileID: 8046420958565674829, guid: 23e6181d8a51654428a1d1055cfd86d8,
         type: 3}
       propertyPath: m_RootOrder

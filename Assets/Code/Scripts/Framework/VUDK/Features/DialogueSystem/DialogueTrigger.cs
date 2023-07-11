@@ -14,6 +14,11 @@ namespace VUDK.Features.DialogueSystem
         protected override void OnTriggerEnter(Collider other)
         {
             base.OnTriggerEnter(other);
+            TriggerDialogue();
+        }
+
+        public void TriggerDialogue()
+        {
             GameManager.Instance.EventManager.TriggerEvent(EventKeys.DialogueEvents.OnTriggeredDialouge, _dialogue);
         }
     }

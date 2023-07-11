@@ -3,6 +3,7 @@ namespace VUDK.Features.DialogueSystem
     using System.Collections;
     using TMPro;
     using UnityEngine;
+    using UnityEngine.Events;
     using UnityEngine.UI;
     using VUDK.Features.DialogueSystem.Data;
     using VUDK.Generic.Managers;
@@ -29,6 +30,9 @@ namespace VUDK.Features.DialogueSystem
 
         public bool IsDialogueOpen => _dialoguePanel.gameObject.activeSelf;
         public bool IsTalking { get; private set; }
+
+        [Header("Events")]
+        public UnityEvent OnEndDialogue;
 
         private void OnEnable()
         {
@@ -73,6 +77,7 @@ namespace VUDK.Features.DialogueSystem
 
         private void EndDialogue()
         {
+            OnEndDialogue?.Invoke();
             GameManager.Instance.EventManager.TriggerEvent(EventKeys.DialogueEvents.OnEndDialogue);
             _dialoguePanel.gameObject.SetActive(false);
             _sentenceText.text = "";

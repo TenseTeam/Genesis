@@ -33,7 +33,7 @@ Transform:
   - {fileID: 5111776386176890717}
   - {fileID: 5701365212322296726}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &3254253397878342025
 GameObject:
@@ -46,7 +46,8 @@ GameObject:
   - component: {fileID: 7899531836930742822}
   - component: {fileID: 300304300063814409}
   - component: {fileID: 5001411842999614665}
-  m_Layer: 0
+  - component: {fileID: 2771264148113789307}
+  m_Layer: 6
   m_Name: piattaforma_media_sopra_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,6 +119,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2771264148113789307
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3254253397878342025}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.591997, y: 0.5589717, z: 5.8644896}
+  m_Center: {x: -0.00000023841858, y: -0.00000011920929, z: 0}
 --- !u!1 &3549469407372609766
 GameObject:
   m_ObjectHideFlags: 0

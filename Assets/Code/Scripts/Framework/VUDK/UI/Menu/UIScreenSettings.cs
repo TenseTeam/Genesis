@@ -17,9 +17,9 @@ namespace VUDK.UI.Menu
         [SerializeField, Header("Toggle")]
         private Toggle _toggleFullscreen;
 
-        public bool Fullscreen { get; set; }
+        public bool Fullscreen { get; private set; }
 
-        public void Awake()
+        private void Awake()
         {
             QualitySettings.vSyncCount = 0; // Disable V-Sync to allow the FPS Cap
 

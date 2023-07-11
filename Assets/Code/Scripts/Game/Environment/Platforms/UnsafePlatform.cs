@@ -17,12 +17,12 @@
 
         private void OnEnable()
         {
-            GameManager.Instance.EventManager.AddListener(EventKeys.OnPlayerTakeDamage, () => SetEnablePlatform(true));
+            GameManager.Instance.EventManager.AddListener(EventKeys.OnPlayerTakeDamage, ReEnablePlatform);
         }
 
         private void OnDisable()
         {
-            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnPlayerTakeDamage, () => SetEnablePlatform(true));
+            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnPlayerTakeDamage, ReEnablePlatform);
         }
 
         protected override void OnEntityEnterPlatform(Collision entityCollision)
@@ -40,6 +40,12 @@
         private void SetEnablePlatform(bool enabled)
         {
             _platform.SetActive(enabled);
+        }
+
+        private void ReEnablePlatform()
+        {
+            StopAllCoroutines();
+            SetEnablePlatform(true);
         }
     }
 }

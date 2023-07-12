@@ -1,11 +1,9 @@
 namespace ProjectGenesis.Environment.DayNightCycleSystem
 {
-    using ProjectGenesis.Constants.Events;
     using System.Collections;
-    using System.Collections.Generic;
     using UnityEngine;
     using VUDK.Generic.Managers;
-    using VUDK.Generic.Systems.EventsSystem;
+    using ProjectGenesis.Constants.Events;
 
     public class DayNightCycle : MonoBehaviour
     {

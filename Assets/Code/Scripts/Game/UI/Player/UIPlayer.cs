@@ -1,11 +1,11 @@
 namespace ProjectGenesis.UI.Player
 {
+    using System.Collections.Generic;
     using UnityEngine.UI;
     using UnityEngine;
-    using VUDK.Generic.Systems.EventsSystem;
-    using ProjectGenesis.Constants.Events;
-    using System.Collections.Generic;
     using VUDK.Generic.Managers;
+    using VUDK.Generic.Systems.EntitySystem;
+    using VUDK.Generic.Systems.EventsSystem.Events;
 
     public class UIPlayer : MonoBehaviour
     {
@@ -18,17 +18,17 @@ namespace ProjectGenesis.UI.Player
 
         private void OnEnable()
         {
-            GameManager.Instance.EventManager.AddListener<int, int>(EventKeys.OnHitPointsPlayerSetup, SetupHealth);
-            GameManager.Instance.EventManager.AddListener(EventKeys.OnPlayerTakeDamage, RemoveHeart);
+            GameManager.Instance.EventManager.AddListener<EntityBase>(EventKeys.EntityEvents.OnEntityInit, (ent) => SetupHealth((int)ent.StartingHitPoints));
+            GameManager.Instance.EventManager.AddListener<EntityBase>(EventKeys.EntityEvents.OnEntityTakeDamage, (ent) => RemoveHeart());
         }
 
         private void OnDisable()
         {
-            GameManager.Instance.EventManager.RemoveListener<int, int>(EventKeys.OnHitPointsPlayerSetup, SetupHealth);
-            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnPlayerTakeDamage, RemoveHeart);
+            GameManager.Instance.EventManager.RemoveListener<EntityBase>(EventKeys.EntityEvents.OnEntityInit, (ent) => SetupHealth((int)ent.StartingHitPoints));
+            GameManager.Instance.EventManager.RemoveListener<EntityBase>(EventKeys.EntityEvents.OnEntityTakeDamage, (ent) => RemoveHeart());
         }
 
-        private void SetupHealth(int current, int max)
+        private void SetupHealth(int max)
         {
             for (int i = 0; i < max; i++)
             {

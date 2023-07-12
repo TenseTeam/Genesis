@@ -37,5 +37,13 @@
         {
             public const string OnBeforeChangeScene = "OnBeforeChangeScene";
         }
+
+        public static class EntityEvents
+        {
+            public const string OnEntityInit = "OnEntityInit";
+            public const string OnEntityTakeDamage = "OnEntityTakeDamage";
+            public const string OnEntityHeal = "OnEntityHeal";
+            public const string OnEntityDeath = "OnEntityDeath";
+        }
     }
 }

@@ -2,7 +2,6 @@
 {
     using ProjectGenesis.Constants.Events;
     using System;
-    using System.Collections;
     using UnityEngine;
     using UnityEngine.InputSystem;
     using VUDK.Generic.Managers;
@@ -39,7 +38,6 @@
 
         [field: SerializeField, Min(0)]
         public float AirSpeed { get; private set; }
-
         public float Horizontal { get; private set; }
         public bool IsJumpInCooldown { get; private set; }
 
@@ -82,6 +80,7 @@
         {
             GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerJump, transform.position);
             float effectiveJumpForce = _isJumpAffectedByScale ? _jumpForce * transform.lossyScale.magnitude : _jumpForce;
+            Rigidbody.velocity = Vector3.zero;
             Rigidbody.AddForce(transform.up * effectiveJumpForce, ForceMode.Impulse);
         }
 

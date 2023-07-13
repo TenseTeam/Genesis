@@ -4,6 +4,7 @@ namespace ProjectGenesis.Environment.DayNightCycleSystem
     using UnityEngine;
     using VUDK.Generic.Managers;
     using ProjectGenesis.Constants.Events;
+    using VUDK.Generic.Serializable;
 
     public class DayNightCycle : MonoBehaviour
     {
@@ -30,9 +31,10 @@ namespace ProjectGenesis.Environment.DayNightCycleSystem
         [SerializeField]
         private float _durationTransitionLight;
 
-
         [SerializeField, Header("Target Follow")]
         private Transform _lockOnTarget;
+        [SerializeField]
+        private XYZBools _followOnAxis;
         [SerializeField]
         private Vector3 _offset;
         [SerializeField, Min(0f)]
@@ -41,12 +43,18 @@ namespace ProjectGenesis.Environment.DayNightCycleSystem
         [SerializeField, Header("Setting")]
         private bool _startAsDay;
 
+        private Vector3 _lockOnPosition =>
+            new Vector3(
+                _followOnAxis.X ? _lockOnTarget.position.x + _offset.x: transform.position.x,
+                _followOnAxis.Y ? _lockOnTarget.position.y + _offset.y : transform.position.y,
+                _followOnAxis.Z ? _lockOnTarget.position.z + _offset.z : transform.position.z
+                );
+
         private void Start()
         {
             if (_startAsDay)
             {
                 GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnBeginDay);
-
                 SetToDay();
             }
             else
@@ -58,7 +66,7 @@ namespace ProjectGenesis.Environment.DayNightCycleSystem
 
         private void Update()
         {
-            transform.position = Vector3.Lerp(transform.position, _lockOnTarget.position + _offset, _followSpeed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, _lockOnPosition, _followSpeed * Time.deltaTime);
         }
 
         public void TransitionToDay()

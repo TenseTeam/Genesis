@@ -1,7 +1,7 @@
 ﻿namespace VUDK.Features.DialogueSystem.Data
 {
     using UnityEngine;
-    using VUDK.Generic.Serializable.Mathematics;
+    using VUDK.Generic.Serializable;
 
     [CreateAssetMenu(menuName = "Dialogue/Speaker")]
     public class SpeakerData : ScriptableObject

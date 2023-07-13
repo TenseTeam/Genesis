@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using UnityEngine;
     using VUDK.Extensions.Audio;
-    using VUDK.Generic.Serializable.Mathematics;
+    using VUDK.Generic.Serializable;
 
     public abstract class AudioManager : MonoBehaviour
     {

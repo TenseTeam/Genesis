@@ -7,7 +7,28 @@
 
     public class PlayerGraphicsController : MonoBehaviour
     {
+        [SerializeField, Header("Effects")]
+        private ParticleSystem[] _teleportEffects;
+        [SerializeField]
+        private ParticleSystem[] _sizeUpEffects;
+        [SerializeField]
+        private ParticleSystem[] _sizeDownEffects;
+
         private Animator _anim;
+
+        private void OnEnable()
+        {
+            GameManager.Instance.EventManager.AddListener(EventKeys.OnEnterTeleport, TriggerTeleportEffect);
+            GameManager.Instance.EventManager.AddListener(EventKeys.OnPlayerSizeUp, TriggerSizeUpEffect);
+            GameManager.Instance.EventManager.AddListener(EventKeys.OnPlayerSizeDown, TriggerSizeDownEffect);
+        }
+
+        private void OnDisable()
+        {
+            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnEnterTeleport, TriggerTeleportEffect);
+            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnPlayerSizeUp, TriggerSizeUpEffect);
+            GameManager.Instance.EventManager.RemoveListener(EventKeys.OnPlayerSizeDown, TriggerSizeDownEffect);
+        }
 
         public void Init(Animator animator)
         {
@@ -32,6 +53,27 @@
         public void TriggerStep()
         {
             GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerStep, transform.position);
+        }
+
+        public void TriggerTeleportEffect()
+        {
+            TriggerParticles(_teleportEffects);
+        }
+
+        public void TriggerSizeUpEffect()
+        {
+            TriggerParticles(_sizeUpEffects);
+        }
+
+        public void TriggerSizeDownEffect()
+        {
+            TriggerParticles(_sizeDownEffects);
+        }
+
+        private void TriggerParticles(ParticleSystem[] particles)
+        {
+            foreach(ParticleSystem particle in particles)
+                particle.Play();
         }
     }
 }

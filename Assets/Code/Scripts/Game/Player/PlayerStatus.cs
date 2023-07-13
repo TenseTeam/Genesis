@@ -1,8 +1,10 @@
 ﻿namespace ProjectGenesis.Player
 {
+    using ProjectGenesis.Constants.Events;
     using System;
     using UnityEngine;
     using VUDK.Extensions.Transform;
+    using VUDK.Generic.Managers;
 
     public class PlayerStatus : MonoBehaviour, ICloneable
     {
@@ -33,6 +35,11 @@
             _targetSize = IsResized ? _originalSize : size;
             _isResizing = true;
             IsResized = !IsResized;
+
+            if (_targetSize.magnitude >= _originalSize.magnitude)
+                GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerSizeUp);
+            else
+                GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerSizeDown);
 
             CancelInvoke("StopResizing");
             Invoke("StopResizing", _resizeTime);

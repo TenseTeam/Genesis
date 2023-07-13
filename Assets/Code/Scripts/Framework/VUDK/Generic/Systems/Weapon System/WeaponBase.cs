@@ -3,7 +3,7 @@
     using System;
     using System.Collections;
     using UnityEngine;
-    using VUDK.Generic.Serializable.Mathematics;
+    using VUDK.Generic.Serializable;
 
     public abstract class WeaponBase : MonoBehaviour
     {

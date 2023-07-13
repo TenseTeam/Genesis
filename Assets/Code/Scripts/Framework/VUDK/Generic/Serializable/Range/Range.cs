@@ -1,4 +1,4 @@
-﻿namespace VUDK.Generic.Serializable.Mathematics
+﻿namespace VUDK.Generic.Serializable
 {
     using System;
     using UnityEngine;

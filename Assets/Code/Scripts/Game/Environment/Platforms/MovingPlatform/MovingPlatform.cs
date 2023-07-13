@@ -18,10 +18,7 @@
 
         private Vector3 _previousPosition;
 
-        private void Start()
-        {
-            _previousPosition = transform.position;
-        }
+        private void Start() => _previousPosition = transform.position;
 
         private void FixedUpdate() => Move();
 
@@ -35,10 +32,9 @@
             _previousPosition = transform.position;
 
             float distanceToTarget = Vector3.Distance(targetPosition, transform.position);
+
             if (distanceToTarget <= distanceToMove)
-            {
                 _positions.Next();
-            }
         }
 
         protected override void OnEntityEnterPlatform(Collision entityCollision)

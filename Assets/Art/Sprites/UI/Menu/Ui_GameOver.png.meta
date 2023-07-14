@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: daa79acf9b2d6c84b83146bddec336d5
+guid: 294098640e944f14ea8dba5298ba73cf
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -53,7 +53,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -106,84 +106,20 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 8192
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 2
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: spr_ConceptHill_1a_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 19200
-        height: 1071
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7babc3c5da73e2f4f98ddc473a3b0549
-      internalID: 1185450462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    outline:
-    - - {x: -1917.1875, y: 296.35574}
-      - {x: -2696.4844, y: 149.93492}
-      - {x: -2711.7188, y: 126.5076}
-      - {x: -2886.3281, y: 268.24295}
-      - {x: -2973.0469, y: 303.38397}
-      - {x: -4358.203, y: 303.38397}
-      - {x: -4618.3594, y: 182.7332}
-      - {x: -4618.3594, y: -540}
-      - {x: -1468.3594, y: -540}
-      - {x: -1468.3594, y: -329.15402}
-      - {x: -1747.2656, y: 235.44469}
-    - - {x: -894.1406, y: 315.09763}
-      - {x: -1380.4688, y: -245.987}
-      - {x: -1406.25, y: -515.4013}
-      - {x: -1406.25, y: -540}
-      - {x: 1278.5156, y: -540}
-      - {x: 1278.5156, y: -442.77658}
-      - {x: 1225.7812, y: 30.455532}
-      - {x: 503.90625, y: 315.09763}
-    - - {x: 4712.1094, y: -208.50327}
-      - {x: 4693.3594, y: 114.79393}
-      - {x: 4679.297, y: 309.24078}
-      - {x: 1416.7969, y: 309.24078}
-      - {x: 1296.0938, y: -227.24513}
-      - {x: 1296.0938, y: -540}
-      - {x: 4727.3438, y: -540}
-      - {x: 4727.3438, y: -524.7723}
-      - {x: 4726.172, y: -483.7744}
-      - {x: 4722.6562, y: -372.4946}
+    sprites: []
+    outline: []
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      spr_ConceptHill_1a_0: 1185450462
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

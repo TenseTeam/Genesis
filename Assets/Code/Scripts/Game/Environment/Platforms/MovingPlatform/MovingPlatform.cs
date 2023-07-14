@@ -16,11 +16,33 @@
         [SerializeField, Header("Velocity")]
         private float _speed;
 
+        [SerializeField, Header("Settings")]
+        private bool _startOnAwake;
+
+        private bool _canMove;
         private Vector3 _previousPosition;
 
-        private void Start() => _previousPosition = transform.position;
+        private void Awake()
+        {
+            if (_startOnAwake)
+                _canMove = true;
+        }
 
-        private void FixedUpdate() => Move();
+        private void Start()
+        {
+            _previousPosition = transform.position;
+        }
+
+        private void FixedUpdate()
+        {
+            if (_canMove)
+                Move();
+        }
+
+        public void StartMove()
+        {
+            _canMove = true;
+        }
 
         public void Move()
         {

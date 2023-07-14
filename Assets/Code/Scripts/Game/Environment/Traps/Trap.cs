@@ -4,7 +4,6 @@ namespace ProjectGenesis.Environment.Traps
     using VUDK.Generic.Systems.EntitySystem.Interfaces;
     using VUDK.Generic.Systems.TriggerSystem;
 
-    [RequireComponent(typeof(Collider))]
     public class Trap : TriggerEvent
     {
         protected override void OnTriggerEnter(Collider other)

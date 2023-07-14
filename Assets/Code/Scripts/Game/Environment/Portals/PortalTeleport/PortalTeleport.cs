@@ -46,7 +46,7 @@
         }
 
 #if DEBUG
-        protected override void OnDrawGizmos()
+        private void OnDrawGizmos()
         {
             Vector3 _dest = transform.position + DestinationOnArriveOffset;
             float size = transform.localScale.magnitude / 8f;

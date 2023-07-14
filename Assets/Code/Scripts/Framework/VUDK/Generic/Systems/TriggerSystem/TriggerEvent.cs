@@ -4,7 +4,6 @@
     using UnityEngine.Events;
     using VUDK.Extensions.Gizmos;
 
-    [ExecuteInEditMode]
     [RequireComponent(typeof(Collider))]
     public class TriggerEvent : MonoBehaviour
     {
@@ -12,13 +11,6 @@
         protected UnityEvent OnEnter;
         [SerializeField]
         protected UnityEvent OnExit;
-
-        private Collider _collider;
-
-        private void Awake()
-        {
-            TryGetComponent(out _collider);
-        }
 
         protected virtual void OnTriggerEnter(Collider other)
         {
@@ -33,18 +25,5 @@
         protected virtual void OnTriggerStay(Collider other)
         {
         }
-
-#if DEBUG
-        protected virtual void OnDrawGizmos()
-        {
-            DrawTrigger();
-        }
-
-        protected virtual void DrawTrigger()
-        {
-            Gizmos.color = Color.red;
-            GizmosExtension.DrawWireCubeWithRotation(transform.position, transform.rotation, _collider.bounds.size);
-        }
-#endif
     }
 }

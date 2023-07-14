@@ -10,12 +10,12 @@ Material:
   m_Name: mat_HoloGlitch_0a 3
   m_Shader: {fileID: -6465566751694194690, guid: a2b31413e80721949a153632fd24c3c9,
     type: 3}
-  m_Parent: {fileID: 0}
+  m_Parent: {fileID: 2100000, guid: 2d9741b67f85729428b22e547b6b6a71, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
+  m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap:
@@ -24,42 +24,13 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - Texture2D_71802F8D:
-        m_Texture: {fileID: 2800000, guid: 11ca10b794efdf944b750ab493949ceb, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - Texture2D_96667006:
-        m_Texture: {fileID: 2800000, guid: 683341ccb1c7851428498ded84350928, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Ints: []
-    m_Floats:
-    - Vector1_4CAD8D14: 0
-    - Vector1_706D613F: 0
-    - Vector1_8FB533F9: 0
-    - Vector1_9D1B0319: 7.8
-    - Vector1_A2A31FB8: 0
-    - Vector1_F6F5E966: 0.5
-    - _QueueControl: 0
-    - _QueueOffset: 0
+    m_Floats: []
     m_Colors:
     - Color_3436EB5F: {r: 0.07694803, g: 0.09433961, b: 0.01370594, a: 0}
     - Color_677C2DF4: {r: 0.19461787, g: 0.23839766, b: 0.039546248, a: 0}
     - Color_E34AF851: {r: 0.18934593, g: 0.1981132, b: 0.101673186, a: 0}
-    - Vector2_95CC62B7: {r: 3, g: 10.5, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2690486871915171614
 MonoBehaviour:

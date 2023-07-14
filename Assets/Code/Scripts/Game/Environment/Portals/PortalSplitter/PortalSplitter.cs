@@ -55,7 +55,7 @@
         }
 
 #if DEBUG
-        protected override void OnDrawGizmos()
+        private void OnDrawGizmos()
         {
             Vector3 playerPos = transform.position + _playerAlignPosition;
             Vector3 linkedPos = transform.position + _linkedPlayerAlignPosition;

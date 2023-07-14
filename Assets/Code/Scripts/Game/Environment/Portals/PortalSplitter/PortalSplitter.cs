@@ -1,8 +1,10 @@
 ﻿namespace ProjectGenesis.Environment.Portals.PortalSplitter
 {
+    using ProjectGenesis.Constants.Events;
     using ProjectGenesis.Player;
     using UnityEngine;
     using VUDK.Extensions.Transform;
+    using VUDK.Generic.Managers;
 
     public class PortalSplitter : PortalBase
     {
@@ -33,6 +35,7 @@
 
         private void EnableDouble(PlayerController player)
         {
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnEnterSplitter);
             player.Status.ApplySplit();
             _linkedPlayerManager.Enable();
             _linkedPlayerManager.gameObject.SetActive(true);

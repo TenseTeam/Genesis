@@ -35,7 +35,7 @@ namespace ProjectGenesis.Player
 
         protected override void DeathEffects()
         {
-            GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnGameover);
+            //GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnGameover);
         }
     }
 }

@@ -3,10 +3,9 @@
     using UnityEngine;
     using VUDK.Extensions.Transform;
     using VUDK.Extensions.Gizmos;
-    using VUDK.Generic.Systems.EventsSystem;
+    using VUDK.Generic.Managers;
     using ProjectGenesis.Player;
     using ProjectGenesis.Constants.Events;
-    using VUDK.Generic.Managers;
 
     public class PortalTeleport : PortalBase
     {
@@ -23,6 +22,7 @@
             if(interactor.TryGetComponent(out PlayerController player) && !IsTeleporting)
             {
                 OnEnter?.Invoke();
+                GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnEnterTeleport);
                 _portalDestination.TeleportAtThisPortal(interactor.transform);
             }
         }

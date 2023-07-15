@@ -35,7 +35,7 @@ Transform:
   - {fileID: 4936757744036304635}
   - {fileID: 7535056679236510458}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &2190470306661241544
 BoxCollider:
@@ -78,6 +78,7 @@ MonoBehaviour:
       m_Calls: []
   _portalDestination: {fileID: 0}
   <DestinationOnArriveOffset>k__BackingField: {x: 0, y: 0, z: 0}
+  <DestinationOnArriveRotation>k__BackingField: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &3082953578397529431
 GameObject:
   m_ObjectHideFlags: 0
@@ -9886,7 +9887,6 @@ GameObject:
   - component: {fileID: 7535056679236510458}
   - component: {fileID: 4762462508346254420}
   - component: {fileID: 4364195815260508272}
-  - component: {fileID: 5633144556839627391}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -9959,25 +9959,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5633144556839627391
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8185565001880413742}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}

@@ -97,10 +97,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Music: {fileID: 7936015831811275621}
   StereoSourceEffect: {fileID: 6196753950008130958}
-  StereoSourceEffects: []
+  StereoSourceEffects:
+  - {fileID: 1669162114234555471}
+  - {fileID: 4222564610345313858}
+  - {fileID: 8848853566487461379}
+  - {fileID: 5991461094138938473}
+  - {fileID: 5458320546086351057}
+  - {fileID: 2049018957666021091}
   _buttonClick: {fileID: 8300000, guid: 5e368e4a49e543049a7732087c0341b9, type: 3}
   _enterPortal: {fileID: 8300000, guid: 712ca645095b2dd4c989a21c3200054f, type: 3}
+  _levelCompleted: {fileID: 8300000, guid: 2c2baf00d3350d040971b876ae60690d, type: 3}
   _playerJump: {fileID: 8300000, guid: 297ba4af1472bfc438ed0bb8fd5f4b34, type: 3}
+  _playerTakeDamage: {fileID: 8300000, guid: dc62722e764f57e46ab6d039bd6f1e3c, type: 3}
 --- !u!1 &1109289120283723251
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,7 +750,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: b8f13a0899e3f9443b2ad5331f3ca76b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1209,7 +1217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b2f9fd176ad9e4da329e5424fe1837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pooledObject: {fileID: 6587472758719143661, guid: 7a373f700080a794a8be1ea3e7b206ce,
+  _pooledObject: {fileID: 5303107264787402792, guid: 68148cdb38fa1ba41af2006fda891478,
     type: 3}
   _instancesAtStart: 3
   _isCapped: 0
@@ -1386,6 +1394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31321eefbd75d754e86e47490d63638b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sceneToLoadOnGameover: 4
 --- !u!1 &8872645044108756300
 GameObject:
   m_ObjectHideFlags: 0

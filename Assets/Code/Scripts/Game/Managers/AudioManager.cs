@@ -16,6 +16,8 @@
         private AudioClip _enterPortal;
         [SerializeField]
         private AudioClip _levelCompleted;
+        [SerializeField]
+        private AudioClip _bounceEffect;
 
         [SerializeField, Header("Player Effects")]
         private AudioClip _playerJump;
@@ -29,8 +31,9 @@
             GameManager.Instance.EventManager.AddListener<Vector3>(EventKeys.OnEnterPortal, (position) => PlaySpatialAudio(_enterPortal, position));
 
             GameManager.Instance.EventManager.AddListener<EntityBase>(EventKeysVUDK.EntityEvents.OnEntityTakeDamage, (ent) => PlayConcurrentEffectAudio(_playerTakeDamage));
-            //GameManager.Instance.EventManager.AddListener<Vector3>(EventKeys.OnPlayerStep, (position) => PlaySpatialAudio(_playerStep, position));
             GameManager.Instance.EventManager.AddListener<Vector3>(EventKeys.OnPlayerJump, (position) => PlaySpatialAudio(_playerJump, position));
+
+            GameManager.Instance.EventManager.AddListener<Vector3>(EventKeys.OnBouncing, (position) => PlaySpatialAudio(_bounceEffect, position));
 
             GameManager.Instance.EventManager.AddListener<AudioClip>(EventKeys.OnEnterTriggerVocal, (vocalClip) => PlayUncuncurrentEffectAudio(vocalClip));
             GameManager.Instance.EventManager.AddListener(EventKeys.OnExitTriggerVocal, StereoSourceEffect.Stop);
@@ -43,8 +46,9 @@
             GameManager.Instance.EventManager.RemoveListener<Vector3>(EventKeys.OnEnterPortal, (position) => PlaySpatialAudio(_enterPortal, position));
 
             GameManager.Instance.EventManager.RemoveListener<EntityBase>(EventKeysVUDK.EntityEvents.OnEntityTakeDamage, (ent) => PlayConcurrentEffectAudio(_playerTakeDamage));
-            //GameManager.Instance.EventManager.RemoveListener<Vector3>(EventKeys.OnPlayerStep, (position) => PlaySpatialAudio(_playerStep, position));
             GameManager.Instance.EventManager.RemoveListener<Vector3>(EventKeys.OnPlayerJump, (position) => PlaySpatialAudio(_playerJump, position));
+
+            GameManager.Instance.EventManager.RemoveListener<Vector3>(EventKeys.OnBouncing, (position) => PlaySpatialAudio(_bounceEffect, position));
 
             GameManager.Instance.EventManager.RemoveListener<AudioClip>(EventKeys.OnEnterTriggerVocal, (vocalClip) => PlayUncuncurrentEffectAudio(vocalClip));
             GameManager.Instance.EventManager.RemoveListener(EventKeys.OnExitTriggerVocal, StereoSourceEffect.Stop);

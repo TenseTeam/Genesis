@@ -8,11 +8,11 @@
     public class PlayerGraphicsController : MonoBehaviour
     {
         [SerializeField, Header("Effects")]
-        private ParticleSystem[] _teleportEffects;
+        private ParticleSystem _teleportEffects;
         [SerializeField]
-        private ParticleSystem[] _sizeUpEffects;
+        private ParticleSystem _sizeUpEffects;
         [SerializeField]
-        private ParticleSystem[] _sizeDownEffects;
+        private ParticleSystem _sizeDownEffects;
 
         private Animator _anim;
 
@@ -57,23 +57,17 @@
 
         public void TriggerTeleportEffect()
         {
-            TriggerParticles(_teleportEffects);
+            _teleportEffects.Play();
         }
 
         public void TriggerSizeUpEffect()
         {
-            TriggerParticles(_sizeUpEffects);
+            _sizeDownEffects.Play();
         }
 
         public void TriggerSizeDownEffect()
         {
-            TriggerParticles(_sizeDownEffects);
-        }
-
-        private void TriggerParticles(ParticleSystem[] particles)
-        {
-            foreach(ParticleSystem particle in particles)
-                particle.Play();
+            _sizeDownEffects.Play();
         }
     }
 }

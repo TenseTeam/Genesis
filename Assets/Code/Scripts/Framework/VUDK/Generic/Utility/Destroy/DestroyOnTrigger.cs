@@ -4,11 +4,12 @@ namespace VUDK.Generic.Utility
 
     public class DestroyOnTrigger : MonoBehaviour
     {
-        public string tagName = "Enemy";
+        [SerializeField]
+        private string _tagName;
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.tag == tagName)
+            if (other.CompareTag(_tagName))
             {
                 Destroy(gameObject);
             }

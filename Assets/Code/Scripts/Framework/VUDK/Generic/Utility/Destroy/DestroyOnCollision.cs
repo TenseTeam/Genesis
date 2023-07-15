@@ -4,11 +4,12 @@ namespace VUDK.Generic.Utility
 
     public class DestroyOnCollision : MonoBehaviour
     {
-        public string tagName = "Enemy";
+        [SerializeField]
+        private string _tagName;
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionEnter(Collision other)
         {
-            if (collision.transform.CompareTag(tag))
+            if (other.transform.CompareTag(_tagName))
             {
                 Destroy(gameObject);
             }

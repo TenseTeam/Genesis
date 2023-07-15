@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 726417215046189873}
   - component: {fileID: 1608428648857615311}
   m_Layer: 3
-  m_Name: pf_PlayerErek
+  m_Name: pf_PlayerErek2DLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ Transform:
   - {fileID: 7644586782117290032}
   - {fileID: 6526978165924441870}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6833115318141443375
 Animator:
@@ -207,17 +207,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef54833161145745a4ddbbcc4442cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _teleportEffects:
-  - {fileID: 7958207335855339793}
-  - {fileID: 5581346111312588185}
-  _sizeUpEffects:
-  - {fileID: 8116908666510266197}
-  - {fileID: 0}
-  - {fileID: 4457459270574002030}
-  _sizeDownEffects:
-  - {fileID: 5632162236361116351}
-  - {fileID: 0}
-  - {fileID: 3429857110515546109}
+  _teleportEffects: {fileID: 0}
+  _sizeUpEffects: {fileID: 0}
+  _sizeDownEffects: {fileID: 0}
 --- !u!114 &7299434669335622148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29453,7 +29445,8 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.90082675
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5866666021909216657, guid: 2bca38a09659e7147a72208319cdbd45, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7602194810454603475, guid: 2bca38a09659e7147a72208319cdbd45,

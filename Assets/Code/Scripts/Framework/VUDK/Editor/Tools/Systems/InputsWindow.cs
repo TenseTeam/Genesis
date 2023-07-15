@@ -1,10 +1,9 @@
-﻿namespace VUDK.Tools.Systems
+﻿namespace VUDK.Editor.Tools.Systems
 {
     using UnityEditor;
     using UnityEngine.InputSystem;
     using UnityEngine;
 
-#if DEBUG
     public class InputsWindow : EditorWindow
     {
         private static InputActionAsset s_inputActionAsset;
@@ -32,5 +31,4 @@
                 Debug.LogWarning("Asset \"Inputs.inputActionAsset\" not found.");
         }
     }
-#endif
 }

@@ -5,6 +5,7 @@
     using VUDK.Features.DialogueSystem.Data;
     using EventKeysVUDK = VUDK.Generic.Systems.EventsSystem.Events.EventKeys;
     using EventKeys = ProjectGenesis.Constants.Events.EventKeys;
+    using VUDK.Generic.Systems.EntitySystem;
 
     public class AudioManager : VUDK.Generic.Managers.AudioManager
     {
@@ -13,9 +14,13 @@
 
         [SerializeField, Header("Effects")]
         private AudioClip _enterPortal;
+        [SerializeField]
+        private AudioClip _levelCompleted;
 
         [SerializeField, Header("Player Effects")]
         private AudioClip _playerJump;
+        [SerializeField]
+        private AudioClip _playerTakeDamage;
 
         protected override void OnEnable()
         {
@@ -23,6 +28,7 @@
             GameManager.Instance.EventManager.AddListener<SpeakerData>(EventKeysVUDK.DialogueEvents.OnDialougeTypedLetter, (speakerData) => PlayUncuncurrentEffectAudio(speakerData.SpeakerLetterAudio, speakerData.PitchVariation));
             GameManager.Instance.EventManager.AddListener<Vector3>(EventKeys.OnEnterPortal, (position) => PlaySpatialAudio(_enterPortal, position));
 
+            GameManager.Instance.EventManager.AddListener<EntityBase>(EventKeysVUDK.EntityEvents.OnEntityTakeDamage, (ent) => PlayConcurrentEffectAudio(_playerTakeDamage));
             //GameManager.Instance.EventManager.AddListener<Vector3>(EventKeys.OnPlayerStep, (position) => PlaySpatialAudio(_playerStep, position));
             GameManager.Instance.EventManager.AddListener<Vector3>(EventKeys.OnPlayerJump, (position) => PlaySpatialAudio(_playerJump, position));
 
@@ -36,6 +42,7 @@
             GameManager.Instance.EventManager.RemoveListener<SpeakerData>(EventKeysVUDK.DialogueEvents.OnDialougeTypedLetter, (speakerData) => PlayUncuncurrentEffectAudio(speakerData.SpeakerLetterAudio, speakerData.PitchVariation));
             GameManager.Instance.EventManager.RemoveListener<Vector3>(EventKeys.OnEnterPortal, (position) => PlaySpatialAudio(_enterPortal, position));
 
+            GameManager.Instance.EventManager.RemoveListener<EntityBase>(EventKeysVUDK.EntityEvents.OnEntityTakeDamage, (ent) => PlayConcurrentEffectAudio(_playerTakeDamage));
             //GameManager.Instance.EventManager.RemoveListener<Vector3>(EventKeys.OnPlayerStep, (position) => PlaySpatialAudio(_playerStep, position));
             GameManager.Instance.EventManager.RemoveListener<Vector3>(EventKeys.OnPlayerJump, (position) => PlaySpatialAudio(_playerJump, position));
 

@@ -1,6 +1,5 @@
 ﻿namespace ProjectGenesis.Environment.Traps
 {
-    using System.Collections;
     using UnityEngine;
     using VUDK.Patterns.ObjectPool;
     using VUDK.Patterns.ObjectPool.Interfaces;

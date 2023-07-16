@@ -45,6 +45,7 @@
         //private Vector3 _raySlopeOrigin => transform.position + (Vector3.up * _raySlopeOffset);
 
         private float _jumpForceScaled => _jumpForce * transform.localScale.magnitude;
+        private float _speedScaled => Speed * transform.lossyScale.magnitude / Rigidbody.mass;
 
         private void OnEnable()
         {
@@ -70,7 +71,7 @@
         {
             //if (!_canClimbSlope) return;
             //float effectiveSpeed = (_isSpeedAffectedByScale ? Speed * transform.lossyScale.magnitude : Speed) / Rigidbody.mass;
-            Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * Speed /*effectiveSpeed*/);
+            Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * _speedScaled /*effectiveSpeed*/);
         }
 
         public override void Stop()

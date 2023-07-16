@@ -44,8 +44,8 @@
         //private bool _canClimbSlope => SlopeAngle() <= _maxSlopeDegree;
         //private Vector3 _raySlopeOrigin => transform.position + (Vector3.up * _raySlopeOffset);
 
-        private float _jumpForceScaled => _jumpForce * transform.localScale.magnitude;
-        private float _speedScaled => Speed * transform.lossyScale.magnitude / Rigidbody.mass;
+        private float _jumpForceScaled => _jumpForce /** transform.localScale.magnitude*/;
+        private float _speedScaled => Speed / Rigidbody.mass;
 
         private void OnEnable()
         {

@@ -8,9 +8,17 @@
 
     public class PlayerInputsController : MonoBehaviour
     {
+        [SerializeField, Header("Settings")]
+        private bool _disableInputsOnAwake;
+        [SerializeField]
+        private bool _disableMovementInputsOnAwake;
+
         private void Awake()
         {
             EnableInputs();
+
+            if (_disableInputsOnAwake) DisableInputs();
+            if (_disableMovementInputsOnAwake) DisableMovementInputs();
         }
 
         private void OnEnable()

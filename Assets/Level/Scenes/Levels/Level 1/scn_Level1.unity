@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -31547,21 +31547,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: pf_GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 3797527112424252662, guid: 10ec1f320946b034cb477d6bccb4b28d,
-        type: 3}
-      propertyPath: _groundLayers.m_Bits
-      value: 320
-      objectReference: {fileID: 0}
-    - target: {fileID: 5408408294387018601, guid: 10ec1f320946b034cb477d6bccb4b28d,
-        type: 3}
-      propertyPath: _bounceEffect
-      value: 
-      objectReference: {fileID: 8300000, guid: 00a6f70d13019be44b65e5de09761f43, type: 3}
-    - target: {fileID: 5408408294387018601, guid: 10ec1f320946b034cb477d6bccb4b28d,
-        type: 3}
-      propertyPath: _playerTakeDamage
-      value: 
-      objectReference: {fileID: 8300000, guid: adb0daa3f93855f47a4ebd442ba03e51, type: 3}
     - target: {fileID: 6868593674866161336, guid: 10ec1f320946b034cb477d6bccb4b28d,
         type: 3}
       propertyPath: m_RootOrder
@@ -31617,16 +31602,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7936015831811275621, guid: 10ec1f320946b034cb477d6bccb4b28d,
-        type: 3}
-      propertyPath: m_Volume
-      value: 0.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 7936015831811275621, guid: 10ec1f320946b034cb477d6bccb4b28d,
-        type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 53c7f46d2ae0ceb4894877d131cc029d, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

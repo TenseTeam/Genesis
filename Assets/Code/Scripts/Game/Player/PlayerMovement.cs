@@ -18,10 +18,10 @@
         [SerializeField, Min(0)]
         private float _jumpCooldown;
 
-        [SerializeField, Header("Scale")]
-        private bool _isJumpAffectedByScale;
-        [SerializeField]
-        private bool _isSpeedAffectedByScale;
+        //[SerializeField, Header("Scale")]
+        //private bool _isJumpAffectedByScale;
+        //[SerializeField]
+        //private bool _isSpeedAffectedByScale;
 
         //[SerializeField, Range(0f, 90f), Header("Slope")]
         //private float _maxSlopeDegree;
@@ -43,6 +43,8 @@
 
         //private bool _canClimbSlope => SlopeAngle() <= _maxSlopeDegree;
         //private Vector3 _raySlopeOrigin => transform.position + (Vector3.up * _raySlopeOffset);
+
+        private float _jumpForceScaled => _jumpForce * transform.localScale.magnitude;
 
         private void OnEnable()
         {
@@ -67,8 +69,8 @@
         public override void Move()
         {
             //if (!_canClimbSlope) return;
-            float effectiveSpeed = (_isSpeedAffectedByScale ? Speed * transform.lossyScale.magnitude : Speed) / Rigidbody.mass;
-            Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * effectiveSpeed);
+            //float effectiveSpeed = (_isSpeedAffectedByScale ? Speed * transform.lossyScale.magnitude : Speed) / Rigidbody.mass;
+            Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * Speed /*effectiveSpeed*/);
         }
 
         public override void Stop()
@@ -79,9 +81,9 @@
         public void Jump()
         {
             GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerJump, transform.position);
-            float effectiveJumpForce = _isJumpAffectedByScale ? _jumpForce * transform.lossyScale.magnitude : _jumpForce;
+            //float effectiveJumpForce = _isJumpAffectedByScale ? _jumpForce * transform.lossyScale.magnitude : _jumpForce;
             Rigidbody.velocity = Vector3.zero;
-            Rigidbody.AddForce(transform.up * effectiveJumpForce, ForceMode.Impulse);
+            Rigidbody.AddForce(transform.up * _jumpForceScaled, ForceMode.Impulse);
         }
 
         public void InvokeDisableJumpCooldown()

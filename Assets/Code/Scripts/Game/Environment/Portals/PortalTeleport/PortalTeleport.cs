@@ -64,7 +64,7 @@
                 // Draw arrow indicating the rotation
                 Quaternion rotation = DestinationOnArriveRotation;
                 Vector3 arrowEnd = _dest + rotation * Vector3.forward * (size * 1.5f);
-                GizmosExtension.DrawArrowRay(_dest, arrowEnd, size * 0.5f);
+                GizmosExtension.DrawArrow(_dest, arrowEnd, size * 0.5f);
             }
         }
 #endif

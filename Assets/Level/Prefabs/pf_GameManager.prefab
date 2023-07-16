@@ -107,8 +107,9 @@ MonoBehaviour:
   _buttonClick: {fileID: 8300000, guid: 5e368e4a49e543049a7732087c0341b9, type: 3}
   _enterPortal: {fileID: 8300000, guid: 712ca645095b2dd4c989a21c3200054f, type: 3}
   _levelCompleted: {fileID: 8300000, guid: 2c2baf00d3350d040971b876ae60690d, type: 3}
+  _bounceEffect: {fileID: 8300000, guid: 00a6f70d13019be44b65e5de09761f43, type: 3}
   _playerJump: {fileID: 8300000, guid: 297ba4af1472bfc438ed0bb8fd5f4b34, type: 3}
-  _playerTakeDamage: {fileID: 8300000, guid: dc62722e764f57e46ab6d039bd6f1e3c, type: 3}
+  _playerTakeDamage: {fileID: 8300000, guid: adb0daa3f93855f47a4ebd442ba03e51, type: 3}
 --- !u!1 &1109289120283723251
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ Transform:
   - {fileID: 6932064242874605951}
   - {fileID: 4899254886066240141}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3428986148979004667
 MonoBehaviour:
@@ -748,9 +749,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 12282472877973379, guid: 19c5c58b53dacd34b8edad22dfd76732,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: b8f13a0899e3f9443b2ad5331f3ca76b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 53c7f46d2ae0ceb4894877d131cc029d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.07
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1441,7 +1442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _groundLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
 --- !u!1 &9052413236844200537
 GameObject:
   m_ObjectHideFlags: 0

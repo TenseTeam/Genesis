@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: a_MoonRotation
+  m_Name: a_3DMoonRotation
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -19,58 +19,58 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 180, y: 180, z: 180}
-        inSlope: {x: 0, y: 0, z: 80.41005}
-        outSlope: {x: 0, y: 0, z: 80.41005}
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 40, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.116200134}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.5
-        value: {x: 180, y: 180, z: 202.6}
-        inSlope: {x: 0, y: 0, z: -0.33790016}
-        outSlope: {x: 0, y: 0, z: -0.33790016}
+        value: {x: 20, y: 0, z: 0}
+        inSlope: {x: 40, y: -0, z: -0}
+        outSlope: {x: -40, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.3036397}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.22181892}
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
-        value: {x: 180, y: 180, z: 182.6}
-        inSlope: {x: 0, y: 0, z: -59.193203}
-        outSlope: {x: 0, y: 0, z: -59.193203}
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: -40, y: -0, z: -0}
+        outSlope: {x: -40, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.2562728}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.11693287}
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1.5
-        value: {x: 180, y: 180, z: 162.6}
-        inSlope: {x: 0, y: 0, z: -0.2946186}
-        outSlope: {x: 0, y: 0, z: -0.2946186}
+        value: {x: -20, y: 0, z: 0}
+        inSlope: {x: -40, y: -0, z: -0}
+        outSlope: {x: 40, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.27281308}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.22424054}
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 2
-        value: {x: 180, y: 180, z: 180.03667}
-        inSlope: {x: 0, y: 0, z: 70.37174}
-        outSlope: {x: 0, y: 0, z: 70.37174}
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 40, y: -0, z: -0}
+        outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.10901189}
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: 
+    path: Moon_Face_low
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
   m_PPtrCurves: []
-  m_SampleRate: 30
+  m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -78,7 +78,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 3990629121
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -114,19 +114,103 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 180
+        value: 0
         inSlope: 0
-        outSlope: 0
-        tangentMode: 136
+        outSlope: 40
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 20
+        inSlope: 40
+        outSlope: -40
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -40
+        outSlope: -40
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: -20
+        inSlope: -40
+        outSlope: 40
+        tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 2
-        value: 180
+        value: 0
+        inSlope: 40
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Moon_Face_low
+    classID: 4
+    script: {fileID: 0}
+    flags: 0
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
         inSlope: 0
         outSlope: 0
-        tangentMode: 136
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.5
+        value: 0
+        inSlope: -0
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -0
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.5
+        value: 0
+        inSlope: -0
+        outSlope: 0
+        tangentMode: 69
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2
+        value: 0
+        inSlope: -0
+        outSlope: 0
+        tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
@@ -134,88 +218,67 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.y
-    path: 
+    path: Moon_Face_low
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 180
-        inSlope: 80.41005
-        outSlope: 80.41005
-        tangentMode: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 69
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.116200134
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.5
-        value: 202.6
-        inSlope: -0.33790016
-        outSlope: -0.33790016
-        tangentMode: 1
+        value: 0
+        inSlope: -0
+        outSlope: 0
+        tangentMode: 69
         weightedMode: 0
-        inWeight: 0.3036397
-        outWeight: 0.22181892
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 182.6
-        inSlope: -59.193203
-        outSlope: -59.193203
-        tangentMode: 0
+        value: 0
+        inSlope: -0
+        outSlope: 0
+        tangentMode: 69
         weightedMode: 0
-        inWeight: 0.2562728
-        outWeight: 0.11693287
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.5
-        value: 162.6
-        inSlope: -0.2946186
-        outSlope: -0.2946186
-        tangentMode: 0
+        value: 0
+        inSlope: -0
+        outSlope: 0
+        tangentMode: 69
         weightedMode: 0
-        inWeight: 0.27281308
-        outWeight: 0.22424054
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       - serializedVersion: 3
         time: 2
-        value: 180.03667
-        inSlope: 70.37174
-        outSlope: 70.37174
-        tangentMode: 0
+        value: 0
+        inSlope: -0
+        outSlope: 0
+        tangentMode: 69
         weightedMode: 0
-        inWeight: 0.10901189
+        inWeight: 0.33333334
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: 
+    path: Moon_Face_low
     classID: 4
     script: {fileID: 0}
-    flags: 16
-  - serializedVersion: 2
-    curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 180
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.x
-    path: 
-    classID: 4
-    script: {fileID: 0}
-    flags: 16
+    flags: 0
   m_EulerEditorCurves:
   - serializedVersion: 2
     curve:
@@ -225,10 +288,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.x
-    path: 
+    path: Moon_Face_low
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -237,10 +300,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.y
-    path: 
+    path: Moon_Face_low
     classID: 4
     script: {fileID: 0}
-    flags: 16
+    flags: 0
   - serializedVersion: 2
     curve:
       serializedVersion: 2
@@ -249,10 +312,10 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalEulerAngles.z
-    path: 
+    path: Moon_Face_low
     classID: 4
     script: {fileID: 0}
-    flags: 16
-  m_HasGenericRootTransform: 1
+    flags: 0
+  m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []

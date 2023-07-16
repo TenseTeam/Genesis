@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 030fdce7dbbf8654e9e96ffab378cac1
+guid: 252044c9e7a284641a337d65ae1e0e38
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,10 +69,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,10 +108,10 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Windows Store Apps
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ui_FullscreenWord_0
+      name: Ui_Loading_1a_0
       rect:
         serializedVersion: 2
-        x: 1266
-        y: 282
-        width: 366
-        height: 45
+        x: 0
+        y: 0
+        width: 512
+        height: 164
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd17a882740cf3b418e41517ee67c8bb
-      internalID: -1977025205
+      spriteID: 7a44ea7766307604eaa04013c198e369
+      internalID: -1075680649
       vertices: []
       indices: 
       edges: []
@@ -154,7 +154,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ui_FullscreenWord_0: -1977025205
+      Ui_Loading_1a_0: -1075680649
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

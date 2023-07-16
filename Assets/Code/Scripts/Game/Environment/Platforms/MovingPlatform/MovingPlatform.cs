@@ -3,10 +3,14 @@
     using System.Collections.Generic;
     using System.Linq;
     using UnityEngine;
+    using UnityEngine.Events;
     using VUDK.Generic.Structures;
 
     public class MovingPlatform : Platform
     {
+        [SerializeField]
+        private UnityEvent _onArriveAtEndPosition;
+
         [SerializeField, Header("Platform Anchor")]
         private PlatformAnchor _anchor;
 
@@ -18,6 +22,8 @@
 
         [SerializeField, Header("Settings")]
         private bool _startOnAwake;
+        [SerializeField]
+        private bool _isLooped;
 
         private bool _canMove;
         private Vector3 _previousPosition;
@@ -39,9 +45,16 @@
                 Move();
         }
 
+        [ContextMenu("StartMove")]
         public void StartMove()
         {
             _canMove = true;
+        }
+
+        [ContextMenu("StopMove")]
+        public void StopMove()
+        {
+            _canMove = false;
         }
 
         public void Move()
@@ -56,7 +69,15 @@
             float distanceToTarget = Vector3.Distance(targetPosition, transform.position);
 
             if (distanceToTarget <= distanceToMove)
+            {
+                if (_positions.IsAt(_positions.List.Count - 1) && !_isLooped)
+                {
+                    ArriveAtEndPosition();
+                    return;
+                }
+
                 _positions.Next();
+            }
         }
 
         protected override void OnEntityEnterPlatform(Collision entityCollision)
@@ -71,10 +92,18 @@
             entityCollision.transform.parent = null;
         }
 
+        private void ArriveAtEndPosition()
+        {
+            StopMove();
+            _positions.List.Reverse();
+            _onArriveAtEndPosition?.Invoke();
+        }
+
 #if DEBUG
         private void OnDrawGizmos()
         {
-            if (_positions.List.Count == 0) return;
+            if (_positions == null || _positions.List.Count <= 0)
+                return;
             List<Vector3> pos = _positions.List.ToList();
 
             Gizmos.color = Color.red;

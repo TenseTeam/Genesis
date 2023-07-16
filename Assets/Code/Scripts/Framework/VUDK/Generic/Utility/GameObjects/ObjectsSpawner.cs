@@ -6,7 +6,7 @@
     public abstract class ObjectsSpawner : MonoBehaviour
     {
         [SerializeField, Min(0), Header("Rate")]
-        private float _spawnRate = 1f;
+        private float _spawnWaitRate = 1f;
 
         protected bool IsStarted { get; private set; }
 
@@ -42,7 +42,7 @@
             while (true)
             {
                 SpawnObject();
-                yield return new WaitForSeconds(_spawnRate);
+                yield return new WaitForSeconds(_spawnWaitRate);
             }
         }
     }

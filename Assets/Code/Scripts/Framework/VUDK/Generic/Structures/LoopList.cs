@@ -69,5 +69,23 @@ namespace VUDK.Generic.Structures
         {
             return List.Count == 0;
         }
+
+        /// <summary>
+        /// Checks if the Current element is the last one in the list.
+        /// </summary>
+        /// <returns>True if the Current element is the last one, False if not.</returns>
+        public bool IsLast()
+        {
+            return _index == List.Count - 1; 
+        }
+
+        /// <summary>
+        /// Checks if the Current element is equals to a specific index.
+        /// </summary>
+        /// <returns>True if the Current element is equals to a specific index, False if not.</returns>
+        public bool IsAt(int index)
+        {
+            return _index == index;
+        }
     }
 }

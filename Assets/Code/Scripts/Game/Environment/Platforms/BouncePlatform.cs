@@ -1,6 +1,8 @@
 namespace ProjectGenesis.Environment.Platforms
 {
+    using ProjectGenesis.Constants.Events;
     using UnityEngine;
+    using VUDK.Generic.Managers;
 
     public class BouncePlatform : Platform
     {
@@ -15,6 +17,7 @@ namespace ProjectGenesis.Environment.Platforms
 
         private void Bounce(Rigidbody bouncer)
         {
+            GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnBouncing, transform.position);
             bouncer.velocity = Vector3.zero;
             bouncer.AddForce(transform.up * _bounceForce, ForceMode.Impulse);
         }

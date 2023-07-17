@@ -14,6 +14,8 @@
 
         [field: SerializeField]
         public Vector3 DestinationOnArriveOffset { get; private set; }
+        [field: SerializeField]
+        public Quaternion DestinationOnArriveRotation { get; private set; }
 
         public bool IsTeleporting { get; private set; }
 
@@ -32,7 +34,7 @@
             OnExit?.Invoke();
             GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnEnterPortal, transform.position);
             IsTeleporting = true;
-            traveler.SetPosition(transform.position + DestinationOnArriveOffset);
+            traveler.SetPositionAndRotation(transform.position + DestinationOnArriveOffset, DestinationOnArriveRotation);
         }
 
         public bool IsLinked()
@@ -46,7 +48,7 @@
         }
 
 #if DEBUG
-        protected override void OnDrawGizmos()
+        private void OnDrawGizmos()
         {
             Vector3 _dest = transform.position + DestinationOnArriveOffset;
             float size = transform.localScale.magnitude / 8f;
@@ -58,6 +60,11 @@
             {
                 Gizmos.color = _portalDestination.IsLinked() ? Color.yellow : Color.red;
                 GizmosExtension.DrawArrow(transform.position, _portalDestination.transform.position, size*4f);
+
+                // Draw arrow indicating the rotation
+                Quaternion rotation = DestinationOnArriveRotation;
+                Vector3 arrowEnd = _dest + rotation * Vector3.forward * (size * 1.5f);
+                GizmosExtension.DrawArrow(_dest, arrowEnd, size * 0.5f);
             }
         }
 #endif

@@ -1,7 +1,6 @@
 ﻿namespace ProjectGenesis.Player
 {
     using UnityEngine;
-    using VUDK.Generic.Systems.EventsSystem;
     using VUDK.Generic.Systems.InputSystem;
     using EventKeysVUDK = VUDK.Generic.Systems.EventsSystem.Events.EventKeys;
     using EventKeys = ProjectGenesis.Constants.Events.EventKeys;
@@ -9,6 +8,19 @@
 
     public class PlayerInputsController : MonoBehaviour
     {
+        [SerializeField, Header("Settings")]
+        private bool _disableInputsOnAwake;
+        [SerializeField]
+        private bool _disableMovementInputsOnAwake;
+
+        private void Awake()
+        {
+            EnableInputs();
+
+            if (_disableInputsOnAwake) DisableInputs();
+            if (_disableMovementInputsOnAwake) DisableMovementInputs();
+        }
+
         private void OnEnable()
         {
             GameManager.Instance.EventManager.AddListener(EventKeysVUDK.DialogueEvents.OnStartDialogue, EnableOnlyDialogueInputs);

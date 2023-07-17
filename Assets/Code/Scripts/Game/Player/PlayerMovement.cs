@@ -18,10 +18,10 @@
         [SerializeField, Min(0)]
         private float _jumpCooldown;
 
-        [SerializeField, Header("Scale")]
-        private bool _isJumpAffectedByScale;
-        [SerializeField]
-        private bool _isSpeedAffectedByScale;
+        //[SerializeField, Header("Scale")]
+        //private bool _isJumpAffectedByScale;
+        //[SerializeField]
+        //private bool _isSpeedAffectedByScale;
 
         //[SerializeField, Range(0f, 90f), Header("Slope")]
         //private float _maxSlopeDegree;
@@ -33,22 +33,28 @@
         private Quaternion _targetRotation;
         private bool _isRotating;
 
-        [field: SerializeField, Min(0), Header("Speeds")]
-        public float GroundSpeed { get; private set; }
+        [SerializeField, Min(0), Header("Speeds")]
+        private float _airSpeedMultiplier;
 
         [field: SerializeField, Min(0)]
-        public float AirSpeed { get; private set; }
+        public float GroundSpeed { get; private set; }
         public float Horizontal { get; private set; }
         public bool IsJumpInCooldown { get; private set; }
 
+        public float AirSpeed => Speed * _airSpeedMultiplier;
+
         //private bool _canClimbSlope => SlopeAngle() <= _maxSlopeDegree;
         //private Vector3 _raySlopeOrigin => transform.position + (Vector3.up * _raySlopeOffset);
+
+        private float _jumpForceScaled => _jumpForce /** transform.localScale.magnitude*/;
+        private float _speedScaled => Speed / Rigidbody.mass;
 
         private void OnEnable()
         {
             //InputsManager.Inputs.PlayerMovement.Jump.started += Jump;
             InputsManager.Inputs.PlayerMovement.Movement.started += PerformMoving;
             InputsManager.Inputs.PlayerMovement.Movement.canceled += StopMoving;
+            GameManager.Instance.EventManager.AddListener<float>(EventKeys.OnPlayerChangeSize, ChangeJumpForce);
         }
 
         private void OnDisable()
@@ -56,6 +62,7 @@
             //InputsManager.Inputs.PlayerMovement.Jump.started -= Jump;
             InputsManager.Inputs.PlayerMovement.Movement.started -= PerformMoving;
             InputsManager.Inputs.PlayerMovement.Movement.canceled -= StopMoving;
+            GameManager.Instance.EventManager.RemoveListener<float>(EventKeys.OnPlayerChangeSize, ChangeJumpForce);
         }
 
         private void FixedUpdate()
@@ -67,8 +74,8 @@
         public override void Move()
         {
             //if (!_canClimbSlope) return;
-            float effectiveSpeed = (_isSpeedAffectedByScale ? Speed * transform.lossyScale.magnitude : Speed) / Rigidbody.mass;
-            Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * effectiveSpeed);
+            //float effectiveSpeed = (_isSpeedAffectedByScale ? Speed * transform.lossyScale.magnitude : Speed) / Rigidbody.mass;
+            Rigidbody.velocity = new Vector3(Rigidbody.velocity.x, Rigidbody.velocity.y, Horizontal * _speedScaled /*effectiveSpeed*/);
         }
 
         public override void Stop()
@@ -79,9 +86,9 @@
         public void Jump()
         {
             GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerJump, transform.position);
-            float effectiveJumpForce = _isJumpAffectedByScale ? _jumpForce * transform.lossyScale.magnitude : _jumpForce;
+            //float effectiveJumpForce = _isJumpAffectedByScale ? _jumpForce * transform.lossyScale.magnitude : _jumpForce;
             Rigidbody.velocity = Vector3.zero;
-            Rigidbody.AddForce(transform.up * effectiveJumpForce, ForceMode.Impulse);
+            Rigidbody.AddForce(transform.up * _jumpForceScaled, ForceMode.Impulse);
         }
 
         public void InvokeDisableJumpCooldown()
@@ -122,6 +129,11 @@
         private void CalculateTargetRotation(float direction)
         {
             _targetRotation = Quaternion.Euler(transform.eulerAngles.x, direction >= 0f ? 0f : 180f, transform.eulerAngles.z);
+        }
+
+        private void ChangeJumpForce(float force)
+        {
+            _jumpForce = force;
         }
 
         //private float SlopeAngle()

@@ -18,7 +18,7 @@ namespace VUDK.DataSave.MenuPreferences
             /// <param name="fullscreen">The fullscreen setting to save</param>
             public static void SaveFullscreen(bool fullscreen)
             {
-                PlayerPrefs.SetInt(FULLSCREEN_PREF, fullscreen ? 1 : 0);
+                PlayerPrefs.SetString(FULLSCREEN_PREF, fullscreen ? "true" : "false");
             }
 
             /// <summary>
@@ -50,7 +50,7 @@ namespace VUDK.DataSave.MenuPreferences
             /// <returns>The loaded fullscreen setting</returns>
             public static bool LoadFullscreen()
             {
-                return PlayerPrefs.GetInt(FULLSCREEN_PREF) == 1 ? true : false;
+                return PlayerPrefs.GetString(FULLSCREEN_PREF).Equals("true") ? true : false;
             }
 
             /// <summary>

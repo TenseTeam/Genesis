@@ -28,15 +28,16 @@ namespace VUDK.UI.Menu
                 _dropResolution.options.Add(new TMP_Dropdown.OptionData(resolution));
             }
 
+            _toggleFullscreen.SetIsOnWithoutNotify(MenuPrefsSaver.Screen.LoadFullscreen());
+
             if (MenuPrefsSaver.Screen.LoadResolution(out int w, out int h, out int sel))
             {
                 _dropResolution.value = sel;
-                _toggleFullscreen.isOn = MenuPrefsSaver.Screen.LoadFullscreen();
                 Screen.SetResolution(w, h, _toggleFullscreen.isOn);
             }
             else
             {
-                Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, false);
+                Screen.SetResolution(Screen.currentResolution.width, Screen.currentResolution.height, _toggleFullscreen.isOn);
             }
 
             if (MenuPrefsSaver.Screen.LoadRefreshRate(out int hz, out int selectedHz))
@@ -102,11 +103,8 @@ namespace VUDK.UI.Menu
         /// </summary>
         public void ToggleSetFullScreen()
         {
-            Fullscreen = !Fullscreen;
-
-            MenuPrefsSaver.Screen.SaveFullscreen(Fullscreen);
-
-            Screen.fullScreen = Fullscreen;
+            Screen.fullScreen = _toggleFullscreen.isOn;
+            MenuPrefsSaver.Screen.SaveFullscreen(_toggleFullscreen.isOn);
         }
 
         #endregion

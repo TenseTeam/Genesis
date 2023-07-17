@@ -991,10 +991,20 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -238.27525
       objectReference: {fileID: 0}
+    - target: {fileID: 1720599163603391878, guid: 10ec1f320946b034cb477d6bccb4b28d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2573472017463860808, guid: 10ec1f320946b034cb477d6bccb4b28d,
         type: 3}
       propertyPath: m_Name
       value: pf_GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 2573472017463860808, guid: 10ec1f320946b034cb477d6bccb4b28d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2831157129134683790, guid: 10ec1f320946b034cb477d6bccb4b28d,
         type: 3}

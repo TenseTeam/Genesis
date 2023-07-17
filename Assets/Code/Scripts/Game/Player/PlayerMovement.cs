@@ -33,13 +33,15 @@
         private Quaternion _targetRotation;
         private bool _isRotating;
 
-        [field: SerializeField, Min(0), Header("Speeds")]
-        public float GroundSpeed { get; private set; }
+        [SerializeField, Min(0), Header("Speeds")]
+        private float _airSpeedMultiplier;
 
         [field: SerializeField, Min(0)]
-        public float AirSpeed { get; private set; }
+        public float GroundSpeed { get; private set; }
         public float Horizontal { get; private set; }
         public bool IsJumpInCooldown { get; private set; }
+
+        public float AirSpeed => Speed * _airSpeedMultiplier;
 
         //private bool _canClimbSlope => SlopeAngle() <= _maxSlopeDegree;
         //private Vector3 _raySlopeOrigin => transform.position + (Vector3.up * _raySlopeOffset);
@@ -52,6 +54,7 @@
             //InputsManager.Inputs.PlayerMovement.Jump.started += Jump;
             InputsManager.Inputs.PlayerMovement.Movement.started += PerformMoving;
             InputsManager.Inputs.PlayerMovement.Movement.canceled += StopMoving;
+            GameManager.Instance.EventManager.AddListener<float>(EventKeys.OnPlayerChangeSize, ChangeJumpForce);
         }
 
         private void OnDisable()
@@ -59,6 +62,7 @@
             //InputsManager.Inputs.PlayerMovement.Jump.started -= Jump;
             InputsManager.Inputs.PlayerMovement.Movement.started -= PerformMoving;
             InputsManager.Inputs.PlayerMovement.Movement.canceled -= StopMoving;
+            GameManager.Instance.EventManager.RemoveListener<float>(EventKeys.OnPlayerChangeSize, ChangeJumpForce);
         }
 
         private void FixedUpdate()
@@ -125,6 +129,11 @@
         private void CalculateTargetRotation(float direction)
         {
             _targetRotation = Quaternion.Euler(transform.eulerAngles.x, direction >= 0f ? 0f : 180f, transform.eulerAngles.z);
+        }
+
+        private void ChangeJumpForce(float force)
+        {
+            _jumpForce = force;
         }
 
         //private float SlopeAngle()

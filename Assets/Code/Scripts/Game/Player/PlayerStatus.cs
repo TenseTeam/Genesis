@@ -5,6 +5,7 @@
     using UnityEngine;
     using VUDK.Extensions.Transform;
     using VUDK.Generic.Managers;
+    using VUDK.Generic.Systems.EventsSystem;
 
     public class PlayerStatus : MonoBehaviour, ICloneable
     {
@@ -12,6 +13,11 @@
         private float _resizeSpeed;
         [SerializeField, Min(0f)]
         private float _resizeTime;
+
+        [SerializeField, Min(0f), Header("Jump Change")]
+        private float _resizedJumpforce;
+        [SerializeField]
+        private float _normalJumpForce;
 
         private Vector3 _originalSize;
         private Vector3 _targetSize;
@@ -37,9 +43,15 @@
             IsResized = !IsResized;
 
             if (_targetSize.magnitude >= _originalSize.magnitude)
+            {
                 GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerSizeUp);
+                GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerChangeSize, _normalJumpForce);
+            }
             else
+            {
                 GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerSizeDown);
+                GameManager.Instance.EventManager.TriggerEvent(EventKeys.OnPlayerChangeSize, _resizedJumpforce);
+            }
 
             CancelInvoke("StopResizing");
             Invoke("StopResizing", _resizeTime);

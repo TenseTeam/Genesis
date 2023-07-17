@@ -11,6 +11,7 @@
 
         public const string OnPlayerStep = "OnPlayerStep";
         public const string OnPlayerJump = "OnPlayerJump";
+        public const string OnPlayerChangeSize = "OnPlayerChangeSize";
         public const string OnPlayerSizeUp = "OnPlayerSizeUp";
         public const string OnPlayerSizeDown = "OnPlayerSizeDown";
 

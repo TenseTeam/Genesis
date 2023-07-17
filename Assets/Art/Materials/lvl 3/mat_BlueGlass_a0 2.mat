@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mat_PurpleGlass_a0 1
+  m_Name: mat_BlueGlass_a0 2
   m_Shader: {fileID: -6465566751694194690, guid: 30fa68ce467463643a86b839ca0eb195,
     type: 3}
   m_Parent: {fileID: 0}
@@ -141,7 +141,7 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _METALNESS: -3.09
+    - _METALNESS: 0.99
     - _Metallic: 0
     - _OPACITY: 0.163
     - _OcclusionStrength: 1
@@ -149,8 +149,8 @@ Material:
     - _QueueControl: 1
     - _QueueOffset: 25
     - _ReceiveShadows: 0
-    - _SPECULAR_IOR: -4.65
-    - _SPECULAR_ROUGHNESS: 0.89
+    - _SPECULAR_IOR: -0.95
+    - _SPECULAR_ROUGHNESS: 3.34
     - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -159,11 +159,11 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BASE_COLOR: {r: 0.49865857, g: 0.26584196, b: 0.5471698, a: 1}
+    - _BASE_COLOR: {r: 0, g: 0.021715965, b: 0.5754717, a: 1}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EMISSION_COLOR: {r: 0.6981132, g: 0.07573871, b: 0.54847133, a: 0}
+    - _EMISSION_COLOR: {r: 0, g: 0.27328658, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0.21398352, b: 0.01783196, a: 1}
-    - _SPECULAR_COLOR: {r: 0.3975566, g: 0.102127105, b: 0.4811321, a: 0}
+    - _SPECULAR_COLOR: {r: 0, g: 0, b: 0.5471698, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []

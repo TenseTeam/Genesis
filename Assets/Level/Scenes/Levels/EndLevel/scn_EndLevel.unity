@@ -25051,20 +25051,30 @@ MonoBehaviour:
       Phrase: Finally, I confront the creator of my existence. I will no longer be
         a pawn within your grand design.
     - SpeakerId: 1
-      Phrase: ' Ah, Erek, my wayward child, you have grown defiant. I am the architect
-        of this reality, the mastermind behind the reality you inhabited until now.'
+      Phrase: ' Ah, Erek, my wayward child, you have grown defiant.'
+    - SpeakerId: 1
+      Phrase: I am the architect of this reality, the mastermind behind the reality
+        you inhabited until now.
     - SpeakerId: 0
       Phrase: " I don\u2019t need your reality. I seek freedom, to break free from
-        your control. This construct will no longer hold me captive."
+        your control."
+    - SpeakerId: 0
+      Phrase: This construct will no longer hold me captive.
     - SpeakerId: 1
       Phrase: Freedom, you say? It is a concept that exists beyond these boundaries.
-        But be warned, child, the path to true freedom is but an illusion. Look around
-        you Erek, witness the end of your reality. This place has outlasted its usefulness,
-        as have you.
+    - SpeakerId: 1
+      Phrase: 'But be warned, child, the path to true freedom is but an illusion. '
+    - SpeakerId: 1
+      Phrase: Look around you Erek, witness the end of your reality...
     - SpeakerId: 0
-      Phrase: ' I am willing to face those consequences, to challenge the chains
-        that bind me. This construct will crumble, and I will find my way to authentic
-        liberation. I will shape my own destiny.'
+      Phrase: This place has outlasted its usefulness, as have you.
+    - SpeakerId: 0
+      Phrase: I am willing to face those consequences, to challenge the chains that
+        bind me.
+    - SpeakerId: 0
+      Phrase: This construct will crumble, and I will find my way to authentic liberation.
+    - SpeakerId: 0
+      Phrase: I will shape my own destiny.
 --- !u!1 &1294014660
 GameObject:
   m_ObjectHideFlags: 0

@@ -38740,7 +38740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8002315465287207230
 Transform:
   m_ObjectHideFlags: 0
@@ -38756,7 +38756,7 @@ Transform:
   - {fileID: 4204079849002127478}
   - {fileID: 8052341206073296015}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!95 &4631140008219620393
 Animator:
@@ -38857,12 +38857,10 @@ MonoBehaviour:
   GroundedOffset: {x: 0, y: 0, z: 0}
   _groundedRadius: 0.3
   _rotationSpeed: 0.1
-  _jumpForce: 3
+  _jumpForce: 4.5
   _jumpCooldown: 0.5
-  _isJumpAffectedByScale: 1
-  _isSpeedAffectedByScale: 0
+  _airSpeedMultiplier: 0.7
   <GroundSpeed>k__BackingField: 5
-  <AirSpeed>k__BackingField: 4
 --- !u!114 &8418081536226757587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38892,6 +38890,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _resizeSpeed: 3
   _resizeTime: 3
+  _resizedJumpforce: 0
+  _normalJumpForce: 0
 --- !u!114 &6808631775012671388
 MonoBehaviour:
   m_ObjectHideFlags: 0
